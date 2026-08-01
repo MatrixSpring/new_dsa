@@ -1,0 +1,57 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.local
+
+# Outputs
+outputs/
+
+# Database files (runtime)
+*.db
+*.db-shm
+*.db-wal
+
+# Lock files (runtime)
+*.lock
+
+# Vite / build timestamp artifacts
+*.timestamp-*.mjs
+
+# Node
+node_modules/
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Docker
+*.tar
+*.tar.gz

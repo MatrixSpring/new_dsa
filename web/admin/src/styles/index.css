@@ -1,0 +1,290 @@
+/* ===== 全局样式（暗色科技风） ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: hsl(228 35% 7%);
+  color: hsl(210 20% 92%);
+}
+
+/* ===== 通用工具类 ===== */
+.flex {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gap-8 {
+  gap: 8px;
+}
+.gap-12 {
+  gap: 12px;
+}
+.gap-16 {
+  gap: 16px;
+}
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+.mt-24 {
+  margin-top: 24px;
+}
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+/* ===== 中国股市涨跌色（暗色版） ===== */
+.price-up {
+  color: hsl(0 88% 64%);
+}
+.price-down {
+  color: hsl(149 100% 44%);
+}
+.price-flat {
+  color: hsl(215 16% 60%);
+}
+
+/* ===== 卡片（暗色版） ===== */
+.chart-card {
+  background: hsl(224 25% 13%);
+  border: 1px solid hsl(220 20% 20%);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* ===== 页面标题（暗色版） ===== */
+.page-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(210 20% 92%);
+  margin-bottom: 16px;
+}
+
+/* ===== 空状态（暗色版） ===== */
+.empty-tip {
+  text-align: center;
+  padding: 40px 0;
+  color: hsl(215 14% 45%);
+  font-size: 14px;
+}
+
+/* ===== Element Plus 全局暗色覆盖 ===== */
+.el-card {
+  background: hsl(224 25% 13%);
+  border-color: hsl(220 20% 20%);
+  color: hsl(210 20% 92%);
+}
+
+.el-card__header {
+  border-color: hsl(220 20% 20%);
+  color: hsl(210 20% 92%);
+}
+
+.el-dialog {
+  background: hsl(225 28% 11%);
+  border: 1px solid hsl(220 20% 20%);
+}
+
+.el-dialog__title {
+  color: hsl(210 20% 92%);
+}
+
+.el-dialog__body {
+  color: hsl(210 20% 92%);
+}
+
+.el-form-item__label {
+  color: hsl(215 16% 60%) !important;
+}
+
+.el-radio-button__inner {
+  background: hsl(224 25% 13%);
+  border-color: hsl(220 20% 20%);
+  color: hsl(215 16% 60%);
+}
+
+.el-radio-button__original-radio:checked + .el-radio-button__inner {
+  background: hsl(190 100% 50% / 0.15);
+  border-color: hsl(190 100% 50% / 0.4);
+  color: hsl(190 100% 50%);
+  box-shadow: -1px 0 0 0 hsl(190 100% 50% / 0.4);
+}
+
+.el-radio-group .el-radio__label {
+  color: hsl(215 16% 60%);
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+  background: hsl(190 100% 50%);
+  border-color: hsl(190 100% 50%);
+}
+
+.el-radio__input.is-checked + .el-radio__label {
+  color: hsl(190 100% 50%);
+}
+
+.el-date-editor .el-range-input {
+  background: transparent;
+  color: hsl(210 20% 92%);
+}
+
+.el-date-editor .el-range-separator {
+  color: hsl(215 16% 60%);
+}
+
+.el-picker-panel {
+  background: hsl(225 28% 11%);
+  border-color: hsl(220 20% 20%);
+  color: hsl(210 20% 92%);
+}
+
+.el-picker-panel__icon-btn,
+.el-date-picker__header-label {
+  color: hsl(215 16% 60%);
+}
+
+.el-date-table th {
+  color: hsl(215 16% 60%);
+  border-color: hsl(220 20% 20%);
+}
+
+.el-date-table td .el-date-table-cell__text {
+  color: hsl(210 20% 92%);
+}
+
+.el-date-table td.in-range .el-date-table-cell {
+  background: hsl(190 100% 50% / 0.1);
+}
+
+.el-input-number {
+  --el-fill-color-light: hsl(224 25% 13%);
+}
+
+.el-input-number__decrease,
+.el-input-number__increase {
+  background: hsl(222 25% 16%);
+  border-color: hsl(220 20% 20%);
+  color: hsl(215 16% 60%);
+}
+
+.el-input-number__decrease:hover,
+.el-input-number__increase:hover {
+  color: hsl(190 100% 50%);
+}
+
+.el-divider {
+  border-color: hsl(220 20% 20%);
+}
+
+.el-divider__text {
+  background: hsl(224 25% 13%);
+  color: hsl(215 16% 60%);
+}
+
+.el-alert {
+  background: hsl(190 100% 50% / 0.08);
+  border: 1px solid hsl(190 100% 50% / 0.2);
+}
+
+.el-alert--info .el-alert__title {
+  color: hsl(190 100% 50%);
+}
+
+.el-message-box {
+  background: hsl(225 28% 11%);
+  border: 1px solid hsl(220 20% 20%);
+}
+
+.el-message-box__title {
+  color: hsl(210 20% 92%);
+}
+
+.el-message-box__content {
+  color: hsl(210 20% 92%);
+}
+
+.el-popper {
+  background: hsl(225 28% 11%);
+  border-color: hsl(220 20% 20%);
+  color: hsl(210 20% 92%);
+}
+
+.el-popper__arrow::before {
+  background: hsl(225 28% 11%);
+  border-color: hsl(220 20% 20%);
+}
+
+.el-select-dropdown__item {
+  color: hsl(210 20% 92%);
+}
+
+.el-select-dropdown__item.hover,
+.el-select-dropdown__item:hover {
+  background: hsl(222 25% 16%);
+}
+
+.el-select-dropdown__item.selected {
+  color: hsl(190 100% 50%);
+}
+
+.el-tag--danger {
+  background: hsl(0 88% 64% / 0.15);
+  border-color: hsl(0 88% 64% / 0.4);
+  color: hsl(0 88% 64%);
+}
+
+.el-tag--success {
+  background: hsl(149 100% 44% / 0.15);
+  border-color: hsl(149 100% 44% / 0.4);
+  color: hsl(149 100% 44%);
+}
+
+.el-tag--warning {
+  background: hsl(38 100% 55% / 0.15);
+  border-color: hsl(38 100% 55% / 0.4);
+  color: hsl(38 100% 55%);
+}
+
+.el-tag--primary {
+  background: hsl(190 100% 50% / 0.15);
+  border-color: hsl(190 100% 50% / 0.4);
+  color: hsl(190 100% 50%);
+}
+
+.el-badge__content--success {
+  background: hsl(149 100% 44%);
+}
+
+.el-textarea__inner {
+  background: hsl(224 25% 13%);
+  border-color: hsl(220 20% 20%);
+  color: hsl(210 20% 92%);
+  box-shadow: none;
+}
+
+.el-textarea__inner:focus {
+  border-color: hsl(190 100% 50% / 0.5);
+  box-shadow: none;
+}

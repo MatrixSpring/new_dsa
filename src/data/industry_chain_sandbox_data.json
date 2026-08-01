@@ -1,0 +1,1240 @@
+{
+  "INDUSTRY_CHAINS": {
+    "lithium": {
+      "id": "lithium",
+      "name": "锂电池产业链",
+      "icon": "🔋",
+      "color": "190 100% 50%",
+      "nodes": [
+        {
+          "id": "li_mine",
+          "label": "锂矿开采",
+          "sub": "上游资源",
+          "layer": 0,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 85,
+          "barrier": "high",
+          "supplyDemand": "tight",
+          "costSensitivity": 20,
+          "profitElasticity": 90
+        },
+        {
+          "id": "co_mine",
+          "label": "钴矿开采",
+          "sub": "上游资源",
+          "layer": 0,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 70,
+          "barrier": "high",
+          "supplyDemand": "balanced",
+          "costSensitivity": 15,
+          "profitElasticity": 75
+        },
+        {
+          "id": "ni_mine",
+          "label": "镍矿开采",
+          "sub": "上游资源",
+          "layer": 0,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 60,
+          "barrier": "medium",
+          "supplyDemand": "surplus",
+          "costSensitivity": 10,
+          "profitElasticity": 60
+        },
+        {
+          "id": "graphite",
+          "label": "石墨矿",
+          "sub": "上游资源",
+          "layer": 0,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 55,
+          "barrier": "medium",
+          "supplyDemand": "balanced",
+          "costSensitivity": 12,
+          "profitElasticity": 65
+        },
+        {
+          "id": "cathode",
+          "label": "正极材料",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 45,
+          "barrier": "medium",
+          "supplyDemand": "surplus",
+          "costSensitivity": 80,
+          "profitElasticity": 70
+        },
+        {
+          "id": "anode",
+          "label": "负极材料",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 50,
+          "barrier": "medium",
+          "supplyDemand": "balanced",
+          "costSensitivity": 65,
+          "profitElasticity": 60
+        },
+        {
+          "id": "electrolyte",
+          "label": "电解液",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 55,
+          "barrier": "medium",
+          "supplyDemand": "balanced",
+          "costSensitivity": 70,
+          "profitElasticity": 65
+        },
+        {
+          "id": "separator",
+          "label": "隔膜",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "small",
+          "pricingPower": 65,
+          "barrier": "high",
+          "supplyDemand": "tight",
+          "costSensitivity": 50,
+          "profitElasticity": 55
+        },
+        {
+          "id": "cell",
+          "label": "电芯制造",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 40,
+          "barrier": "medium",
+          "supplyDemand": "surplus",
+          "costSensitivity": 75,
+          "profitElasticity": 80
+        },
+        {
+          "id": "ev",
+          "label": "新能源汽车",
+          "sub": "下游终端",
+          "layer": 2,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 55,
+          "barrier": "high",
+          "supplyDemand": "growing",
+          "costSensitivity": 60,
+          "profitElasticity": 85
+        },
+        {
+          "id": "ess",
+          "label": "储能系统",
+          "sub": "下游终端",
+          "layer": 2,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 45,
+          "barrier": "medium",
+          "supplyDemand": "growing",
+          "costSensitivity": 55,
+          "profitElasticity": 75
+        },
+        {
+          "id": "consumer",
+          "label": "消费电子",
+          "sub": "下游终端",
+          "layer": 2,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 40,
+          "barrier": "low",
+          "supplyDemand": "stable",
+          "costSensitivity": 35,
+          "profitElasticity": 50
+        },
+        {
+          "id": "equipment",
+          "label": "锂电设备",
+          "sub": "配套服务",
+          "layer": 1.5,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 60,
+          "barrier": "high",
+          "supplyDemand": "balanced",
+          "costSensitivity": 40,
+          "profitElasticity": 70
+        },
+        {
+          "id": "recycle",
+          "label": "电池回收",
+          "sub": "配套服务",
+          "layer": 1.5,
+          "type": "industry",
+          "size": "small",
+          "pricingPower": 50,
+          "barrier": "medium",
+          "supplyDemand": "growing",
+          "costSensitivity": 30,
+          "profitElasticity": 80
+        }
+      ],
+      "edges": [
+        {
+          "source": "li_mine",
+          "target": "cathode",
+          "type": "cost",
+          "coeff": 0.85,
+          "lag": 5,
+          "desc": "碳酸锂→正极材料成本核心，占正极成本40-50%"
+        },
+        {
+          "source": "co_mine",
+          "target": "cathode",
+          "type": "cost",
+          "coeff": 0.65,
+          "lag": 7,
+          "desc": "钴价波动→三元正极成本敏感"
+        },
+        {
+          "source": "ni_mine",
+          "target": "cathode",
+          "type": "cost",
+          "coeff": 0.55,
+          "lag": 7,
+          "desc": "镍价→高镍三元正极成本"
+        },
+        {
+          "source": "graphite",
+          "target": "anode",
+          "type": "cost",
+          "coeff": 0.75,
+          "lag": 5,
+          "desc": "石墨→负极材料主要原料"
+        },
+        {
+          "source": "cathode",
+          "target": "cell",
+          "type": "cost",
+          "coeff": 0.8,
+          "lag": 3,
+          "desc": "正极占电芯成本40%，传导直接"
+        },
+        {
+          "source": "anode",
+          "target": "cell",
+          "type": "cost",
+          "coeff": 0.5,
+          "lag": 3,
+          "desc": "负极占电芯成本10-15%"
+        },
+        {
+          "source": "electrolyte",
+          "target": "cell",
+          "type": "cost",
+          "coeff": 0.55,
+          "lag": 3,
+          "desc": "电解液占电芯成本8-12%"
+        },
+        {
+          "source": "separator",
+          "target": "cell",
+          "type": "cost",
+          "coeff": 0.4,
+          "lag": 3,
+          "desc": "隔膜占电芯成本5-8%"
+        },
+        {
+          "source": "cell",
+          "target": "ev",
+          "type": "cost",
+          "coeff": 0.7,
+          "lag": 5,
+          "desc": "电芯占整车成本30-40%"
+        },
+        {
+          "source": "cell",
+          "target": "ess",
+          "type": "cost",
+          "coeff": 0.75,
+          "lag": 5,
+          "desc": "电芯占储能系统成本55-65%"
+        },
+        {
+          "source": "cell",
+          "target": "consumer",
+          "type": "cost",
+          "coeff": 0.4,
+          "lag": 5,
+          "desc": "电芯占消费电子成本10-15%"
+        },
+        {
+          "source": "ev",
+          "target": "cell",
+          "type": "demand",
+          "coeff": 0.9,
+          "lag": 3,
+          "desc": "新能源车销量→电芯需求拉动"
+        },
+        {
+          "source": "ess",
+          "target": "cell",
+          "type": "demand",
+          "coeff": 0.6,
+          "lag": 5,
+          "desc": "储能装机量→电芯需求拉动"
+        },
+        {
+          "source": "equipment",
+          "target": "cell",
+          "type": "supply",
+          "coeff": 0.45,
+          "lag": 10,
+          "desc": "设备产能→电芯扩产瓶颈"
+        },
+        {
+          "source": "recycle",
+          "target": "li_mine",
+          "type": "subst",
+          "coeff": 0.3,
+          "lag": 15,
+          "desc": "回收锂→替代部分原矿供给"
+        },
+        {
+          "source": "recycle",
+          "target": "co_mine",
+          "type": "subst",
+          "coeff": 0.4,
+          "lag": 15,
+          "desc": "回收钴→替代部分原矿供给"
+        },
+        {
+          "source": "li_mine",
+          "target": "electrolyte",
+          "type": "cost",
+          "coeff": 0.2,
+          "lag": 8,
+          "desc": "锂盐→电解液六氟磷酸锂原料"
+        }
+      ],
+      "companies": {
+        "li_mine": [
+          {
+            "code": "002460",
+            "name": "赣锋锂业",
+            "mkt": "cn",
+            "revPct": 85,
+            "selfSuff": 60,
+            "overseas": 35,
+            "sensitivity": 0.92,
+            "biz": "锂矿+锂盐"
+          },
+          {
+            "code": "002466",
+            "name": "天齐锂业",
+            "mkt": "cn",
+            "revPct": 90,
+            "selfSuff": 70,
+            "overseas": 55,
+            "sensitivity": 0.95,
+            "biz": "锂精矿+锂盐"
+          },
+          {
+            "code": "ALB",
+            "name": "Albemarle",
+            "mkt": "us",
+            "revPct": 70,
+            "selfSuff": 80,
+            "overseas": 60,
+            "sensitivity": 0.8,
+            "biz": "全球锂资源龙头"
+          }
+        ],
+        "co_mine": [
+          {
+            "code": "603799",
+            "name": "华友钴业",
+            "mkt": "cn",
+            "revPct": 60,
+            "selfSuff": 40,
+            "overseas": 70,
+            "sensitivity": 0.85,
+            "biz": "钴镍采选+冶炼"
+          },
+          {
+            "code": "600711",
+            "name": "盛屯矿业",
+            "mkt": "cn",
+            "revPct": 45,
+            "selfSuff": 30,
+            "overseas": 65,
+            "sensitivity": 0.7,
+            "biz": "钴铜镍资源"
+          }
+        ],
+        "cathode": [
+          {
+            "code": "300073",
+            "name": "当升科技",
+            "mkt": "cn",
+            "revPct": 95,
+            "selfSuff": 20,
+            "overseas": 40,
+            "sensitivity": 0.88,
+            "biz": "正极材料"
+          },
+          {
+            "code": "688005",
+            "name": "容百科技",
+            "mkt": "cn",
+            "revPct": 98,
+            "selfSuff": 15,
+            "overseas": 25,
+            "sensitivity": 0.9,
+            "biz": "高镍三元正极"
+          },
+          {
+            "code": "002340",
+            "name": "格林美",
+            "mkt": "cn",
+            "revPct": 55,
+            "selfSuff": 35,
+            "overseas": 30,
+            "sensitivity": 0.75,
+            "biz": "三元前驱体+回收"
+          }
+        ],
+        "anode": [
+          {
+            "code": "002812",
+            "name": "恩捷股份",
+            "mkt": "cn",
+            "revPct": 80,
+            "selfSuff": 50,
+            "overseas": 20,
+            "sensitivity": 0.78,
+            "biz": "负极+隔膜"
+          },
+          {
+            "code": "603759",
+            "name": "璞泰来",
+            "mkt": "cn",
+            "revPct": 85,
+            "selfSuff": 40,
+            "overseas": 15,
+            "sensitivity": 0.8,
+            "biz": "负极材料"
+          }
+        ],
+        "electrolyte": [
+          {
+            "code": "002709",
+            "name": "天赐材料",
+            "mkt": "cn",
+            "revPct": 90,
+            "selfSuff": 65,
+            "overseas": 20,
+            "sensitivity": 0.85,
+            "biz": "电解液+六氟磷酸锂"
+          },
+          {
+            "code": "300037",
+            "name": "新宙邦",
+            "mkt": "cn",
+            "revPct": 75,
+            "selfSuff": 55,
+            "overseas": 35,
+            "sensitivity": 0.75,
+            "biz": "电解液"
+          }
+        ],
+        "separator": [
+          {
+            "code": "002812",
+            "name": "恩捷股份",
+            "mkt": "cn",
+            "revPct": 65,
+            "selfSuff": 60,
+            "overseas": 25,
+            "sensitivity": 0.82,
+            "biz": "隔膜龙头"
+          },
+          {
+            "code": "002326",
+            "name": "星源材质",
+            "mkt": "cn",
+            "revPct": 88,
+            "selfSuff": 70,
+            "overseas": 20,
+            "sensitivity": 0.78,
+            "biz": "隔膜"
+          }
+        ],
+        "cell": [
+          {
+            "code": "300750",
+            "name": "宁德时代",
+            "mkt": "cn",
+            "revPct": 95,
+            "selfSuff": 45,
+            "overseas": 35,
+            "sensitivity": 0.95,
+            "biz": "全球动力电池龙头"
+          },
+          {
+            "code": "002594",
+            "name": "比亚迪",
+            "mkt": "cn",
+            "revPct": 40,
+            "selfSuff": 80,
+            "overseas": 15,
+            "sensitivity": 0.85,
+            "biz": "整车+电池一体化"
+          },
+          {
+            "code": "300014",
+            "name": "亿纬锂能",
+            "mkt": "cn",
+            "revPct": 80,
+            "selfSuff": 50,
+            "overseas": 30,
+            "sensitivity": 0.82,
+            "biz": "消费+动力+储能电池"
+          },
+          {
+            "code": "688006",
+            "name": "孚能科技",
+            "mkt": "cn",
+            "revPct": 92,
+            "selfSuff": 30,
+            "overseas": 25,
+            "sensitivity": 0.8,
+            "biz": "软包动力电池"
+          }
+        ],
+        "ev": [
+          {
+            "code": "002594",
+            "name": "比亚迪",
+            "mkt": "cn",
+            "revPct": 80,
+            "selfSuff": 85,
+            "overseas": 10,
+            "sensitivity": 0.9,
+            "biz": "新能源车龙头"
+          },
+          {
+            "code": "NIO",
+            "name": "蔚来",
+            "mkt": "us",
+            "revPct": 95,
+            "selfSuff": 30,
+            "overseas": 5,
+            "sensitivity": 0.85,
+            "biz": "高端新能源车"
+          },
+          {
+            "code": "XPEV",
+            "name": "小鹏汽车",
+            "mkt": "us",
+            "revPct": 92,
+            "selfSuff": 25,
+            "overseas": 8,
+            "sensitivity": 0.82,
+            "biz": "智能新能源车"
+          }
+        ],
+        "ess": [
+          {
+            "code": "300274",
+            "name": "阳光电源",
+            "mkt": "cn",
+            "revPct": 35,
+            "selfSuff": 60,
+            "overseas": 55,
+            "sensitivity": 0.72,
+            "biz": "储能逆变器"
+          },
+          {
+            "code": "688390",
+            "name": "固德威",
+            "mkt": "cn",
+            "revPct": 50,
+            "selfSuff": 55,
+            "overseas": 60,
+            "sensitivity": 0.68,
+            "biz": "储能逆变器"
+          }
+        ],
+        "equipment": [
+          {
+            "code": "300457",
+            "name": "赢合科技",
+            "mkt": "cn",
+            "revPct": 85,
+            "selfSuff": 70,
+            "overseas": 15,
+            "sensitivity": 0.75,
+            "biz": "锂电前段设备"
+          },
+          {
+            "code": "300294",
+            "name": "星云股份",
+            "mkt": "cn",
+            "revPct": 70,
+            "selfSuff": 65,
+            "overseas": 10,
+            "sensitivity": 0.68,
+            "biz": "锂电检测设备"
+          }
+        ],
+        "recycle": [
+          {
+            "code": "002340",
+            "name": "格林美",
+            "mkt": "cn",
+            "revPct": 30,
+            "selfSuff": 50,
+            "overseas": 25,
+            "sensitivity": 0.72,
+            "biz": "电池回收+前驱体"
+          },
+          {
+            "code": "300937",
+            "name": "天奇股份",
+            "mkt": "cn",
+            "revPct": 55,
+            "selfSuff": 45,
+            "overseas": 10,
+            "sensitivity": 0.65,
+            "biz": "循环装备+回收"
+          }
+        ]
+      },
+      "news": [
+        {
+          "time": "2026-07-28",
+          "title": "碳酸锂期货价格跌破8万元/吨，上游矿企利润承压",
+          "tag": "price"
+        },
+        {
+          "time": "2026-07-25",
+          "title": "工信部发布新一轮新能源车购置税减免政策",
+          "tag": "policy"
+        },
+        {
+          "time": "2026-07-22",
+          "title": "宁德时代发布麒麟电池5.0，能量密度提升15%",
+          "tag": "tech"
+        },
+        {
+          "time": "2026-07-20",
+          "title": "智利宣布锂矿出口配额制，全球锂供给预期收紧",
+          "tag": "geo"
+        },
+        {
+          "time": "2026-07-18",
+          "title": "欧盟碳关税正式实施，电池出口成本增加3-5%",
+          "tag": "policy"
+        },
+        {
+          "time": "2026-07-15",
+          "title": "比亚迪Q2动力电池装机量超越LG新能源，全球第二",
+          "tag": "market"
+        }
+      ]
+    },
+    "semiconductor": {
+      "id": "semiconductor",
+      "name": "半导体产业链",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "nodes": [
+        {
+          "id": "si_wafer",
+          "label": "硅片",
+          "sub": "上游材料",
+          "layer": 0,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 70,
+          "barrier": "high",
+          "supplyDemand": "tight",
+          "costSensitivity": 30,
+          "profitElasticity": 65
+        },
+        {
+          "id": "photoresist",
+          "label": "光刻胶",
+          "sub": "上游材料",
+          "layer": 0,
+          "type": "industry",
+          "size": "small",
+          "pricingPower": 80,
+          "barrier": "extreme",
+          "supplyDemand": "tight",
+          "costSensitivity": 20,
+          "profitElasticity": 55
+        },
+        {
+          "id": "etch_gas",
+          "label": "电子特气",
+          "sub": "上游材料",
+          "layer": 0,
+          "type": "industry",
+          "size": "small",
+          "pricingPower": 65,
+          "barrier": "high",
+          "supplyDemand": "balanced",
+          "costSensitivity": 25,
+          "profitElasticity": 60
+        },
+        {
+          "id": "eda",
+          "label": "EDA/IP",
+          "sub": "上游工具",
+          "layer": 0,
+          "type": "industry",
+          "size": "small",
+          "pricingPower": 90,
+          "barrier": "extreme",
+          "supplyDemand": "oligopoly",
+          "costSensitivity": 10,
+          "profitElasticity": 85
+        },
+        {
+          "id": "equipment2",
+          "label": "半导体设备",
+          "sub": "上游设备",
+          "layer": 0.5,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 75,
+          "barrier": "extreme",
+          "supplyDemand": "tight",
+          "costSensitivity": 20,
+          "profitElasticity": 75
+        },
+        {
+          "id": "foundry",
+          "label": "晶圆代工",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 70,
+          "barrier": "extreme",
+          "supplyDemand": "balanced",
+          "costSensitivity": 50,
+          "profitElasticity": 90
+        },
+        {
+          "id": "design",
+          "label": "芯片设计",
+          "sub": "中游设计",
+          "layer": 1,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 45,
+          "barrier": "medium",
+          "supplyDemand": "competitive",
+          "costSensitivity": 35,
+          "profitElasticity": 95
+        },
+        {
+          "id": "packaging",
+          "label": "封测",
+          "sub": "中游封测",
+          "layer": 1,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 35,
+          "barrier": "low",
+          "supplyDemand": "surplus",
+          "costSensitivity": 40,
+          "profitElasticity": 60
+        },
+        {
+          "id": "smartphone",
+          "label": "智能手机",
+          "sub": "下游终端",
+          "layer": 2,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 50,
+          "barrier": "high",
+          "supplyDemand": "stable",
+          "costSensitivity": 30,
+          "profitElasticity": 70
+        },
+        {
+          "id": "auto_chip",
+          "label": "汽车电子",
+          "sub": "下游终端",
+          "layer": 2,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 55,
+          "barrier": "high",
+          "supplyDemand": "growing",
+          "costSensitivity": 35,
+          "profitElasticity": 80
+        },
+        {
+          "id": "ai_server",
+          "label": "AI服务器",
+          "sub": "下游终端",
+          "layer": 2,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 65,
+          "barrier": "high",
+          "supplyDemand": "explosive",
+          "costSensitivity": 40,
+          "profitElasticity": 95
+        }
+      ],
+      "edges": [
+        {
+          "source": "si_wafer",
+          "target": "foundry",
+          "type": "cost",
+          "coeff": 0.45,
+          "lag": 8,
+          "desc": "硅片→晶圆代工基础材料成本"
+        },
+        {
+          "source": "photoresist",
+          "target": "foundry",
+          "type": "cost",
+          "coeff": 0.3,
+          "lag": 5,
+          "desc": "光刻胶→晶圆代工耗材"
+        },
+        {
+          "source": "etch_gas",
+          "target": "foundry",
+          "type": "cost",
+          "coeff": 0.25,
+          "lag": 5,
+          "desc": "电子特气→刻蚀耗材"
+        },
+        {
+          "source": "eda",
+          "target": "design",
+          "type": "cost",
+          "coeff": 0.15,
+          "lag": 3,
+          "desc": "EDA授权→芯片设计固定成本"
+        },
+        {
+          "source": "equipment2",
+          "target": "foundry",
+          "type": "supply",
+          "coeff": 0.6,
+          "lag": 12,
+          "desc": "设备交付→代工扩产瓶颈"
+        },
+        {
+          "source": "foundry",
+          "target": "design",
+          "type": "cost",
+          "coeff": 0.55,
+          "lag": 5,
+          "desc": "晶圆代工报价→设计公司成本"
+        },
+        {
+          "source": "foundry",
+          "target": "packaging",
+          "type": "demand",
+          "coeff": 0.7,
+          "lag": 3,
+          "desc": "晶圆产量→封测需求拉动"
+        },
+        {
+          "source": "design",
+          "target": "smartphone",
+          "type": "demand",
+          "coeff": 0.5,
+          "lag": 4,
+          "desc": "手机SoC→智能手机出货"
+        },
+        {
+          "source": "design",
+          "target": "auto_chip",
+          "type": "demand",
+          "coeff": 0.6,
+          "lag": 6,
+          "desc": "车规芯片→汽车电子需求"
+        },
+        {
+          "source": "design",
+          "target": "ai_server",
+          "type": "demand",
+          "coeff": 0.85,
+          "lag": 3,
+          "desc": "AI芯片→服务器需求爆发"
+        }
+      ],
+      "companies": {
+        "foundry": [
+          {
+            "code": "688981",
+            "name": "中芯国际",
+            "mkt": "cn",
+            "revPct": 95,
+            "selfSuff": 30,
+            "overseas": 25,
+            "sensitivity": 0.9,
+            "biz": "晶圆代工龙头"
+          }
+        ],
+        "design": [
+          {
+            "code": "688012",
+            "name": "中微公司",
+            "mkt": "cn",
+            "revPct": 85,
+            "selfSuff": 40,
+            "overseas": 20,
+            "sensitivity": 0.82,
+            "biz": "刻蚀设备+芯片设计"
+          }
+        ],
+        "ai_server": [
+          {
+            "code": "002230",
+            "name": "科大讯飞",
+            "mkt": "cn",
+            "revPct": 60,
+            "selfSuff": 50,
+            "overseas": 10,
+            "sensitivity": 0.75,
+            "biz": "AI+语音"
+          }
+        ]
+      },
+      "news": [
+        {
+          "time": "2026-07-28",
+          "title": "台积电3nm良率突破85%，AI芯片产能释放",
+          "tag": "tech"
+        },
+        {
+          "time": "2026-07-25",
+          "title": "美国对华半导体设备出口管制升级",
+          "tag": "policy"
+        },
+        {
+          "time": "2026-07-20",
+          "title": "中芯国际7nm工艺量产，国产替代加速",
+          "tag": "market"
+        }
+      ]
+    },
+    "photovoltaic": {
+      "id": "photovoltaic",
+      "name": "光伏产业链",
+      "icon": "☀️",
+      "color": "38 100% 55%",
+      "nodes": [
+        {
+          "id": "polysilicon",
+          "label": "多晶硅",
+          "sub": "上游原料",
+          "layer": 0,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 75,
+          "barrier": "high",
+          "supplyDemand": "surplus",
+          "costSensitivity": 20,
+          "profitElasticity": 85
+        },
+        {
+          "id": "wafer_pv",
+          "label": "硅片",
+          "sub": "上游原料",
+          "layer": 0,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 60,
+          "barrier": "medium",
+          "supplyDemand": "surplus",
+          "costSensitivity": 40,
+          "profitElasticity": 75
+        },
+        {
+          "id": "cell_pv",
+          "label": "电池片",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 45,
+          "barrier": "medium",
+          "supplyDemand": "surplus",
+          "costSensitivity": 65,
+          "profitElasticity": 80
+        },
+        {
+          "id": "module",
+          "label": "组件",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 35,
+          "barrier": "low",
+          "supplyDemand": "surplus",
+          "costSensitivity": 55,
+          "profitElasticity": 65
+        },
+        {
+          "id": "inverter",
+          "label": "逆变器",
+          "sub": "中游制造",
+          "layer": 1,
+          "type": "industry",
+          "size": "medium",
+          "pricingPower": 55,
+          "barrier": "medium",
+          "supplyDemand": "balanced",
+          "costSensitivity": 35,
+          "profitElasticity": 70
+        },
+        {
+          "id": "pv_plant",
+          "label": "光伏电站",
+          "sub": "下游终端",
+          "layer": 2,
+          "type": "industry",
+          "size": "large",
+          "pricingPower": 40,
+          "barrier": "medium",
+          "supplyDemand": "growing",
+          "costSensitivity": 50,
+          "profitElasticity": 75
+        }
+      ],
+      "edges": [
+        {
+          "source": "polysilicon",
+          "target": "wafer_pv",
+          "type": "cost",
+          "coeff": 0.8,
+          "lag": 5,
+          "desc": "多晶硅→硅片核心成本"
+        },
+        {
+          "source": "wafer_pv",
+          "target": "cell_pv",
+          "type": "cost",
+          "coeff": 0.7,
+          "lag": 3,
+          "desc": "硅片→电池片成本占比60%"
+        },
+        {
+          "source": "cell_pv",
+          "target": "module",
+          "type": "cost",
+          "coeff": 0.65,
+          "lag": 3,
+          "desc": "电池片→组件成本占比50%"
+        },
+        {
+          "source": "module",
+          "target": "pv_plant",
+          "type": "cost",
+          "coeff": 0.5,
+          "lag": 5,
+          "desc": "组件→电站投资成本40%"
+        },
+        {
+          "source": "inverter",
+          "target": "pv_plant",
+          "type": "cost",
+          "coeff": 0.2,
+          "lag": 5,
+          "desc": "逆变器→电站成本8-12%"
+        }
+      ],
+      "companies": {
+        "polysilicon": [
+          {
+            "code": "600438",
+            "name": "通威股份",
+            "mkt": "cn",
+            "revPct": 70,
+            "selfSuff": 80,
+            "overseas": 15,
+            "sensitivity": 0.88,
+            "biz": "多晶硅+电池片"
+          }
+        ],
+        "module": [
+          {
+            "code": "688599",
+            "name": "天合光能",
+            "mkt": "cn",
+            "revPct": 90,
+            "selfSuff": 60,
+            "overseas": 45,
+            "sensitivity": 0.82,
+            "biz": "光伏组件"
+          }
+        ]
+      },
+      "news": [
+        {
+          "time": "2026-07-28",
+          "title": "多晶硅价格触底反弹，N型料溢价扩大",
+          "tag": "price"
+        },
+        {
+          "time": "2026-07-25",
+          "title": "欧盟可再生能源目标上调至45%，光伏出口预期改善",
+          "tag": "policy"
+        }
+      ]
+    }
+  },
+  "SHOCK_EVENTS": [
+    {
+      "id": "li_export_ban",
+      "name": "锂矿出口限制",
+      "cat": "geo",
+      "intensity": 75,
+      "duration": 15,
+      "desc": "主要锂资源国限制原矿出口",
+      "target": "li_mine",
+      "midVars": [
+        {
+          "name": "碳酸锂价格",
+          "change": "+35%",
+          "desc": "供给收缩→现货价格跳涨"
+        },
+        {
+          "name": "正极成本",
+          "change": "+18%",
+          "desc": "碳酸锂占正极成本40-50%"
+        }
+      ]
+    },
+    {
+      "id": "ev_subsidy_cut",
+      "name": "新能源车补贴退坡",
+      "cat": "policy",
+      "intensity": 55,
+      "duration": 10,
+      "desc": "购置税减免政策到期或缩减",
+      "target": "ev",
+      "midVars": [
+        {
+          "name": "终端销量",
+          "change": "−12%",
+          "desc": "补贴退坡→消费者购车成本上升"
+        },
+        {
+          "name": "电芯需求",
+          "change": "−8%",
+          "desc": "整车销量下滑传导至电池"
+        }
+      ]
+    },
+    {
+      "id": "safety_accident",
+      "name": "电池工厂安全事故",
+      "cat": "sentiment",
+      "intensity": 45,
+      "duration": 7,
+      "desc": "头部电池厂发生起火事故",
+      "target": "cell",
+      "midVars": [
+        {
+          "name": "安全审查",
+          "change": "+100%",
+          "desc": "行业安全大检查启动"
+        },
+        {
+          "name": "产能利用率",
+          "change": "−15%",
+          "desc": "停产检修影响供给"
+        }
+      ]
+    },
+    {
+      "id": "rate_hike",
+      "name": "美联储加息50bp",
+      "cat": "liquidity",
+      "intensity": 65,
+      "duration": 20,
+      "desc": "全球流动性收紧，高资本开支行业承压",
+      "target": "__global__",
+      "midVars": [
+        {
+          "name": "融资成本",
+          "change": "+15%",
+          "desc": "利率上升→资本开支项目IRR下降"
+        },
+        {
+          "name": "估值压制",
+          "change": "−8%",
+          "desc": "DCF折现率上升→远期利润估值下降"
+        }
+      ]
+    },
+    {
+      "id": "trade_tariff",
+      "name": "欧盟碳关税实施",
+      "cat": "policy",
+      "intensity": 40,
+      "duration": 30,
+      "desc": "电池出口碳成本增加3-5%",
+      "target": "cell",
+      "midVars": [
+        {
+          "name": "出口成本",
+          "change": "+5%",
+          "desc": "碳关税→出口竞争力下降"
+        },
+        {
+          "name": "海外份额",
+          "change": "−3%",
+          "desc": "日韩竞争对手获益"
+        }
+      ]
+    },
+    {
+      "id": "tech_breakthrough",
+      "name": "固态电池突破",
+      "cat": "sentiment",
+      "intensity": 50,
+      "duration": 25,
+      "desc": "固态电池量产时间表提前",
+      "target": "cell",
+      "midVars": [
+        {
+          "name": "液态电池需求",
+          "change": "−10%",
+          "desc": "技术替代预期→远期需求下降"
+        },
+        {
+          "name": "固态材料需求",
+          "change": "+200%",
+          "desc": "新赛道爆发"
+        }
+      ]
+    }
+  ]
+}
