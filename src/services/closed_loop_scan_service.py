@@ -29,6 +29,7 @@ from src.services.wechat_provider import refresh_wechat_pool
 from src.services.flash_provider import refresh_flash_pool
 from src.services.community_provider import refresh_community_pool
 from src.services.overseas_provider import refresh_overseas_pool
+from src.services.vertical_media_provider import refresh_vertical_media_pool
 from src.services.kronos_service import analyze_stock
 from src.services.opinion_cross_validation import (
     build_source_index,
@@ -49,6 +50,7 @@ from src.storage import (
     BacktraceFlashOpinion,
     BacktraceCommunityOpinion,
     BacktraceOverseasOpinion,
+    BacktraceVerticalMediaOpinion,
     BacktraceKronosSignal,
     DatabaseManager,
 )
@@ -256,6 +258,31 @@ def _resolve_overseas_codes() -> List[str]:
     return sorted(codes)
 
 
+def _resolve_vertical_media_codes() -> List[str]:
+    """#40 垂直专业媒体舆情子系统：读取（惰性刷新）垂直专业媒体报道事件池中的标的代码集合。
+
+    沙箱确定性 mock 仅引用大涨池内标的；真实环境可由财新/证券时报/e公司/上海证券报/第一财经
+    等抓取引入 fresh 专业媒体催化标的（如深度调研覆盖的细分龙头）。
+    """
+    m = DatabaseManager.get_instance()
+    with m.session_scope() as s:
+        cnt = s.query(BacktraceVerticalMediaOpinion).count()
+    if cnt == 0:
+        try:
+            refresh_vertical_media_pool()
+        except Exception as e:  # noqa: BLE001
+            logger.warning('垂直专业媒体池刷新失败（将忽略垂直媒体叠加）：%s', e)
+            return []
+        with m.session_scope() as s:
+            cnt = s.query(BacktraceVerticalMediaOpinion).count()
+    codes: set[str] = set()
+    with m.session_scope() as s:
+        for r in s.query(BacktraceVerticalMediaOpinion).all():
+            if r.stock_code:
+                codes.add(str(r.stock_code))
+    return sorted(codes)
+
+
 def _kronos_signal_for(stock_code: str, stock_name: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """#35 Kronos 技术面算力底座：取该标的已缓存的技术面信号；未命中则惰性实时分析（mock 确定性）。
 
@@ -435,6 +462,23 @@ def scan_alerts(
             codes = codes + extra
     overseas_set = set(overseas_codes)
 
+    # #40 垂直专业媒体舆情子系统：把垂直专业媒体报道事件池标的作为情绪面筛选叠加（union），
+    # 与 #25 披露（基本面）、#28 头条舆情（公域情绪）、#31 微信舆情（私域情绪）、#34 短线快讯
+    # （盘中催化）、#36 社区舆情（散户情绪）、#37 海外权威（外资/机构）、#23 行情（大涨）正交互补。
+    # 垂直专业媒体（财新/券商中国/e公司/证券时报/上海证券报/第一财经）对 A 股**官方指定信披
+    # 媒体公信力、深度调研、监管追踪、行业权威解读**影响力强（证券时报/e公司/上海证券报为法定
+    # 信披媒体），在 #38 六层信息圈层交叉验证中归 L1 权威圈层（权重 0.12~0.15）；短线偏慢、
+    # 对题材催化弱。沙箱确定性 mock 仅引用大涨池内标的 → 叠加不新增代码；真实环境
+    # 可扩展至 fresh 专业媒体深度调研覆盖的细分龙头。
+    vertical_media_codes: List[str] = []
+    if watchlist is None:
+        vertical_media_codes = _resolve_vertical_media_codes()
+        extra = [c for c in vertical_media_codes if c not in set(codes)]
+        if extra:
+            _ensure_screen_pool(extra, gain_type='垂直媒体')
+            codes = codes + extra
+    vertical_media_set = set(vertical_media_codes)
+
     batch = scan_batch or (datetime.now().strftime('%Y%m%d%H%M%S') + '-' + uuid.uuid4().hex[:6])
 
     alerts: List[Dict[str, Any]] = []
@@ -467,6 +511,7 @@ def scan_alerts(
             'hasFlash': code in flash_set,
             'hasCommunity': code in community_set,
             'hasOverseas': code in overseas_set,
+            'hasVerticalMedia': code in vertical_media_set,
             'kronosInfo': _kronos_signal_for(code, d.get('stockName')),
         })
 
@@ -503,6 +548,7 @@ def scan_alerts(
         'flashCandidates': len(flash_codes),
         'communityCandidates': len(community_codes),
         'overseasCandidates': len(overseas_codes),
+        'verticalMediaCandidates': len(vertical_media_codes),
         'kronosAnalyzed': len(alerts),   # #35 Kronos 技术面算力底座：对每只 alert 富化 kronosInfo 的标的数
         'crossValidationSummary': cv_summary,  # #38 六层圈层命中 / 共识分布 / 冲突 / 谣言
         'inflectionSummary': inflection_summary,  # #39 拐点预警摘要（见顶/启动/情绪反转/背离分级）

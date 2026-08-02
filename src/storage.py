@@ -1100,6 +1100,71 @@ class BacktraceOverseasOpinion(Base):
         }
 
 
+class BacktraceVerticalMediaOpinion(Base):
+    """反向归因·垂直专业财经媒体子系统：专业媒体报道/权威催化事件池（DSA-VERTICAL-MEDIA-OPINION-V1.0，#40 外挂伴随表）。
+
+    与 #25 披露（基本面）、#28 头条舆情（公域情绪）、#31 微信舆情（私域情绪）、#34 短线快讯
+    （盘中催化）、#36 社区舆情（散户情绪）、#37 海外权威（外资/机构）、#23 行情（大涨）正交、
+    平行的「垂直专业媒体情绪面催化事件源」：覆盖蓝图 §一.7 的财新 / 券商中国 / e公司（证券时报
+    旗下） / 证券时报 / 上海证券报 / 第一财经 / 21世纪经济报道 七类经官方批准的专业财经媒体。
+    垂直专业媒体对 A 股**官方指定信披媒体公信力、深度调研、监管追踪、行业权威解读**影响力强
+    （证券时报 / e公司 / 上海证券报为法定信披媒体，财新 / 第一财经为深度独立财经），是八路
+    可插拔信号源之一（#35 Kronos 技术面单独逐 alert 富化，不扩池）。
+
+    由可插拔垂直媒体适配器（vertical_media_provider）写入：沙箱走确定性 mock，真实环境
+    （DSA_REALTIME_VERTICAL_MEDIA=1）由垂直专业媒体抓取（财新/证券时报/e公司/上海证券报/
+    第一财经 + 深度调研 / 监管追踪解析）拉取；缺失或失败优雅回退 mock。
+
+    字段对齐蓝图 §一.7 / §三 / §五：
+      - media_name（媒体名）：财新 / 券商中国 / e公司 / 证券时报 / 上海证券报 / 第一财经 / 21世纪经济报道
+      - outlet（媒体分类）：官方指定信披媒体 / 专业财经媒体
+      - is_official（官方指定信披媒体）：1=法定信披渠道（e公司/证券时报/上海证券报）
+      - coverage_type（报道类型）：深度调研 / 快讯点评 / 监管追踪 / 行业解读
+      - sentiment_score(-1~1) / sentiment(看多/中性/看空)
+      - has_rumor(疑似谣言)：0/1（权威媒体极少，用于风控降权）
+      - weight_suggest(建议 DSA 权重：短线 0.12 / 官方信披 0.15)
+    闭环预警扫描在 watchlist=None 时把垂直专业媒体池标的作为情绪面筛选叠加（union），
+    与 #25 披露 / #28 头条舆情 / #31 微信舆情 / #34 短线快讯 / #36 社区舆情 / #37 海外权威 /
+    #23 行情 正交互补；并在 #38 六层信息圈层交叉验证中归入 L1 权威圈层。
+    """
+    __tablename__ = 'backtrace_vertical_media_opinions'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    pub_date = Column(String(10), nullable=True)                  # 发布日期 YYYY-MM-DD
+    title = Column(String(255), nullable=False)                  # 报道标题
+    media_name = Column(String(24), nullable=True)               # 媒体名（财新/券商中国/e公司/证券时报/上海证券报/第一财经/21世纪经济报道）
+    outlet = Column(String(24), nullable=True)                   # 媒体分类（官方指定信披媒体/专业财经媒体）
+    is_official = Column(Integer, nullable=False, default=0)     # 1=官方指定信披媒体（法定信披渠道）
+    coverage_type = Column(String(16), nullable=True)            # 深度调研/快讯点评/监管追踪/行业解读
+    sentiment_score = Column(Float, nullable=True, default=0.0)  # 情绪得分 -1~1
+    sentiment = Column(String(16), nullable=True)                # 看多/中性/看空
+    has_rumor = Column(Integer, nullable=False, default=0)       # 1=疑似谣言（权威媒体极少，用于风控降权）
+    weight_suggest = Column(Float, nullable=True, default=0.12)  # 建议 DSA 权重（短线 0.12 / 官方信披 0.15）
+    summary = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'pubDate': self.pub_date,
+            'title': self.title,
+            'mediaName': self.media_name,
+            'outlet': self.outlet,
+            'isOfficial': bool(self.is_official),
+            'coverageType': self.coverage_type,
+            'sentimentScore': self.sentiment_score,
+            'sentiment': self.sentiment,
+            'hasRumor': bool(self.has_rumor),
+            'weightSuggest': self.weight_suggest,
+            'summary': self.summary,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
 class BacktraceKronosSignal(Base):
     """反向归因·K 线技术面算力底座：逐只标的 Kronos 技术面信号（DSA-KRONOS-V1.0，#35 外挂伴随表）。
 
