@@ -1,0 +1,11 @@
+{
+  "jobs": {
+    "crawl_morning_meeting": {
+      "enabled": true,
+      "last_run_at": "2026-08-02T11:39:33.379845",
+      "last_status": "success",
+      "run_count": 1
+    }
+  },
+  "runtime": {}
+}

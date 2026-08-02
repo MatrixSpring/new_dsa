@@ -289,6 +289,32 @@ async def app_lifespan(app: FastAPI):
         runtime_scheduler=app.state.runtime_scheduler_service,
     )
     _schedule_stock_index_background_refresh(app, "startup")
+
+    # ---- 新增：DSA 每日自动闭环（APScheduler 六段时序，env 门控）----
+    # 默认关闭，避免改变既有单日分析行为；设置 DSA_DAILY_LOOP_ENABLED=true 开启。
+    if os.getenv("DSA_DAILY_LOOP_ENABLED", "").strip().lower() in {"1", "true", "yes", "on"}:
+        try:
+            from src.daily_loop import ApschedulerDailyLoop
+
+            _loop_symbols = [
+                s.strip()
+                for s in os.getenv("DSA_DAILY_LOOP_SYMBOLS", "").split(",")
+                if s.strip()
+            ]
+            _loop_mode = os.getenv("DSA_DAILY_LOOP_MODE", "synthetic").strip() or "synthetic"
+            dsa_loop = ApschedulerDailyLoop(
+                symbols=_loop_symbols or None,
+                market=os.getenv("DSA_DAILY_LOOP_MARKET", "A").strip() or "A",
+                mode=_loop_mode,
+            )
+            dsa_loop.start()
+            app.state.dsa_daily_loop = dsa_loop
+            logger.info(
+                "[DSA] 每日自动闭环(APScheduler)已启动，标的数=%d，模式=%s",
+                len(_loop_symbols), _loop_mode,
+            )
+        except Exception as _loop_err:  # 闭环启动失败不应拖垮主服务
+            logger.warning("[DSA] 每日自动闭环启动失败（已跳过）: %s", _loop_err)
     try:
         yield
     finally:
@@ -303,6 +329,10 @@ async def app_lifespan(app: FastAPI):
         if runtime_scheduler is not None:
             runtime_scheduler.stop()
             delattr(app.state, "runtime_scheduler_service")
+        dsa_loop = getattr(app.state, "dsa_daily_loop", None)
+        if dsa_loop is not None:
+            dsa_loop.stop()
+            delattr(app.state, "dsa_daily_loop")
 
 
 def create_app(static_dir: Optional[Path] = None) -> FastAPI:

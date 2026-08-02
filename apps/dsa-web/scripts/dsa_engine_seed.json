@@ -1,0 +1,2285 @@
+{
+  "chains": [
+    {
+      "id": "lithium",
+      "name": "锂电池产业链",
+      "icon": "🔋",
+      "color": "190 100% 50%",
+      "category": "内置 · 产业链沙盘",
+      "l1": "内置 · 产业链沙盘",
+      "l2": "",
+      "summary": "覆盖锂矿→材料→电芯→新能源车/储能/消费电子的全产业链，支持成本/需求/替代/供给四类传导与冲击推演。",
+      "source": "sandbox",
+      "nodeCount": 14,
+      "companyCount": null
+    },
+    {
+      "id": "semiconductor",
+      "name": "半导体产业链",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "内置 · 产业链沙盘",
+      "l1": "内置 · 产业链沙盘",
+      "l2": "",
+      "summary": "覆盖硅片/设备/EDA→晶圆代工/设计/封测→手机/汽车电子/AI服务器的半导体自主可控全景。",
+      "source": "sandbox",
+      "nodeCount": 11,
+      "companyCount": null
+    },
+    {
+      "id": "photovoltaic",
+      "name": "光伏产业链",
+      "icon": "☀️",
+      "color": "38 100% 55%",
+      "category": "内置 · 产业链沙盘",
+      "l1": "内置 · 产业链沙盘",
+      "l2": "",
+      "summary": "覆盖多晶硅→硅片→电池片→组件→逆变器的光伏产业链，含电价/装机/出口政策传导。",
+      "source": "sandbox",
+      "nodeCount": 6,
+      "companyCount": null
+    },
+    {
+      "id": "1",
+      "name": "元宇宙",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "XR与沉浸式",
+      "summary": "融合 VR/AR、数字孪生与区块链的沉浸式互联网形态，是新质生产力在虚实融合场景的载体。",
+      "source": "xzsc",
+      "nodeCount": 11,
+      "companyCount": 8
+    },
+    {
+      "id": "2",
+      "name": "算力",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "AI算力基础设施",
+      "summary": "以 AI 芯片、服务器与智算中心为核心的新型生产力底座，支撑大模型训练与推理。",
+      "source": "xzsc",
+      "nodeCount": 9,
+      "companyCount": 9
+    },
+    {
+      "id": "3",
+      "name": "数商（数据要素）",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "数据要素",
+      "summary": "数据作为生产要素的确权、流通与资产化体系，是新质生产力的新型生产资料。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 7
+    },
+    {
+      "id": "4",
+      "name": "人形机器人",
+      "icon": "🛠️",
+      "color": "30 90% 55%",
+      "category": "高端装备与智能制造",
+      "l1": "高端装备与智能制造",
+      "l2": "机器人",
+      "summary": "具备类人形态与运动智能的通用机器人，是 AI 与精密制造融合的终极载体之一。",
+      "source": "xzsc",
+      "nodeCount": 11,
+      "companyCount": 7
+    },
+    {
+      "id": "5",
+      "name": "人工智能",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "AI大模型",
+      "summary": "以大模型与智能体为核心的通用人工智能能力，渗透并重塑各行各业生产力。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 7
+    },
+    {
+      "id": "6",
+      "name": "合成生物",
+      "icon": "💊",
+      "color": "340 80% 60%",
+      "category": "生物医药与大健康",
+      "l1": "生物医药与大健康",
+      "l2": "生物制造",
+      "summary": "以工程化手段设计生物体系，进行材料、医药、食品等绿色制造的颠覆性技术。",
+      "source": "xzsc",
+      "nodeCount": 9,
+      "companyCount": 25
+    },
+    {
+      "id": "7",
+      "name": "类器官芯片",
+      "icon": "💊",
+      "color": "340 80% 60%",
+      "category": "生物医药与大健康",
+      "l1": "生物医药与大健康",
+      "l2": "器官芯片",
+      "summary": "在微流控芯片上构建类器官，用于药物筛选与毒理评价的精准医疗技术。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 7
+    },
+    {
+      "id": "8",
+      "name": "超高清视频显示",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "光电显示",
+      "summary": "4K/8K 与 Mini/Micro LED 等新型显示技术，带动内容制作与终端升级。",
+      "source": "xzsc",
+      "nodeCount": 9,
+      "companyCount": 2
+    },
+    {
+      "id": "9",
+      "name": "量子通信",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "量子信息",
+      "summary": "基于量子密钥分发(QKD)的绝对安全通信，是信息安全的新质基础设施。",
+      "source": "xzsc",
+      "nodeCount": 8,
+      "companyCount": 5
+    },
+    {
+      "id": "10",
+      "name": "脑机接口",
+      "icon": "💊",
+      "color": "340 80% 60%",
+      "category": "生物医药与大健康",
+      "l1": "生物医药与大健康",
+      "l2": "神经工程",
+      "summary": "在脑与机器间建立直接信息通道，赋能医疗康复与新一代人机交互。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 10
+    },
+    {
+      "id": "11",
+      "name": "新型储能",
+      "icon": "🔋",
+      "color": "150 80% 50%",
+      "category": "新能源与新型储能",
+      "l1": "新能源与新型储能",
+      "l2": "储能",
+      "summary": "锂电、液流、压缩空气等多技术路线的储能系统，支撑新型电力系统调峰。",
+      "source": "xzsc",
+      "nodeCount": 8,
+      "companyCount": 6
+    },
+    {
+      "id": "12",
+      "name": "充电桩",
+      "icon": "🔋",
+      "color": "150 80% 50%",
+      "category": "新能源与新型储能",
+      "l1": "新能源与新型储能",
+      "l2": "充电基础设施",
+      "summary": "电动汽车补能网络，是新能源车普及的关键配套基础设施。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 3
+    },
+    {
+      "id": "13",
+      "name": "抽蓄电站",
+      "icon": "🔋",
+      "color": "150 80% 50%",
+      "category": "新能源与新型储能",
+      "l1": "新能源与新型储能",
+      "l2": "抽水蓄能",
+      "summary": "规模最大的长时储能方式，承担电网调峰填谷与应急备用。",
+      "source": "xzsc",
+      "nodeCount": 4,
+      "companyCount": 4
+    },
+    {
+      "id": "14",
+      "name": "氟化工",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "氟化工",
+      "summary": "以萤石为源头的含氟材料体系，广泛服务于新能源、半导体与医药。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 17
+    },
+    {
+      "id": "15",
+      "name": "光通信",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "光通信",
+      "summary": "以光模块与光纤光缆为核心的通信底座，支撑算力网络与5G/6G。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 3
+    },
+    {
+      "id": "16",
+      "name": "航空发动机零部件",
+      "icon": "🛠️",
+      "color": "30 90% 55%",
+      "category": "高端装备与智能制造",
+      "l1": "高端装备与智能制造",
+      "l2": "航空制造",
+      "summary": "高温合金叶片、机匣等核心零部件，是航空发动机自主可控的关键。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 8
+    },
+    {
+      "id": "17",
+      "name": "化妆品",
+      "icon": "🛒",
+      "color": "20 90% 55%",
+      "category": "消费与传统产业智能化",
+      "l1": "消费与传统产业智能化",
+      "l2": "美妆个护",
+      "summary": "原料、配方与品牌运营驱动的消费品赛道，国货崛起与新成分创新活跃。",
+      "source": "xzsc",
+      "nodeCount": 5,
+      "companyCount": 8
+    },
+    {
+      "id": "18",
+      "name": "锂电池",
+      "icon": "🔋",
+      "color": "150 80% 50%",
+      "category": "新能源与新型储能",
+      "l1": "新能源与新型储能",
+      "l2": "动力电池",
+      "summary": "新能源汽车与储能的核心动力源，覆盖材料—电芯—Pack 全链条。",
+      "source": "xzsc",
+      "nodeCount": 10,
+      "companyCount": 17
+    },
+    {
+      "id": "19",
+      "name": "锂电池涂覆材料",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "电池材料",
+      "summary": "隔膜涂覆用氧化铝/勃姆石/PVDF 等功能材料，提升电池安全与性能。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 7
+    },
+    {
+      "id": "20",
+      "name": "数据中心建设",
+      "icon": "🏗️",
+      "color": "250 70% 60%",
+      "category": "新基建",
+      "l1": "新基建",
+      "l2": "算力基础设施",
+      "summary": "算力落地的物理载体，涵盖供配电、暖通与 IT 设备的系统工程。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 6
+    },
+    {
+      "id": "21",
+      "name": "温控设备",
+      "icon": "🛠️",
+      "color": "30 90% 55%",
+      "category": "高端装备与智能制造",
+      "l1": "高端装备与智能制造",
+      "l2": "温控",
+      "summary": "数据中心、储能与工业场景的精密温控系统，材料与核心零部件是瓶颈。",
+      "source": "xzsc",
+      "nodeCount": 8,
+      "companyCount": 10
+    },
+    {
+      "id": "22",
+      "name": "小分子创新药",
+      "icon": "💊",
+      "color": "340 80% 60%",
+      "category": "生物医药与大健康",
+      "l1": "生物医药与大健康",
+      "l2": "创新药",
+      "summary": "基于新靶点的小分子药物研发，是高景气度的医药创新主赛道。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 3
+    },
+    {
+      "id": "23",
+      "name": "智能马桶",
+      "icon": "🛒",
+      "color": "20 90% 55%",
+      "category": "消费与传统产业智能化",
+      "l1": "消费与传统产业智能化",
+      "l2": "智能家居",
+      "summary": "卫浴产品智能化升级代表，融合电子、水件与物联能力。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 3
+    },
+    {
+      "id": "24",
+      "name": "LED",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "光电",
+      "summary": "从外延芯片到照明显示的半导体光电器件产业链。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 9
+    },
+    {
+      "id": "25",
+      "name": "半导体",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "半导体",
+      "summary": "支撑数字经济的基石产业，覆盖设备、材料、设计、制造、封测全链条。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 39
+    },
+    {
+      "id": "26",
+      "name": "电池（通用）",
+      "icon": "🔋",
+      "color": "150 80% 50%",
+      "category": "新能源与新型储能",
+      "l1": "新能源与新型储能",
+      "l2": "电池",
+      "summary": "除锂电外的广义电池体系（铅蓄、钠电、固态等），与锂电池互补。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 29
+    },
+    {
+      "id": "27",
+      "name": "风电",
+      "icon": "🔋",
+      "color": "150 80% 50%",
+      "category": "新能源与新型储能",
+      "l1": "新能源与新型储能",
+      "l2": "风电",
+      "summary": "海陆风电装备制造与运营，是清洁能源主力之一。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 3
+    },
+    {
+      "id": "28",
+      "name": "高铁",
+      "icon": "🛠️",
+      "color": "30 90% 55%",
+      "category": "高端装备与智能制造",
+      "l1": "高端装备与智能制造",
+      "l2": "轨道交通",
+      "summary": "动车组与列控系统为代表的轨道交通高端装备体系。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 3
+    },
+    {
+      "id": "29",
+      "name": "基建",
+      "icon": "🛒",
+      "color": "20 90% 55%",
+      "category": "消费与传统产业智能化",
+      "l1": "消费与传统产业智能化",
+      "l2": "基建",
+      "summary": "传统基建在绿色化、智能化方向升级，是稳经济的重要抓手。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 3
+    },
+    {
+      "id": "30",
+      "name": "家电",
+      "icon": "🛒",
+      "color": "20 90% 55%",
+      "category": "消费与传统产业智能化",
+      "l1": "消费与传统产业智能化",
+      "l2": "智能家居",
+      "summary": "白电、厨电智能化与全球化，受益以旧换新与出海。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 7
+    },
+    {
+      "id": "31",
+      "name": "聚氨酯",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "聚氨酯",
+      "summary": "MDI/TDI 及下游组合料，广泛应用于建材、汽车与鞋服。",
+      "source": "xzsc",
+      "nodeCount": 8,
+      "companyCount": 13
+    },
+    {
+      "id": "32",
+      "name": "物流",
+      "icon": "🛒",
+      "color": "20 90% 55%",
+      "category": "消费与传统产业智能化",
+      "l1": "消费与传统产业智能化",
+      "l2": "现代物流",
+      "summary": "仓储、运力与数字化系统协同的现代流通体系。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 17
+    },
+    {
+      "id": "33",
+      "name": "冷链物流",
+      "icon": "🛒",
+      "color": "20 90% 55%",
+      "category": "消费与传统产业智能化",
+      "l1": "消费与传统产业智能化",
+      "l2": "冷链",
+      "summary": "温控仓储与运输网络，服务食品、医药等温敏商品。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 6
+    },
+    {
+      "id": "34",
+      "name": "食品饮料",
+      "icon": "🛒",
+      "color": "20 90% 55%",
+      "category": "消费与传统产业智能化",
+      "l1": "消费与传统产业智能化",
+      "l2": "食品饮料",
+      "summary": "刚需消费赛道，健康化与高端化趋势明显。",
+      "source": "xzsc",
+      "nodeCount": 5,
+      "companyCount": 8
+    },
+    {
+      "id": "35",
+      "name": "特斯拉",
+      "icon": "🚗",
+      "color": "200 90% 55%",
+      "category": "汽车与智能交通",
+      "l1": "汽车与智能交通",
+      "l2": "特斯拉产业链",
+      "summary": "以特斯拉为核心的全球化新能源车供应链，带动一体化压铸等革新。",
+      "source": "xzsc",
+      "nodeCount": 8,
+      "companyCount": 25
+    },
+    {
+      "id": "36",
+      "name": "无人驾驶",
+      "icon": "🚗",
+      "color": "200 90% 55%",
+      "category": "汽车与智能交通",
+      "l1": "汽车与智能交通",
+      "l2": "自动驾驶",
+      "summary": "L4 及以上自动驾驶，融合感知、决策与车路协同。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 6
+    },
+    {
+      "id": "37",
+      "name": "芯片",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "芯片",
+      "summary": "集成电路统称，与半导体产业链重合，强调芯片设计与制造环节。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 42
+    },
+    {
+      "id": "38",
+      "name": "疫苗",
+      "icon": "💊",
+      "color": "340 80% 60%",
+      "category": "生物医药与大健康",
+      "l1": "生物医药与大健康",
+      "l2": "疫苗",
+      "summary": "预防性生物制品，平台技术涵盖灭活、mRNA、重组等。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 3
+    },
+    {
+      "id": "39",
+      "name": "稀土",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "稀土",
+      "summary": "战略资源，分离冶炼后形成永磁等功能材料，卡位高端制造。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 10
+    },
+    {
+      "id": "40",
+      "name": "纤维",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "纤维",
+      "summary": "从化纤到碳纤维等特种纤维，应用于纺织、军工与复合材料。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 2
+    },
+    {
+      "id": "41",
+      "name": "新零售",
+      "icon": "🛒",
+      "color": "20 90% 55%",
+      "category": "消费与传统产业智能化",
+      "l1": "消费与传统产业智能化",
+      "l2": "新零售",
+      "summary": "数字化驱动的全渠道与即时零售，重构人货场。",
+      "source": "xzsc",
+      "nodeCount": 4,
+      "companyCount": 6
+    },
+    {
+      "id": "42",
+      "name": "水处理",
+      "icon": "♻️",
+      "color": "140 70% 50%",
+      "category": "绿色环保与公用事业",
+      "l1": "绿色环保与公用事业",
+      "l2": "水处理",
+      "summary": "膜法与药剂为核心的污水资源化与给水处理。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 8
+    },
+    {
+      "id": "43",
+      "name": "大气治理",
+      "icon": "♻️",
+      "color": "140 70% 50%",
+      "category": "绿色环保与公用事业",
+      "l1": "绿色环保与公用事业",
+      "l2": "大气治理",
+      "summary": "脱硫脱硝与除尘，服务电力、钢铁、水泥等重点行业。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 2
+    },
+    {
+      "id": "44",
+      "name": "新基建-特高压",
+      "icon": "🏗️",
+      "color": "250 70% 60%",
+      "category": "新基建",
+      "l1": "新基建",
+      "l2": "特高压",
+      "summary": "远距离、大容量输电骨干网，承载新能源消纳与区域互济。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 8
+    },
+    {
+      "id": "45",
+      "name": "新基建-工业互联网",
+      "icon": "🏗️",
+      "color": "250 70% 60%",
+      "category": "新基建",
+      "l1": "新基建",
+      "l2": "工业互联网",
+      "summary": "工业全要素互联与平台化运营，驱动制造业数字化转型。",
+      "source": "xzsc",
+      "nodeCount": 4,
+      "companyCount": 7
+    },
+    {
+      "id": "46",
+      "name": "新基建-大数据",
+      "icon": "🏗️",
+      "color": "250 70% 60%",
+      "category": "新基建",
+      "l1": "新基建",
+      "l2": "大数据",
+      "summary": "数据采存算用一体化基础设施，是新质生产力的数据底座。",
+      "source": "xzsc",
+      "nodeCount": 4,
+      "companyCount": 7
+    },
+    {
+      "id": "47",
+      "name": "新基建-人工智能",
+      "icon": "🏗️",
+      "color": "250 70% 60%",
+      "category": "新基建",
+      "l1": "新基建",
+      "l2": "AI基础设施",
+      "summary": "以智算中心与大模型平台为核心的 AI 公共服务底座。",
+      "source": "xzsc",
+      "nodeCount": 4,
+      "companyCount": 7
+    },
+    {
+      "id": "48",
+      "name": "智能汽车",
+      "icon": "🚗",
+      "color": "200 90% 55%",
+      "category": "汽车与智能交通",
+      "l1": "汽车与智能交通",
+      "l2": "智能汽车",
+      "summary": "电动化与智能化融合的新一代汽车，软件定义汽车成为趋势。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 9
+    },
+    {
+      "id": "49",
+      "name": "智能网联汽车",
+      "icon": "🚗",
+      "color": "200 90% 55%",
+      "category": "汽车与智能交通",
+      "l1": "汽车与智能交通",
+      "l2": "车联网",
+      "summary": "车与车、路、云协同的网联化体系，扩展单车智能边界。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 7
+    },
+    {
+      "id": "50",
+      "name": "智能物联网AIoT",
+      "icon": "💻",
+      "color": "220 80% 60%",
+      "category": "数字经济与信息技术",
+      "l1": "数字经济与信息技术",
+      "l2": "AIoT",
+      "summary": "AI 与物联网融合，赋能智慧城市、家居与工业。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 10
+    },
+    {
+      "id": "51",
+      "name": "5G小基站",
+      "icon": "🏗️",
+      "color": "250 70% 60%",
+      "category": "新基建",
+      "l1": "新基建",
+      "l2": "5G通信",
+      "summary": "补盲补热的室内外深度覆盖设备，是 5G 规模商用的关键。",
+      "source": "xzsc",
+      "nodeCount": 5,
+      "companyCount": 6
+    },
+    {
+      "id": "52",
+      "name": "3D打印",
+      "icon": "🛠️",
+      "color": "30 90% 55%",
+      "category": "高端装备与智能制造",
+      "l1": "高端装备与智能制造",
+      "l2": "增材制造",
+      "summary": "增材制造（AM），实现复杂构件一体化成形，服务航天医疗模具。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 13
+    },
+    {
+      "id": "53",
+      "name": "3D玻璃",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "结构件",
+      "summary": "曲面热弯 3D 玻璃盖板，广泛用于手机与车载显示。",
+      "source": "xzsc",
+      "nodeCount": 5,
+      "companyCount": 5
+    },
+    {
+      "id": "54",
+      "name": "触摸屏",
+      "icon": "🧪",
+      "color": "280 70% 60%",
+      "category": "新材料与化工",
+      "l1": "新材料与化工",
+      "l2": "触控",
+      "summary": "触控模组产业链，是移动终端与车载交互的核心部件。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 5
+    },
+    {
+      "id": "55",
+      "name": "军工",
+      "icon": "🛡️",
+      "color": "0 70% 55%",
+      "category": "国防军工",
+      "l1": "国防军工",
+      "l2": "国防军工",
+      "summary": "武器装备科研生产体系，自主可控与信息化是主线。",
+      "source": "xzsc",
+      "nodeCount": 5,
+      "companyCount": 34
+    },
+    {
+      "id": "56",
+      "name": "航空发动机",
+      "icon": "🛠️",
+      "color": "30 90% 55%",
+      "category": "高端装备与智能制造",
+      "l1": "高端装备与智能制造",
+      "l2": "航空发动机",
+      "summary": "飞机“心脏”，主机总装与控制系统是最高壁垒环节。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 8
+    },
+    {
+      "id": "57",
+      "name": "机床",
+      "icon": "🛠️",
+      "color": "30 90% 55%",
+      "category": "高端装备与智能制造",
+      "l1": "高端装备与智能制造",
+      "l2": "工业母机",
+      "summary": "工业母机，高端五轴联动数控机床是制造升级的战略装备。",
+      "source": "xzsc",
+      "nodeCount": 6,
+      "companyCount": 15
+    },
+    {
+      "id": "58",
+      "name": "激光",
+      "icon": "🛠️",
+      "color": "30 90% 55%",
+      "category": "高端装备与智能制造",
+      "l1": "高端装备与智能制造",
+      "l2": "激光",
+      "summary": "激光器与激光装备，应用于切割、焊接、标记与医疗。",
+      "source": "xzsc",
+      "nodeCount": 7,
+      "companyCount": 2
+    }
+  ],
+  "params": [],
+  "propagate": {
+    "shockNode": "li_mine",
+    "shockLabel": "锂矿开采",
+    "magnitude": 0.2,
+    "magnitudePct": 20.0,
+    "kind": "cost",
+    "params": {
+      "maxDepth": 20,
+      "bidirectionalDecay": 0.9,
+      "bearishDecay": 0.7,
+      "usedOverrides": true,
+      "factorWeights": null
+    },
+    "nodeImpacts": [
+      {
+        "nodeId": "cathode",
+        "label": "正极材料",
+        "stage": "中游制造",
+        "layer": 1,
+        "impact": 0.1457,
+        "impactPct": 14.57,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "cell",
+        "label": "电芯制造",
+        "stage": "中游制造",
+        "layer": 1,
+        "impact": 0.0954,
+        "impactPct": 9.54,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "co_mine",
+        "label": "钴矿开采",
+        "stage": "上游资源",
+        "layer": 0,
+        "impact": 0.0691,
+        "impactPct": 6.91,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "ev",
+        "label": "新能源汽车",
+        "stage": "下游终端",
+        "layer": 2,
+        "impact": 0.0632,
+        "impactPct": 6.32,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "ni_mine",
+        "label": "镍矿开采",
+        "stage": "上游资源",
+        "layer": 0,
+        "impact": 0.0585,
+        "impactPct": 5.85,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "ess",
+        "label": "储能系统",
+        "stage": "下游终端",
+        "layer": 2,
+        "impact": 0.0497,
+        "impactPct": 4.97,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "recycle",
+        "label": "电池回收",
+        "stage": "配套服务",
+        "layer": 1.5,
+        "impact": 0.04,
+        "impactPct": 4.0,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "electrolyte",
+        "label": "电解液",
+        "stage": "中游制造",
+        "layer": 1,
+        "impact": 0.0386,
+        "impactPct": 3.86,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "anode",
+        "label": "负极材料",
+        "stage": "中游制造",
+        "layer": 1,
+        "impact": 0.0351,
+        "impactPct": 3.51,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "separator",
+        "label": "隔膜",
+        "stage": "中游制造",
+        "layer": 1,
+        "impact": 0.0281,
+        "impactPct": 2.81,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "consumer",
+        "label": "消费电子",
+        "stage": "下游终端",
+        "layer": 2,
+        "impact": 0.0265,
+        "impactPct": 2.65,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "equipment",
+        "label": "锂电设备",
+        "stage": "配套服务",
+        "layer": 1.5,
+        "impact": 0.0261,
+        "impactPct": 2.61,
+        "direction": "positive"
+      },
+      {
+        "nodeId": "graphite",
+        "label": "石墨矿",
+        "stage": "上游资源",
+        "layer": 0,
+        "impact": 0.0165,
+        "impactPct": 1.65,
+        "direction": "positive"
+      }
+    ],
+    "companyImpacts": [
+      {
+        "code": "002460",
+        "name": "赣锋锂业",
+        "nodes": [
+          "锂矿开采"
+        ],
+        "impactPct": 20.0,
+        "direction": "positive"
+      },
+      {
+        "code": "002466",
+        "name": "天齐锂业",
+        "nodes": [
+          "锂矿开采"
+        ],
+        "impactPct": 20.0,
+        "direction": "positive"
+      },
+      {
+        "code": "ALB",
+        "name": "Albemarle",
+        "nodes": [
+          "锂矿开采"
+        ],
+        "impactPct": 20.0,
+        "direction": "positive"
+      },
+      {
+        "code": "300073",
+        "name": "当升科技",
+        "nodes": [
+          "正极材料"
+        ],
+        "impactPct": 14.57,
+        "direction": "positive"
+      },
+      {
+        "code": "688005",
+        "name": "容百科技",
+        "nodes": [
+          "正极材料"
+        ],
+        "impactPct": 14.57,
+        "direction": "positive"
+      },
+      {
+        "code": "002340",
+        "name": "格林美",
+        "nodes": [
+          "正极材料",
+          "电池回收"
+        ],
+        "impactPct": 14.57,
+        "direction": "positive"
+      },
+      {
+        "code": "300750",
+        "name": "宁德时代",
+        "nodes": [
+          "电芯制造"
+        ],
+        "impactPct": 9.54,
+        "direction": "positive"
+      },
+      {
+        "code": "002594",
+        "name": "比亚迪",
+        "nodes": [
+          "电芯制造",
+          "新能源汽车"
+        ],
+        "impactPct": 9.54,
+        "direction": "positive"
+      },
+      {
+        "code": "300014",
+        "name": "亿纬锂能",
+        "nodes": [
+          "电芯制造"
+        ],
+        "impactPct": 9.54,
+        "direction": "positive"
+      },
+      {
+        "code": "688006",
+        "name": "孚能科技",
+        "nodes": [
+          "电芯制造"
+        ],
+        "impactPct": 9.54,
+        "direction": "positive"
+      },
+      {
+        "code": "603799",
+        "name": "华友钴业",
+        "nodes": [
+          "钴矿开采"
+        ],
+        "impactPct": 6.91,
+        "direction": "positive"
+      },
+      {
+        "code": "600711",
+        "name": "盛屯矿业",
+        "nodes": [
+          "钴矿开采"
+        ],
+        "impactPct": 6.91,
+        "direction": "positive"
+      },
+      {
+        "code": "NIO",
+        "name": "蔚来",
+        "nodes": [
+          "新能源汽车"
+        ],
+        "impactPct": 6.32,
+        "direction": "positive"
+      },
+      {
+        "code": "XPEV",
+        "name": "小鹏汽车",
+        "nodes": [
+          "新能源汽车"
+        ],
+        "impactPct": 6.32,
+        "direction": "positive"
+      },
+      {
+        "code": "300274",
+        "name": "阳光电源",
+        "nodes": [
+          "储能系统"
+        ],
+        "impactPct": 4.97,
+        "direction": "positive"
+      },
+      {
+        "code": "688390",
+        "name": "固德威",
+        "nodes": [
+          "储能系统"
+        ],
+        "impactPct": 4.97,
+        "direction": "positive"
+      },
+      {
+        "code": "300937",
+        "name": "天奇股份",
+        "nodes": [
+          "电池回收"
+        ],
+        "impactPct": 4.0,
+        "direction": "positive"
+      },
+      {
+        "code": "002709",
+        "name": "天赐材料",
+        "nodes": [
+          "电解液"
+        ],
+        "impactPct": 3.86,
+        "direction": "positive"
+      },
+      {
+        "code": "300037",
+        "name": "新宙邦",
+        "nodes": [
+          "电解液"
+        ],
+        "impactPct": 3.86,
+        "direction": "positive"
+      },
+      {
+        "code": "002812",
+        "name": "恩捷股份",
+        "nodes": [
+          "负极材料",
+          "隔膜"
+        ],
+        "impactPct": 3.51,
+        "direction": "positive"
+      },
+      {
+        "code": "603759",
+        "name": "璞泰来",
+        "nodes": [
+          "负极材料"
+        ],
+        "impactPct": 3.51,
+        "direction": "positive"
+      },
+      {
+        "code": "002326",
+        "name": "星源材质",
+        "nodes": [
+          "隔膜"
+        ],
+        "impactPct": 2.81,
+        "direction": "positive"
+      },
+      {
+        "code": "300457",
+        "name": "赢合科技",
+        "nodes": [
+          "锂电设备"
+        ],
+        "impactPct": 2.61,
+        "direction": "positive"
+      },
+      {
+        "code": "300294",
+        "name": "星云股份",
+        "nodes": [
+          "锂电设备"
+        ],
+        "impactPct": 2.61,
+        "direction": "positive"
+      }
+    ],
+    "summary": {
+      "totalNodes": 14,
+      "impactedNodes": 13,
+      "maxImpact": 0.1457,
+      "maxImpactPct": 14.57,
+      "avgAbsImpact": 0.0533,
+      "affectedCompanies": 24,
+      "params": {
+        "maxDepth": 20,
+        "bidirectionalDecay": 0.9,
+        "bearishDecay": 0.7,
+        "usedOverrides": true,
+        "factorWeights": null
+      }
+    }
+  },
+  "scenarios": {
+    "base": {
+      "shockNode": "li_mine",
+      "shockLabel": "锂矿开采",
+      "magnitude": 0.2,
+      "magnitudePct": 20.0,
+      "kind": "cost",
+      "params": {
+        "maxDepth": 20,
+        "bidirectionalDecay": 0.9,
+        "bearishDecay": 0.7,
+        "usedOverrides": true,
+        "factorWeights": null
+      },
+      "nodeImpacts": [
+        {
+          "nodeId": "cathode",
+          "label": "正极材料",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.1457,
+          "impactPct": 14.57,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "cell",
+          "label": "电芯制造",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0954,
+          "impactPct": 9.54,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "co_mine",
+          "label": "钴矿开采",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.0691,
+          "impactPct": 6.91,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ev",
+          "label": "新能源汽车",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0632,
+          "impactPct": 6.32,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ni_mine",
+          "label": "镍矿开采",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.0585,
+          "impactPct": 5.85,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ess",
+          "label": "储能系统",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0497,
+          "impactPct": 4.97,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "recycle",
+          "label": "电池回收",
+          "stage": "配套服务",
+          "layer": 1.5,
+          "impact": 0.04,
+          "impactPct": 4.0,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "electrolyte",
+          "label": "电解液",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0386,
+          "impactPct": 3.86,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "anode",
+          "label": "负极材料",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0351,
+          "impactPct": 3.51,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "separator",
+          "label": "隔膜",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0281,
+          "impactPct": 2.81,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "consumer",
+          "label": "消费电子",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0265,
+          "impactPct": 2.65,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "equipment",
+          "label": "锂电设备",
+          "stage": "配套服务",
+          "layer": 1.5,
+          "impact": 0.0261,
+          "impactPct": 2.61,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "graphite",
+          "label": "石墨矿",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.0165,
+          "impactPct": 1.65,
+          "direction": "positive"
+        }
+      ],
+      "companyImpacts": [
+        {
+          "code": "002460",
+          "name": "赣锋锂业",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 20.0,
+          "direction": "positive"
+        },
+        {
+          "code": "002466",
+          "name": "天齐锂业",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 20.0,
+          "direction": "positive"
+        },
+        {
+          "code": "ALB",
+          "name": "Albemarle",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 20.0,
+          "direction": "positive"
+        },
+        {
+          "code": "300073",
+          "name": "当升科技",
+          "nodes": [
+            "正极材料"
+          ],
+          "impactPct": 14.57,
+          "direction": "positive"
+        },
+        {
+          "code": "688005",
+          "name": "容百科技",
+          "nodes": [
+            "正极材料"
+          ],
+          "impactPct": 14.57,
+          "direction": "positive"
+        },
+        {
+          "code": "002340",
+          "name": "格林美",
+          "nodes": [
+            "正极材料",
+            "电池回收"
+          ],
+          "impactPct": 14.57,
+          "direction": "positive"
+        },
+        {
+          "code": "300750",
+          "name": "宁德时代",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 9.54,
+          "direction": "positive"
+        },
+        {
+          "code": "002594",
+          "name": "比亚迪",
+          "nodes": [
+            "电芯制造",
+            "新能源汽车"
+          ],
+          "impactPct": 9.54,
+          "direction": "positive"
+        },
+        {
+          "code": "300014",
+          "name": "亿纬锂能",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 9.54,
+          "direction": "positive"
+        },
+        {
+          "code": "688006",
+          "name": "孚能科技",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 9.54,
+          "direction": "positive"
+        },
+        {
+          "code": "603799",
+          "name": "华友钴业",
+          "nodes": [
+            "钴矿开采"
+          ],
+          "impactPct": 6.91,
+          "direction": "positive"
+        },
+        {
+          "code": "600711",
+          "name": "盛屯矿业",
+          "nodes": [
+            "钴矿开采"
+          ],
+          "impactPct": 6.91,
+          "direction": "positive"
+        },
+        {
+          "code": "NIO",
+          "name": "蔚来",
+          "nodes": [
+            "新能源汽车"
+          ],
+          "impactPct": 6.32,
+          "direction": "positive"
+        },
+        {
+          "code": "XPEV",
+          "name": "小鹏汽车",
+          "nodes": [
+            "新能源汽车"
+          ],
+          "impactPct": 6.32,
+          "direction": "positive"
+        },
+        {
+          "code": "300274",
+          "name": "阳光电源",
+          "nodes": [
+            "储能系统"
+          ],
+          "impactPct": 4.97,
+          "direction": "positive"
+        },
+        {
+          "code": "688390",
+          "name": "固德威",
+          "nodes": [
+            "储能系统"
+          ],
+          "impactPct": 4.97,
+          "direction": "positive"
+        },
+        {
+          "code": "300937",
+          "name": "天奇股份",
+          "nodes": [
+            "电池回收"
+          ],
+          "impactPct": 4.0,
+          "direction": "positive"
+        },
+        {
+          "code": "002709",
+          "name": "天赐材料",
+          "nodes": [
+            "电解液"
+          ],
+          "impactPct": 3.86,
+          "direction": "positive"
+        },
+        {
+          "code": "300037",
+          "name": "新宙邦",
+          "nodes": [
+            "电解液"
+          ],
+          "impactPct": 3.86,
+          "direction": "positive"
+        },
+        {
+          "code": "002812",
+          "name": "恩捷股份",
+          "nodes": [
+            "负极材料",
+            "隔膜"
+          ],
+          "impactPct": 3.51,
+          "direction": "positive"
+        },
+        {
+          "code": "603759",
+          "name": "璞泰来",
+          "nodes": [
+            "负极材料"
+          ],
+          "impactPct": 3.51,
+          "direction": "positive"
+        },
+        {
+          "code": "002326",
+          "name": "星源材质",
+          "nodes": [
+            "隔膜"
+          ],
+          "impactPct": 2.81,
+          "direction": "positive"
+        },
+        {
+          "code": "300457",
+          "name": "赢合科技",
+          "nodes": [
+            "锂电设备"
+          ],
+          "impactPct": 2.61,
+          "direction": "positive"
+        },
+        {
+          "code": "300294",
+          "name": "星云股份",
+          "nodes": [
+            "锂电设备"
+          ],
+          "impactPct": 2.61,
+          "direction": "positive"
+        }
+      ],
+      "summary": {
+        "totalNodes": 14,
+        "impactedNodes": 13,
+        "maxImpact": 0.1457,
+        "maxImpactPct": 14.57,
+        "avgAbsImpact": 0.0533,
+        "affectedCompanies": 24,
+        "params": {
+          "maxDepth": 20,
+          "bidirectionalDecay": 0.9,
+          "bearishDecay": 0.7,
+          "usedOverrides": true,
+          "factorWeights": null
+        }
+      }
+    },
+    "optimistic": {
+      "shockNode": "li_mine",
+      "shockLabel": "锂矿开采",
+      "magnitude": 0.12,
+      "magnitudePct": 12.0,
+      "kind": "cost",
+      "params": {
+        "maxDepth": 20,
+        "bidirectionalDecay": 0.9,
+        "bearishDecay": 1.0,
+        "usedOverrides": true,
+        "factorWeights": null
+      },
+      "nodeImpacts": [
+        {
+          "nodeId": "cathode",
+          "label": "正极材料",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0874,
+          "impactPct": 8.74,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "cell",
+          "label": "电芯制造",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0572,
+          "impactPct": 5.72,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "co_mine",
+          "label": "钴矿开采",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.0415,
+          "impactPct": 4.15,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ev",
+          "label": "新能源汽车",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0379,
+          "impactPct": 3.79,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ni_mine",
+          "label": "镍矿开采",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.0351,
+          "impactPct": 3.51,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ess",
+          "label": "储能系统",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0298,
+          "impactPct": 2.98,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "recycle",
+          "label": "电池回收",
+          "stage": "配套服务",
+          "layer": 1.5,
+          "impact": 0.024,
+          "impactPct": 2.4,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "electrolyte",
+          "label": "电解液",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0232,
+          "impactPct": 2.32,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "anode",
+          "label": "负极材料",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0211,
+          "impactPct": 2.11,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "separator",
+          "label": "隔膜",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0169,
+          "impactPct": 1.69,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "consumer",
+          "label": "消费电子",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0159,
+          "impactPct": 1.59,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "equipment",
+          "label": "锂电设备",
+          "stage": "配套服务",
+          "layer": 1.5,
+          "impact": 0.0156,
+          "impactPct": 1.56,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "graphite",
+          "label": "石墨矿",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.0099,
+          "impactPct": 0.99,
+          "direction": "positive"
+        }
+      ],
+      "companyImpacts": [
+        {
+          "code": "002460",
+          "name": "赣锋锂业",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 12.0,
+          "direction": "positive"
+        },
+        {
+          "code": "002466",
+          "name": "天齐锂业",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 12.0,
+          "direction": "positive"
+        },
+        {
+          "code": "ALB",
+          "name": "Albemarle",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 12.0,
+          "direction": "positive"
+        },
+        {
+          "code": "300073",
+          "name": "当升科技",
+          "nodes": [
+            "正极材料"
+          ],
+          "impactPct": 8.74,
+          "direction": "positive"
+        },
+        {
+          "code": "688005",
+          "name": "容百科技",
+          "nodes": [
+            "正极材料"
+          ],
+          "impactPct": 8.74,
+          "direction": "positive"
+        },
+        {
+          "code": "002340",
+          "name": "格林美",
+          "nodes": [
+            "正极材料",
+            "电池回收"
+          ],
+          "impactPct": 8.74,
+          "direction": "positive"
+        },
+        {
+          "code": "300750",
+          "name": "宁德时代",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 5.72,
+          "direction": "positive"
+        },
+        {
+          "code": "002594",
+          "name": "比亚迪",
+          "nodes": [
+            "电芯制造",
+            "新能源汽车"
+          ],
+          "impactPct": 5.72,
+          "direction": "positive"
+        },
+        {
+          "code": "300014",
+          "name": "亿纬锂能",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 5.72,
+          "direction": "positive"
+        },
+        {
+          "code": "688006",
+          "name": "孚能科技",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 5.72,
+          "direction": "positive"
+        },
+        {
+          "code": "603799",
+          "name": "华友钴业",
+          "nodes": [
+            "钴矿开采"
+          ],
+          "impactPct": 4.15,
+          "direction": "positive"
+        },
+        {
+          "code": "600711",
+          "name": "盛屯矿业",
+          "nodes": [
+            "钴矿开采"
+          ],
+          "impactPct": 4.15,
+          "direction": "positive"
+        },
+        {
+          "code": "NIO",
+          "name": "蔚来",
+          "nodes": [
+            "新能源汽车"
+          ],
+          "impactPct": 3.79,
+          "direction": "positive"
+        },
+        {
+          "code": "XPEV",
+          "name": "小鹏汽车",
+          "nodes": [
+            "新能源汽车"
+          ],
+          "impactPct": 3.79,
+          "direction": "positive"
+        },
+        {
+          "code": "300274",
+          "name": "阳光电源",
+          "nodes": [
+            "储能系统"
+          ],
+          "impactPct": 2.98,
+          "direction": "positive"
+        },
+        {
+          "code": "688390",
+          "name": "固德威",
+          "nodes": [
+            "储能系统"
+          ],
+          "impactPct": 2.98,
+          "direction": "positive"
+        },
+        {
+          "code": "300937",
+          "name": "天奇股份",
+          "nodes": [
+            "电池回收"
+          ],
+          "impactPct": 2.4,
+          "direction": "positive"
+        },
+        {
+          "code": "002709",
+          "name": "天赐材料",
+          "nodes": [
+            "电解液"
+          ],
+          "impactPct": 2.32,
+          "direction": "positive"
+        },
+        {
+          "code": "300037",
+          "name": "新宙邦",
+          "nodes": [
+            "电解液"
+          ],
+          "impactPct": 2.32,
+          "direction": "positive"
+        },
+        {
+          "code": "002812",
+          "name": "恩捷股份",
+          "nodes": [
+            "负极材料",
+            "隔膜"
+          ],
+          "impactPct": 2.11,
+          "direction": "positive"
+        },
+        {
+          "code": "603759",
+          "name": "璞泰来",
+          "nodes": [
+            "负极材料"
+          ],
+          "impactPct": 2.11,
+          "direction": "positive"
+        },
+        {
+          "code": "002326",
+          "name": "星源材质",
+          "nodes": [
+            "隔膜"
+          ],
+          "impactPct": 1.69,
+          "direction": "positive"
+        },
+        {
+          "code": "300457",
+          "name": "赢合科技",
+          "nodes": [
+            "锂电设备"
+          ],
+          "impactPct": 1.56,
+          "direction": "positive"
+        },
+        {
+          "code": "300294",
+          "name": "星云股份",
+          "nodes": [
+            "锂电设备"
+          ],
+          "impactPct": 1.56,
+          "direction": "positive"
+        }
+      ],
+      "summary": {
+        "totalNodes": 14,
+        "impactedNodes": 13,
+        "maxImpact": 0.0874,
+        "maxImpactPct": 8.74,
+        "avgAbsImpact": 0.032,
+        "affectedCompanies": 24,
+        "params": {
+          "maxDepth": 20,
+          "bidirectionalDecay": 0.9,
+          "bearishDecay": 1.0,
+          "usedOverrides": true,
+          "factorWeights": null
+        }
+      }
+    },
+    "pessimistic": {
+      "shockNode": "li_mine",
+      "shockLabel": "锂矿开采",
+      "magnitude": 0.27999999999999997,
+      "magnitudePct": 28.0,
+      "kind": "cost",
+      "params": {
+        "maxDepth": 20,
+        "bidirectionalDecay": 0.9,
+        "bearishDecay": 0.5,
+        "usedOverrides": true,
+        "factorWeights": null
+      },
+      "nodeImpacts": [
+        {
+          "nodeId": "cathode",
+          "label": "正极材料",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.204,
+          "impactPct": 20.4,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "cell",
+          "label": "电芯制造",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.1335,
+          "impactPct": 13.35,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "co_mine",
+          "label": "钴矿开采",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.0968,
+          "impactPct": 9.68,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ev",
+          "label": "新能源汽车",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0885,
+          "impactPct": 8.85,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ni_mine",
+          "label": "镍矿开采",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.0819,
+          "impactPct": 8.19,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "ess",
+          "label": "储能系统",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0695,
+          "impactPct": 6.95,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "recycle",
+          "label": "电池回收",
+          "stage": "配套服务",
+          "layer": 1.5,
+          "impact": 0.056,
+          "impactPct": 5.6,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "electrolyte",
+          "label": "电解液",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0541,
+          "impactPct": 5.41,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "anode",
+          "label": "负极材料",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0492,
+          "impactPct": 4.92,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "separator",
+          "label": "隔膜",
+          "stage": "中游制造",
+          "layer": 1,
+          "impact": 0.0393,
+          "impactPct": 3.93,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "consumer",
+          "label": "消费电子",
+          "stage": "下游终端",
+          "layer": 2,
+          "impact": 0.0371,
+          "impactPct": 3.71,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "equipment",
+          "label": "锂电设备",
+          "stage": "配套服务",
+          "layer": 1.5,
+          "impact": 0.0365,
+          "impactPct": 3.65,
+          "direction": "positive"
+        },
+        {
+          "nodeId": "graphite",
+          "label": "石墨矿",
+          "stage": "上游资源",
+          "layer": 0,
+          "impact": 0.023,
+          "impactPct": 2.3,
+          "direction": "positive"
+        }
+      ],
+      "companyImpacts": [
+        {
+          "code": "002460",
+          "name": "赣锋锂业",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 28.0,
+          "direction": "positive"
+        },
+        {
+          "code": "002466",
+          "name": "天齐锂业",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 28.0,
+          "direction": "positive"
+        },
+        {
+          "code": "ALB",
+          "name": "Albemarle",
+          "nodes": [
+            "锂矿开采"
+          ],
+          "impactPct": 28.0,
+          "direction": "positive"
+        },
+        {
+          "code": "300073",
+          "name": "当升科技",
+          "nodes": [
+            "正极材料"
+          ],
+          "impactPct": 20.4,
+          "direction": "positive"
+        },
+        {
+          "code": "688005",
+          "name": "容百科技",
+          "nodes": [
+            "正极材料"
+          ],
+          "impactPct": 20.4,
+          "direction": "positive"
+        },
+        {
+          "code": "002340",
+          "name": "格林美",
+          "nodes": [
+            "正极材料",
+            "电池回收"
+          ],
+          "impactPct": 20.4,
+          "direction": "positive"
+        },
+        {
+          "code": "300750",
+          "name": "宁德时代",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 13.35,
+          "direction": "positive"
+        },
+        {
+          "code": "002594",
+          "name": "比亚迪",
+          "nodes": [
+            "电芯制造",
+            "新能源汽车"
+          ],
+          "impactPct": 13.35,
+          "direction": "positive"
+        },
+        {
+          "code": "300014",
+          "name": "亿纬锂能",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 13.35,
+          "direction": "positive"
+        },
+        {
+          "code": "688006",
+          "name": "孚能科技",
+          "nodes": [
+            "电芯制造"
+          ],
+          "impactPct": 13.35,
+          "direction": "positive"
+        },
+        {
+          "code": "603799",
+          "name": "华友钴业",
+          "nodes": [
+            "钴矿开采"
+          ],
+          "impactPct": 9.68,
+          "direction": "positive"
+        },
+        {
+          "code": "600711",
+          "name": "盛屯矿业",
+          "nodes": [
+            "钴矿开采"
+          ],
+          "impactPct": 9.68,
+          "direction": "positive"
+        },
+        {
+          "code": "NIO",
+          "name": "蔚来",
+          "nodes": [
+            "新能源汽车"
+          ],
+          "impactPct": 8.85,
+          "direction": "positive"
+        },
+        {
+          "code": "XPEV",
+          "name": "小鹏汽车",
+          "nodes": [
+            "新能源汽车"
+          ],
+          "impactPct": 8.85,
+          "direction": "positive"
+        },
+        {
+          "code": "300274",
+          "name": "阳光电源",
+          "nodes": [
+            "储能系统"
+          ],
+          "impactPct": 6.95,
+          "direction": "positive"
+        },
+        {
+          "code": "688390",
+          "name": "固德威",
+          "nodes": [
+            "储能系统"
+          ],
+          "impactPct": 6.95,
+          "direction": "positive"
+        },
+        {
+          "code": "300937",
+          "name": "天奇股份",
+          "nodes": [
+            "电池回收"
+          ],
+          "impactPct": 5.6,
+          "direction": "positive"
+        },
+        {
+          "code": "002709",
+          "name": "天赐材料",
+          "nodes": [
+            "电解液"
+          ],
+          "impactPct": 5.41,
+          "direction": "positive"
+        },
+        {
+          "code": "300037",
+          "name": "新宙邦",
+          "nodes": [
+            "电解液"
+          ],
+          "impactPct": 5.41,
+          "direction": "positive"
+        },
+        {
+          "code": "002812",
+          "name": "恩捷股份",
+          "nodes": [
+            "负极材料",
+            "隔膜"
+          ],
+          "impactPct": 4.92,
+          "direction": "positive"
+        },
+        {
+          "code": "603759",
+          "name": "璞泰来",
+          "nodes": [
+            "负极材料"
+          ],
+          "impactPct": 4.92,
+          "direction": "positive"
+        },
+        {
+          "code": "002326",
+          "name": "星源材质",
+          "nodes": [
+            "隔膜"
+          ],
+          "impactPct": 3.93,
+          "direction": "positive"
+        },
+        {
+          "code": "300457",
+          "name": "赢合科技",
+          "nodes": [
+            "锂电设备"
+          ],
+          "impactPct": 3.65,
+          "direction": "positive"
+        },
+        {
+          "code": "300294",
+          "name": "星云股份",
+          "nodes": [
+            "锂电设备"
+          ],
+          "impactPct": 3.65,
+          "direction": "positive"
+        }
+      ],
+      "summary": {
+        "totalNodes": 14,
+        "impactedNodes": 13,
+        "maxImpact": 0.204,
+        "maxImpactPct": 20.4,
+        "avgAbsImpact": 0.0746,
+        "affectedCompanies": 24,
+        "params": {
+          "maxDepth": 20,
+          "bidirectionalDecay": 0.9,
+          "bearishDecay": 0.5,
+          "usedOverrides": true,
+          "factorWeights": null
+        }
+      }
+    },
+    "params": {
+      "maxDepth": 20,
+      "bidirectionalDecay": 0.9,
+      "bearishDecay": 0.7,
+      "magnitude": 0.2,
+      "optimisticMagnitude": 0.12,
+      "pessimisticMagnitude": 0.27999999999999997
+    }
+  },
+  "shockNode": "锂矿开采"
+}

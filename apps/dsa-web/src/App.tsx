@@ -36,6 +36,18 @@ const GeoEventTopology = lazy(() => import('./pages/visuals/GeoEventTopology'));
 const DimensionTree = lazy(() => import('./pages/visuals/DimensionTree'));
 const IndustryChainTopology = lazy(() => import('./pages/visuals/IndustryChainTopology'));
 const MultiConsensusPage = lazy(() => import('./pages/MultiConsensusPage'));
+const ForecastCenterPage = lazy(() => import('./pages/ForecastCenterPage'));
+const GlobalDynamicsPage = lazy(() => import('./pages/GlobalDynamicsPage'));
+const DomesticDynamicsPage = lazy(() => import('./pages/DomesticDynamicsPage'));
+const DailyDynamicsPage = lazy(() => import('./pages/DailyDynamicsPage'));
+const SchedulerAdminPage = lazy(() => import('./pages/SchedulerAdminPage'));
+const ReviewCenterPage = lazy(() => import('./pages/ReviewCenterPage'));
+const IndustryMaintenancePage = lazy(() => import('./pages/IndustryMaintenancePage'));
+const CompanyMaintenancePage = lazy(() => import('./pages/CompanyMaintenancePage'));
+const DsaParamsPage = lazy(() => import('./pages/DsaParamsPage'));
+const CrawlCenterPage = lazy(() => import('./pages/CrawlCenterPage'));
+const BacktracePage = lazy(() => import('./pages/BacktracePage'));
+const DsaEnginePage = lazy(() => import('./pages/DsaEnginePage'));
 const LegacyHubPage = lazy(() => import('./pages/LegacyHubPage'));
 
 const AppContent: React.FC = () => {
@@ -116,6 +128,18 @@ const AppContent: React.FC = () => {
         <Route path="/screening" element={<StockScreeningPage />} />
         <Route path="/backtest" element={<BacktestPage />} />
         <Route path="/alerts" element={<AlertsPage />} />
+        <Route path="/forecast-center" element={<ForecastCenterPage />} />
+        <Route path="/global-dynamics" element={<GlobalDynamicsPage />} />
+        <Route path="/domestic-dynamics" element={<DomesticDynamicsPage />} />
+        <Route path="/daily-dynamics" element={<DailyDynamicsPage />} />
+        <Route path="/scheduler" element={<SchedulerAdminPage />} />
+        <Route path="/review-center" element={<ReviewCenterPage />} />
+        <Route path="/industry-maintenance" element={<IndustryMaintenancePage />} />
+        <Route path="/company-maintenance" element={<CompanyMaintenancePage />} />
+        <Route path="/dsa-params" element={<DsaParamsPage />} />
+        <Route path="/crawl-center" element={<CrawlCenterPage />} />
+        <Route path="/backtrace" element={<BacktracePage />} />
+        <Route path="/dsa-engine" element={<DsaEnginePage />} />
         <Route path="/usage" element={<TokenUsagePage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="*" element={<NotFoundPage />} />

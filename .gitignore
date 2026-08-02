@@ -52,6 +52,9 @@ coverage/
 htmlcov/
 .coverage
 
+# Workbuddy local memory
+.workbuddy/
+
 # Docker
 *.tar
 *.tar.gz

@@ -7,6 +7,7 @@ python-dotenv>=1.0.0        # Environment variable configuration
 tenacity>=8.2.0             # Retry support with exponential backoff
 sqlalchemy>=2.0.0           # ORM database access
 schedule>=1.2.0             # Scheduled task runner
+apscheduler>=3.10.0         # DSA 每日自动闭环（六段分钟级时序，设计 §6）
 exchange-calendars>=4.13.0   # Trading calendars; 4.5.x is incompatible with pandas 3 Timedelta "T"
 
 # Data source dependencies, ordered by fallback priority

@@ -38,6 +38,15 @@ from api.v1.endpoints import (
     graph_rl_strategy,
     export,
     community,
+    predict,
+    llm_parse,
+    scheduler,
+    review,
+    dsa_params,
+    forecast_snapshot,
+    intelligence_impact,
+    crawl,
+    backtrace,
 )
 
 # 创建 v1 版本主路由。
@@ -202,4 +211,67 @@ router.include_router(
     community.router,
     prefix="/community",
     tags=["Community"]
+)
+
+# ---- 多周期前瞻预测统一接口（设计 §4 第三层计算引擎接口）----
+router.include_router(
+    predict.router,
+    prefix="/predict",
+    tags=["Predict"]
+)
+
+# ---- 长文本深度解析服务（DSA-OPT-LLM-001 / DSA-CRAWL-LLM-MERGE-V1.0）----
+router.include_router(
+    llm_parse.router,
+    prefix="/llm-parse",
+    tags=["LLMParse"]
+)
+
+# ---- 运维后台定时任务可视化（六段可视化之一）----
+router.include_router(
+    scheduler.router,
+    prefix="/scheduler",
+    tags=["Scheduler"]
+)
+
+# ---- 预测复盘归因自动打分（三层复盘：数据层/模型层/逻辑层）----
+router.include_router(
+    review.router,
+    prefix="/review",
+    tags=["Review"]
+)
+
+# ---- DSA 全局模型参数管控（设计 §5.3）----
+router.include_router(
+    dsa_params.router,
+    prefix="/dsa-params",
+    tags=["DsaParams"]
+)
+
+# ---- 前瞻预测快照聚合（设计 §5.3 表1 + 前瞻预测中心数据底座）----
+router.include_router(
+    forecast_snapshot.router,
+    prefix="/forecast-snapshots",
+    tags=["ForecastSnapshot"]
+)
+
+# ---- 情报结构化 5 字段 + AI 分级（设计 §2.2 / §5.2，外挂伴随表）----
+router.include_router(
+    intelligence_impact.router,
+    prefix="/intelligence-impact",
+    tags=["IntelligenceImpact"]
+)
+
+# ---- 自动爬虫 + 长文本解析流水线 P0（抓取 → 解析 → 入库，外挂）----
+router.include_router(
+    crawl.router,
+    prefix="/crawl",
+    tags=["Crawl"]
+)
+
+# ---- 大涨个股反向新闻归因回溯子系统（DSA-BACKTRACE-V1.0，外挂微服务）----
+router.include_router(
+    backtrace.router,
+    prefix="/backtrace",
+    tags=["Backtrace"]
 )

@@ -482,6 +482,1067 @@ _JSON_COLUMNS = {
 }
 
 
+# ---------------------------------------------------------------------------
+# 设计文档新增表（§5.3）：产业链传导系数覆盖 / DSA 全局参数 / 公司风险标签
+# 均为外挂扩展表，不修改既有 company_profile / xzsc_industry_chain 结构。
+# ---------------------------------------------------------------------------
+class ChainEdgeOverride(Base):
+    """产业链自定义传导系数覆盖（页面4「自定义传导系数默认值」持久化）。
+
+    覆盖默认 edges.coeff=0.6 / lag=5，写入后前端重调 propagate 刷新预测。
+    """
+    __tablename__ = 'chain_edge_override'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    chain_id = Column(String(32), nullable=False, index=True)
+    source_node = Column(String(64), nullable=False)
+    target_node = Column(String(64), nullable=False)
+    coeff = Column(Float, nullable=False, default=0.6)
+    lag = Column(Integer, default=5)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
+    __table_args__ = (
+        UniqueConstraint('chain_id', 'source_node', 'target_node', name='uq_chain_edge'),
+    )
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'chainId': self.chain_id,
+            'sourceNode': self.source_node,
+            'targetNode': self.target_node,
+            'coeff': self.coeff,
+            'lag': self.lag,
+            'updatedAt': self.updated_at.isoformat() if self.updated_at else None,
+        }
+
+
+class DsaGlobalParam(Base):
+    """DSA 全局模型参数（页面8 统一管控：递归深度/系数阈值/风险衰减）。"""
+    __tablename__ = 'dsa_global_params'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    param_key = Column(String(48), nullable=False, unique=True, index=True)
+    param_value = Column(Float, nullable=False)
+    param_desc = Column(String(128), nullable=True)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'paramKey': self.param_key,
+            'paramValue': self.param_value,
+            'paramDesc': self.param_desc,
+            'updatedAt': self.updated_at.isoformat() if self.updated_at else None,
+        }
+
+
+class CompanyRiskTag(Base):
+    """公司风险/利好标签（页面5「自动利好/利空识别写风险标签」持久化）。
+
+    与 company_profile 解耦，避免 ALTER 既有宽表；GET /companies/{code} 时合并返回。
+    """
+    __tablename__ = 'company_risk_tags'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    code = Column(String(10), nullable=False, index=True)
+    risk_tags = Column(Text, nullable=False, default='[]')  # JSON: [{tag, level, note, source}]
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
+    __table_args__ = (
+        UniqueConstraint('code', name='uq_company_risk'),
+    )
+
+    def to_dict(self) -> Dict[str, Any]:
+        tags: Any = []
+        try:
+            tags = json.loads(self.risk_tags) if self.risk_tags else []
+        except (ValueError, TypeError):
+            tags = []
+        return {
+            'id': self.id,
+            'code': self.code,
+            'riskTags': tags,
+            'updatedAt': self.updated_at.isoformat() if self.updated_at else None,
+        }
+
+
+class ChainRiskFlag(Base):
+    """产业链环节异常风险标记（页面4「行业异常自动标记风险」）。
+
+    risk_type: price_up(涨价) / output_cut(减产) / oversupply(过剩) / other
+    severity: 高/中/低
+    """
+    __tablename__ = 'chain_risk_flag'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    chain_id = Column(String(32), nullable=False, index=True)
+    node = Column(String(64), nullable=False)
+    risk_type = Column(String(24), nullable=False, default='other')
+    severity = Column(String(8), nullable=False, default='中')
+    note = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.now, index=True)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'chainId': self.chain_id,
+            'node': self.node,
+            'riskType': self.risk_type,
+            'severity': self.severity,
+            'note': self.note,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class ForecastBatchSnapshot(Base):
+    """多周期前瞻预测批量结果快照（设计 §5.3 表1）。
+
+    聚合 decision_signals 的四周期结论，供前瞻预测中心页查询。
+    scope_type: event/industry/stock/portfolio；cycle: 1w/2w/1m/6m。
+    """
+    __tablename__ = 'forecast_batch_snapshot'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    scope_type = Column(String(16), nullable=False, index=True)
+    scope_value = Column(String(64), nullable=True, index=True)
+    cycle = Column(String(8), nullable=False, index=True)
+    direction = Column(String(8), nullable=True)        # up/down/oscillation
+    low_pct = Column(Float, nullable=True)
+    high_pct = Column(Float, nullable=True)
+    up_prob = Column(Float, nullable=True)
+    confidence = Column(Float, nullable=True)
+    core_driver = Column(Text, nullable=True)
+    main_risk = Column(Text, nullable=True)
+    generated_at = Column(DateTime, default=datetime.now, index=True)
+    job_run_id = Column(String(64), nullable=True)
+
+    __table_args__ = (
+        Index('ix_fbs_scope_cycle', 'scope_type', 'scope_value', 'cycle'),
+    )
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'scopeType': self.scope_type,
+            'scopeValue': self.scope_value,
+            'cycle': self.cycle,
+            'direction': self.direction,
+            'lowPct': self.low_pct,
+            'highPct': self.high_pct,
+            'upProb': self.up_prob,
+            'confidence': self.confidence,
+            'coreDriver': self.core_driver,
+            'mainRisk': self.main_risk,
+            'generatedAt': self.generated_at.isoformat() if self.generated_at else None,
+            'jobRunId': self.job_run_id,
+        }
+
+
+class SchedulerJobRun(Base):
+    """自动化任务运行日志（设计 §5.3 表4，替代现有内存日志底座）。"""
+    __tablename__ = 'scheduler_job_run'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    job_key = Column(String(32), nullable=False, index=True)  # overnight/preopen/intraday/postclose/batch/archive
+    started_at = Column(DateTime, default=datetime.now, index=True)
+    finished_at = Column(DateTime, nullable=True)
+    status = Column(String(16), nullable=True)               # success/failed/running
+    summary = Column(Text, nullable=True)
+    error = Column(Text, nullable=True)
+
+    __table_args__ = (
+        Index('ix_sjr_job_key', 'job_key', 'started_at'),
+    )
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'jobKey': self.job_key,
+            'startedAt': self.started_at.isoformat() if self.started_at else None,
+            'finishedAt': self.finished_at.isoformat() if self.finished_at else None,
+            'status': self.status,
+            'summary': self.summary,
+            'error': self.error,
+        }
+
+
+class IntelligenceItemImpact(Base):
+    """情报结构化 5 字段 + AI 分级（设计 §2.2 / §5.2，外挂伴随表）。
+
+    不 ALTER 既有 intelligence_items 宽表；按 item_id 关联，缺失即启发式补齐。
+    impact_level: 高/中/低；impact_cycle: 1w/2w/1m/6m；impact_direction: 利好/利空/中性。
+    """
+    __tablename__ = 'intelligence_item_impact'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    item_id = Column(String(64), nullable=False, unique=True, index=True)
+    impact_level = Column(String(8), nullable=True)        # 高/中/低
+    impact_cycle = Column(String(8), nullable=True)        # 1w/2w/1m/6m
+    impact_industry = Column(String(64), nullable=True)    # 关联产业链 id
+    impact_direction = Column(String(8), nullable=True)    # 利好/利空/中性
+    transmit_weight = Column(Float, nullable=True, default=0.5)  # 0~1
+    graded_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'itemId': self.item_id,
+            'impactLevel': self.impact_level,
+            'impactCycle': self.impact_cycle,
+            'impactIndustry': self.impact_industry,
+            'impactDirection': self.impact_direction,
+            'transmitWeight': self.transmit_weight,
+            'gradedAt': self.graded_at.isoformat() if self.graded_at else None,
+        }
+
+
+class CrawledDocument(Base):
+    """爬虫落地库（自动爬虫 + 长文本解析流水线 P0，外挂伴随表）。
+
+    存放「抓取源 → 原始文本 → LLM 结构化解析」全链路产物；
+    不改动既有 intelligence_items / company_profile 等宽表，仅通过 source_key 关联溯源。
+    status: pending/fetched/parsed/failed。
+    """
+
+    __tablename__ = 'crawled_documents'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    source_key = Column(String(64), nullable=False, index=True)   # cninfo_announcement / morning_notes ...
+    title = Column(String(255), nullable=False)
+    doc_type = Column(String(32), nullable=False, default='policy')  # policy/report/prospectus/minutes
+    raw_text = Column(Text, nullable=True)
+    parsed_json = Column(Text, nullable=True)   # llm_parse_service 结构化结果(JSON 串)
+    status = Column(String(16), nullable=False, default='pending', index=True)
+    error = Column(Text, nullable=True)
+    fetched_at = Column(DateTime, default=datetime.now)
+    parsed_at = Column(DateTime, nullable=True)
+
+    def to_dict(self) -> Dict[str, Any]:
+        parsed: Any = None
+        if self.parsed_json:
+            try:
+                parsed = json.loads(self.parsed_json)
+            except (ValueError, TypeError):
+                parsed = None
+        return {
+            'id': self.id,
+            'sourceKey': self.source_key,
+            'title': self.title,
+            'docType': self.doc_type,
+            'status': self.status,
+            'error': self.error,
+            'fetchedAt': self.fetched_at.isoformat() if self.fetched_at else None,
+            'parsedAt': self.parsed_at.isoformat() if self.parsed_at else None,
+            'rawLength': len(self.raw_text) if self.raw_text else 0,
+            'parsed': parsed,
+        }
+
+
+# ======================================================================
+# 反向归因回溯子系统（DSA-BACKTRACE-V1.0，外挂伴随表，不改动 DSA 内核）
+# 五层架构：行情筛选 → 历史回溯抓取 → LLM 归因推理 → 标准化输出 → DSA 联动
+# ======================================================================
+
+class BacktraceScreenPool(Base):
+    """反向归因：每日大涨标的筛选池（SRS §3.1，外挂伴随表）。
+
+    记录收盘后自动扫描得到的大涨个股回溯池：涨幅≥5% / 涨停 / 放量大涨 / 板块联动。
+    """
+    __tablename__ = 'backtrace_screen_pool'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    screen_date = Column(String(10), nullable=False, index=True)   # YYYY-MM-DD
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=False)
+    daily_gain = Column(Float, nullable=False, default=0.0)         # 当日涨幅 %
+    amount_yi = Column(Float, nullable=True)                        # 成交额(亿元)
+    industry = Column(String(64), nullable=True)
+    rise_start_date = Column(String(10), nullable=True)             # 拉升起始日
+    gain_type = Column(String(32), nullable=True)                   # 涨停/放量大涨/板块联动
+    consecutive_days = Column(Integer, nullable=True, default=1)    # 连续上涨天数
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'screenDate': self.screen_date,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'dailyGain': self.daily_gain,
+            'amountYi': self.amount_yi,
+            'industry': self.industry,
+            'riseStartDate': self.rise_start_date,
+            'gainType': self.gain_type,
+            'consecutiveDays': self.consecutive_days,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceDisclosure(Base):
+    """反向归因·真实环境适配：公开披露事件池（公告 / 财报 / 研报，#25 外挂伴随表）。
+
+    由可插拔披露适配器（disclosure_provider）写入：沙箱走确定性 mock，
+    真实环境（DSA_REALTIME_DISCLOSURE=1）由 cninfo / 财报接口拉取；缺失或失败优雅回退 mock。
+    闭环预警扫描（#20）在 watchlist=None 时把披露池标的作为基本面筛选叠加，喂给真实归因累积。
+    """
+    __tablename__ = 'backtrace_disclosures'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    disclosure_date = Column(String(10), nullable=True)        # 披露日期 YYYY-MM-DD
+    title = Column(String(255), nullable=False)                # 公告 / 财报 / 研报 标题
+    category = Column(String(32), nullable=False)              # 业绩预告/重大合同/股权激励/并购重组/财报/研报点评
+    summary = Column(Text, nullable=True)
+    sentiment = Column(String(16), nullable=True)              # 利好/中性/利空
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'disclosureDate': self.disclosure_date,
+            'title': self.title,
+            'category': self.category,
+            'summary': self.summary,
+            'sentiment': self.sentiment,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceOpinion(Base):
+    """反向归因·公开舆情子系统：头条舆情催化事件池（DSA-PUBLIC-OPINION-V1.0，#28 外挂伴随表）。
+
+    由可插拔舆情适配器（opinion_provider）写入：沙箱走确定性 mock，
+    真实环境（DSA_REALTIME_OPINION=1）由头条爬虫 + FinBERT 情绪量化链路拉取；
+    缺失或失败优雅回退 mock。闭环预警扫描在 watchlist=None 时把舆情池标的作为
+    情绪面筛选叠加（union），与 #25 披露（基本面）、#23 行情（大涨）正交互补。
+    字段对齐文档 §四 统一结构化 JSON：sentiment_score(-1~1) / heat_score(0~1) /
+    info_diff_stage(萌芽/发酵/狂热/退潮) / has_rumor(谣言降权标记)。
+    """
+    __tablename__ = 'backtrace_opinions'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    opinion_date = Column(String(10), nullable=True)             # 舆情日期 YYYY-MM-DD
+    title = Column(String(255), nullable=False)                  # 舆情标题
+    source = Column(String(64), nullable=True)                   # 来源（头条/雪球/股吧/Mock）
+    heat_score = Column(Float, nullable=True, default=0.0)       # 热度指数 0~1
+    sentiment_score = Column(Float, nullable=True, default=0.0)  # 情绪得分 -1~1（FinBERT 代理）
+    sentiment = Column(String(16), nullable=True)                # 利好/中性/利空
+    stage = Column(String(16), nullable=True)                    # 萌芽/发酵/狂热/退潮
+    summary = Column(Text, nullable=True)
+    has_rumor = Column(Integer, nullable=False, default=0)       # 1=疑似谣言（已降权）
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'opinionDate': self.opinion_date,
+            'title': self.title,
+            'source': self.source,
+            'heatScore': self.heat_score,
+            'sentimentScore': self.sentiment_score,
+            'sentiment': self.sentiment,
+            'stage': self.stage,
+            'summary': self.summary,
+        'hasRumor': bool(self.has_rumor),
+        'createdAt': self.created_at.isoformat() if self.created_at else None,
+    }
+
+
+class BacktraceWechatOpinion(Base):
+    """反向归因·微信私域舆情子系统：微信舆情催化事件池（DSA-WECHAT-OPINION-V1.0，#31 外挂伴随表）。
+
+    与 #28 头条公域舆情（BacktraceOpinion）正交、平行的「私域圈层情绪面催化事件源」：
+    文档核心结论——微信私域舆情（公众号 / 视频号 / 付费社群线索）对 A 股短线题材、小票、
+    突发利空、小众产业链催化影响力 > 头条公域舆情；但微信群聊 / 朋友圈 / 私聊无法稳定抓取。
+
+    由可插拔微信舆情适配器（wechat_provider）写入：沙箱走确定性 mock，真实环境
+    （DSA_REALTIME_WECHAT=1）由公众号爬虫（WeChatSpider）/ 视频号爬虫（VideoSpider-WeChat）
+    + FinBERT 情绪量化 + 可信度分级链路拉取；缺失或失败优雅回退 mock。
+
+    字段对齐文档 §五 解析与量化规则 + §二 对比表权重：
+      - carrier（载体）：券商公众号 / 产业垂直号 / 财经视频号 / 付费社群线索 / 其他自媒体
+      - credibility（可信度）：高（券商官方 / 正规产业号）/ 中（行业号）/ 低（无来源爆料，强制降权）
+      - sentiment_score(-1~1) / heat_score(0~1) / stage(萌芽/发酵/狂热/退潮)
+      - has_rumor(谣言降权标记) / weight_suggest(建议 DSA 权重：短线 0.20 / 长线 0.08)
+    闭环预警扫描在 watchlist=None 时把微信池标的作为情绪面筛选叠加（union），
+    与 #25 披露（基本面）、#28 头条舆情（公域情绪）、#23 行情（大涨）正交互补。
+    """
+    __tablename__ = 'backtrace_wechat_opinions'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    pub_date = Column(String(10), nullable=True)                  # 发布日期 YYYY-MM-DD
+    title = Column(String(255), nullable=False)                  # 舆情标题
+    source = Column(String(64), nullable=True)                   # 具体账号 / 渠道名
+    carrier = Column(String(32), nullable=True)                  # 载体：券商公众号/产业垂直号/财经视频号/付费社群线索/其他自媒体
+    credibility = Column(String(16), nullable=True)              # 可信度：高/中/低
+    heat_score = Column(Float, nullable=True, default=0.0)       # 热度指数 0~1
+    sentiment_score = Column(Float, nullable=True, default=0.0)  # 情绪得分 -1~1
+    sentiment = Column(String(16), nullable=True)                # 利好/中性/利空
+    stage = Column(String(16), nullable=True)                    # 萌芽/发酵/狂热/退潮
+    has_rumor = Column(Integer, nullable=False, default=0)       # 1=疑似谣言（已降权）
+    weight_suggest = Column(Float, nullable=True, default=0.20)  # 建议 DSA 短线权重（默认 0.20）
+    summary = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'pubDate': self.pub_date,
+            'title': self.title,
+            'source': self.source,
+            'carrier': self.carrier,
+            'credibility': self.credibility,
+            'heatScore': self.heat_score,
+            'sentimentScore': self.sentiment_score,
+            'sentiment': self.sentiment,
+            'stage': self.stage,
+            'hasRumor': bool(self.has_rumor),
+            'weightSuggest': self.weight_suggest,
+            'summary': self.summary,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceFlashOpinion(Base):
+    """反向归因·短线快讯舆情子系统：快讯催化事件池（DSA-FLASH-OPINION-V1.0，#34 外挂伴随表）。
+
+    与 #28 头条公域舆情（BacktraceOpinion）、#31 微信私域舆情（BacktraceWechatOpinion）
+    正交、平行的「短线快讯情绪面催化事件源」：覆盖蓝图 §一.2 / §七类的
+    财联社 / 华尔街见闻 / 金十（media_type='快讯'）+ 财新 / 券商中国 / e公司
+    （media_type='深度媒体'，个股闪崩高频源头）。财联社为 A 股短线第一舆情平台，
+    游资 / 量化第一参考资讯源，题材炒作核心发酵推手，对短线题材、盘中催化影响力极强。
+
+    由可插拔快讯适配器（flash_provider）写入：沙箱走确定性 mock，真实环境
+    （DSA_REALTIME_FLASH=1）由快讯爬虫（cls-crawler / Crawl4AI）+ FinBERT 情绪量化
+    + 谣言降权链路拉取；缺失或失败优雅回退 mock。
+
+    字段对齐蓝图 §一.2 / §三 / §五.2：
+      - media_type（渠道类型）：快讯（财联社/华尔街见闻/金十）/ 深度媒体（财新/券商中国/e公司）
+      - is_breaking（盘中突发）：1=盘中/早盘突发催化（短线节奏核心信号）
+      - sentiment_score(-1~1) / heat_score(0~1) / stage(萌芽/发酵/狂热/退潮)
+      - has_rumor(谣言降权标记) / weight_suggest(建议 DSA 短线权重：默认 0.22)
+    闭环预警扫描在 watchlist=None 时把快讯池标的作为情绪面筛选叠加（union），
+    与 #25 披露（基本面）、#28 头条舆情（公域情绪）、#31 微信舆情（私域情绪）、#23 行情（大涨）正交互补。
+    """
+    __tablename__ = 'backtrace_flash_opinions'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    pub_date = Column(String(10), nullable=True)                  # 发布日期 YYYY-MM-DD
+    title = Column(String(255), nullable=False)                  # 快讯标题
+    source = Column(String(64), nullable=True)                   # 具体渠道名（财联社/华尔街见闻/金十/e公司...）
+    media_type = Column(String(16), nullable=True)               # 快讯 / 深度媒体
+    is_breaking = Column(Integer, nullable=False, default=0)     # 1=盘中/早盘突发催化
+    heat_score = Column(Float, nullable=True, default=0.0)       # 热度指数 0~1
+    sentiment_score = Column(Float, nullable=True, default=0.0)  # 情绪得分 -1~1
+    sentiment = Column(String(16), nullable=True)                # 利好/中性/利空
+    stage = Column(String(16), nullable=True)                    # 萌芽/发酵/狂热/退潮
+    has_rumor = Column(Integer, nullable=False, default=0)       # 1=疑似谣言（已降权）
+    weight_suggest = Column(Float, nullable=True, default=0.22)  # 建议 DSA 短线权重（默认 0.22）
+    summary = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'pubDate': self.pub_date,
+            'title': self.title,
+            'source': self.source,
+            'mediaType': self.media_type,
+            'isBreaking': bool(self.is_breaking),
+            'heatScore': self.heat_score,
+            'sentimentScore': self.sentiment_score,
+            'sentiment': self.sentiment,
+            'stage': self.stage,
+            'hasRumor': bool(self.has_rumor),
+            'weightSuggest': self.weight_suggest,
+            'summary': self.summary,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceCommunityOpinion(Base):
+    """反向归因·深度社区舆情子系统：社区讨论情绪催化事件池（DSA-COMMUNITY-OPINION-V1.0，#36 外挂伴随表）。
+
+    与 #25 披露（基本面）、#28 头条舆情（公域情绪）、#31 微信舆情（私域情绪）、#34 短线快讯
+    （盘中催化）、#23 行情（大涨）正交、平行的「深度社区情绪面催化事件源」：覆盖蓝图 §一.2 的
+    雪球 / 东财股吧 / 淘股吧 三类深度社区平台。社区平台对 A 股**散户情绪、短线题材、追涨杀跌、
+    谣言发酵**影响力极强（雪球偏理性中长线、股吧/淘股吧偏情绪化短线），是六路可插拔信号源之一。
+
+    由可插拔社区适配器（community_provider）写入：沙箱走确定性 mock，真实环境
+    （DSA_REALTIME_COMMUNITY=1）由社区爬虫（xueqiu / guba / taoguba）+ FinBERT 情绪量化
+    + 质量分层（雪球=高质量 / 股吧·淘股吧=噪音）+ 谣言降权链路拉取；缺失或失败优雅回退 mock。
+
+    字段对齐蓝图 §一.2 / §三 / §五：
+      - platform（平台）：雪球 / 东财股吧 / 淘股吧
+      - quality（质量分层）：高质量（雪球）/ 普通 / 噪音（股吧·淘股吧，情绪极化、谣言高发）
+      - is_hot（登社区热榜）：1=登热帖/热榜（短线情绪风向标）
+      - post_count（讨论数）/ discussion_heat（讨论热度 0~1）
+      - sentiment_score(-1~1) / sentiment(看多/中性/看空)
+      - has_rumor(谣言降权标记) / weight_suggest(建议 DSA 短线权重：默认 0.13)
+    闭环预警扫描在 watchlist=None 时把社区池标的作为情绪面筛选叠加（union），
+    与 #25 披露 / #28 头条舆情 / #31 微信舆情 / #34 短线快讯 / #23 行情 正交互补。
+    """
+    __tablename__ = 'backtrace_community_opinions'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    pub_date = Column(String(10), nullable=True)                  # 发布日期 YYYY-MM-DD
+    title = Column(String(255), nullable=False)                  # 讨论标题
+    platform = Column(String(16), nullable=True)                 # 平台（雪球/东财股吧/淘股吧）
+    quality = Column(String(16), nullable=True)                  # 质量分层（高质量/普通/噪音）
+    is_hot = Column(Integer, nullable=False, default=0)          # 1=登社区热榜/热帖榜
+    post_count = Column(Integer, nullable=True, default=0)       # 讨论 / 帖子数
+    discussion_heat = Column(Float, nullable=True, default=0.0)  # 讨论热度 0~1
+    sentiment_score = Column(Float, nullable=True, default=0.0)  # 情绪得分 -1~1
+    sentiment = Column(String(16), nullable=True)                # 看多/中性/看空
+    has_rumor = Column(Integer, nullable=False, default=0)       # 1=疑似谣言（已降权）
+    weight_suggest = Column(Float, nullable=True, default=0.13)  # 建议 DSA 短线权重（默认 0.13）
+    summary = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'pubDate': self.pub_date,
+            'title': self.title,
+            'platform': self.platform,
+            'quality': self.quality,
+            'isHot': bool(self.is_hot),
+            'postCount': self.post_count,
+            'discussionHeat': self.discussion_heat,
+            'sentimentScore': self.sentiment_score,
+            'sentiment': self.sentiment,
+            'hasRumor': bool(self.has_rumor),
+            'weightSuggest': self.weight_suggest,
+            'summary': self.summary,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceOverseasOpinion(Base):
+    """反向归因·海外权威舆情子系统：海外权威资讯/机构评级催化事件池（DSA-OVERSEAS-OPINION-V1.0，#37 外挂伴随表）。
+
+    与 #25 披露（基本面）、#28 头条舆情（公域情绪）、#31 微信舆情（私域情绪）、#34 短线快讯
+    （盘中催化）、#36 社区舆情（散户情绪）、#23 行情（大涨）正交、平行的「海外权威情绪面
+    催化事件源」：覆盖蓝图 §一.6 的彭博 / 路透 / WSJ / Seeking Alpha 四类海外权威平台。
+    海外权威源对 A 股**外资流向、机构评级、长线基本面预期**影响力极强（外资定价权、北向
+    资金风向标），是七路可插拔信号源之一。
+
+    由可插拔海外适配器（overseas_provider）写入：沙箱走确定性 mock，真实环境
+    （DSA_REALTIME_OVERSEAS=1）由海外财经数据源（Bloomberg / Reuters / WSJ / SeekingAlpha
+    抓取 + 机构评级 / 外资流向解析）拉取；缺失或失败优雅回退 mock。
+
+    字段对齐蓝图 §一.6 / §三 / §五：
+      - platform（平台）：彭博 / 路透 / WSJ / Seeking Alpha
+      - region（区域）：海外
+      - is_institution（机构评级/研报）：1=机构评级/研报事件（外资定价权确认）
+      - rating（评级）：增持 / 中性 / 减持 / 无
+      - sentiment_score(-1~1) / sentiment(看多/中性/看空)
+      - impact_type（催化类型）：外资流向 / 评级调整 / 基本面 / 宏观
+      - weight_suggest(建议 DSA 权重：短线 0.14 / 机构事件 0.18)
+    闭环预警扫描在 watchlist=None 时把海外池标的作为情绪面筛选叠加（union），
+    与 #25 披露 / #28 头条舆情 / #31 微信舆情 / #34 短线快讯 / #36 社区舆情 / #23 行情 正交互补。
+    """
+    __tablename__ = 'backtrace_overseas_opinions'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    pub_date = Column(String(10), nullable=True)                  # 发布日期 YYYY-MM-DD
+    title = Column(String(255), nullable=False)                  # 资讯标题
+    platform = Column(String(24), nullable=True)                 # 平台（彭博/路透/WSJ/Seeking Alpha）
+    region = Column(String(8), nullable=True, default='海外')    # 区域（海外）
+    is_institution = Column(Integer, nullable=False, default=0)  # 1=机构评级/研报事件
+    rating = Column(String(8), nullable=True)                    # 增持/中性/减持/无
+    sentiment_score = Column(Float, nullable=True, default=0.0)  # 情绪得分 -1~1
+    sentiment = Column(String(16), nullable=True)                # 看多/中性/看空
+    impact_type = Column(String(16), nullable=True)              # 外资流向/评级调整/基本面/宏观
+    weight_suggest = Column(Float, nullable=True, default=0.14)  # 建议 DSA 权重（短线 0.14 / 机构 0.18）
+    summary = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'pubDate': self.pub_date,
+            'title': self.title,
+            'platform': self.platform,
+            'region': self.region,
+            'isInstitution': bool(self.is_institution),
+            'rating': self.rating,
+            'sentimentScore': self.sentiment_score,
+            'sentiment': self.sentiment,
+            'impactType': self.impact_type,
+            'weightSuggest': self.weight_suggest,
+            'summary': self.summary,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceKronosSignal(Base):
+    """反向归因·K 线技术面算力底座：逐只标的 Kronos 技术面信号（DSA-KRONOS-V1.0，#35 外挂伴随表）。
+
+    与 #25 披露 / #28 头条舆情 / #31 微信舆情 / #34 短线快讯**本质不同**：Kronos 不是事件 /
+    情绪催化源（不做 union 候选池叠加），而是**逐只 alert 的技术面算力底座**——对每只已扫描
+    标的富化技术面信号（trend / 拐点 / 上涨·横盘·下跌三态概率 / 波动率 / 量能 / 持续性 / Alpha
+    因子），并独立输出三类选股池（短线强势池 / 趋势反转池 / 风险预警池，见 kronos_service.kronos_pools）。
+
+    由可插拔 Kronos 适配器（kronos_service）写入：沙箱走确定性 mock（按股票代码 hash 稳定分布，
+    覆盖强势多头 / 高位顶部风险 / 底部反转三类场景），真实环境（DSA_REALTIME_KRONOS=1）由
+    NeoQuasar 权重 + BSQ 球面量化 Tokenizer + 分层因果 Transformer 自回归推理；缺失权重 /
+    torch / transformers / GPU 时优雅回退 mock。
+
+    字段对齐蓝图 §一/§二/§四：
+      - trend（趋势）：多头趋势 / 空头趋势 / 震荡
+      - momentum（趋势强度 0~1）/ inflection_point（拐点：无顶部拐点 / 顶部拐点·高位见顶 / 底部拐点·下跌末端反转）
+      - rise_prob / sideway_prob / down_prob（上涨 / 横盘 / 下跌三态概率分布，和≈1，Kronos 概率多路径预测）
+      - volatility（波动率 0~1）/ volume_score（量能评分 0~1）
+      - persistence（持续性文本，如「中期上升趋势，量价配合，可持续 1~2 周」）
+      - factor_scores（JSON 文本）：由 BSQ Tokenizer 隐向量派生的候选 Alpha 量化因子列表 [{name, score}]
+    风控硬约束（蓝图 §七）：K 线信号权重短线最高 0.35、长线最高 0.15，Kronos 仅输出技术参考，
+    最终涨跌量化 / 中长期结论由 DSA 数学模型决定；新增因子须经历史回测验证方可入库。
+    """
+    __tablename__ = 'backtrace_kronos_signals'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    trend = Column(String(16), nullable=True)                  # 多头趋势 / 空头趋势 / 震荡
+    momentum = Column(Float, nullable=True, default=0.0)       # 趋势强度 0~1
+    inflection_point = Column(String(32), nullable=True)       # 拐点（无顶部拐点 / 顶部拐点·高位见顶 / 底部拐点·下跌末端反转）
+    rise_prob = Column(Float, nullable=True, default=0.0)      # 上涨概率 0~1
+    sideway_prob = Column(Float, nullable=True, default=0.0)   # 横盘概率 0~1
+    down_prob = Column(Float, nullable=True, default=0.0)      # 下跌概率 0~1
+    volatility = Column(Float, nullable=True, default=0.0)     # 波动率 0~1
+    volume_score = Column(Float, nullable=True, default=0.0)   # 量能评分 0~1
+    persistence = Column(String(64), nullable=True)            # 持续性文本
+    factor_scores = Column(Text, nullable=True)                # JSON 文本：候选 Alpha 因子 [{name, score}]
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        fs: List[Dict[str, Any]] = []
+        if self.factor_scores:
+            try:
+                fs = json.loads(self.factor_scores)
+            except Exception:  # noqa: BLE001
+                fs = []
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'trend': self.trend,
+            'momentum': self.momentum,
+            'inflectionPoint': self.inflection_point,
+            'riseProb': self.rise_prob,
+            'sidewayProb': self.sideway_prob,
+            'downProb': self.down_prob,
+            'volatility': self.volatility,
+            'volumeScore': self.volume_score,
+            'persistence': self.persistence,
+            'factorScores': fs,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceNewsDoc(Base):
+    """反向归因：拉升前历史资讯回溯（SRS §3.2，外挂伴随表）。
+
+    严格时间过滤：仅保留股价拉升启动日之前的内容（is_prior=1）；
+    拉升后新闻（is_prior=0）剔除，禁止作为上涨原因（防事后强行归因）。
+    """
+    __tablename__ = 'backtrace_news_docs'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    doc_type = Column(String(32), nullable=False)       # announcement/research/policy/industry/news
+    source = Column(String(64), nullable=False)         # 来源名（巨潮/券商/财联社...）
+    title = Column(String(255), nullable=False)
+    published_at = Column(String(19), nullable=False)   # 原文发布时间
+    raw_text = Column(Text, nullable=True)
+    is_prior = Column(Integer, nullable=False, default=1)  # 1=拉升前(采用) 0=拉升后(剔除)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'docType': self.doc_type,
+            'source': self.source,
+            'title': self.title,
+            'publishedAt': self.published_at,
+            'isPrior': bool(self.is_prior),
+            'rawLength': len(self.raw_text) if self.raw_text else 0,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceAttribution(Base):
+    """反向归因：结构化归因结果（SRS §3.4，外挂伴随表）。
+
+    result_json 存放固定 JSON 归因（stock_code / driving_factor / similar_history_case /
+    trend_persistence_judge / suggest_adjust + 驱动分类 / 防幻觉护栏）。
+    """
+    __tablename__ = 'backtrace_attributions'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=False)
+    rise_start_date = Column(String(10), nullable=True)
+    daily_gain = Column(Float, nullable=True)
+    total_rise_days = Column(Integer, nullable=True)
+    result_json = Column(Text, nullable=True)           # §3.4 结构化结果(JSON 串)
+    drive_category = Column(String(32), nullable=True)  # 基本面事件驱动/题材情绪驱动/资金筹码驱动
+    trend_judge = Column(String(32), nullable=True)     # 短期脉冲/中期趋势/长期主升
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        result: Any = None
+        if self.result_json:
+            try:
+                result = json.loads(self.result_json)
+            except (ValueError, TypeError):
+                result = None
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'riseStartDate': self.rise_start_date,
+            'dailyGain': self.daily_gain,
+            'totalRiseDays': self.total_rise_days,
+            'driveCategory': self.drive_category,
+            'trendJudge': self.trend_judge,
+            'result': result,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceLinkage(Base):
+    """反向归因：DSA 系统联动记录（SRS §3.5，外挂伴随表）。
+
+    归因结果自动分发：事件库入库 / 个股权重修正 / 产业链系数 / 预测重算 / 案例沉淀。
+    """
+    __tablename__ = 'backtrace_linkages'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    attribution_id = Column(Integer, nullable=False, index=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    event_library_added = Column(Integer, nullable=False, default=0)
+    fundamental_weight_delta = Column(Float, nullable=True)
+    chain_coeff_delta = Column(Float, nullable=True)
+    forecast_recompute = Column(Integer, nullable=False, default=0)
+    case_banked = Column(Integer, nullable=False, default=0)
+    note = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'attributionId': self.attribution_id,
+            'stockCode': self.stock_code,
+            'eventLibraryAdded': bool(self.event_library_added),
+            'fundamentalWeightDelta': self.fundamental_weight_delta,
+            'chainCoeffDelta': self.chain_coeff_delta,
+            'forecastRecompute': bool(self.forecast_recompute),
+            'caseBanked': bool(self.case_banked),
+            'note': self.note,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceSectorReview(Base):
+    """反向归因：批量板块复盘记录（SRS §3.6，外挂伴随表）。
+
+    针对板块集体大涨，批量回溯板块内个股共同前置事件，输出板块景气判断、
+    轮动逻辑、上下游传导链与共同催化分布。
+    """
+    __tablename__ = 'backtrace_sector_reviews'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    sector_name = Column(String(64), nullable=False, index=True)
+    rise_date = Column(String(16), nullable=True)
+    prosperity = Column(String(32), nullable=True)
+    member_count = Column(Integer, nullable=False, default=0)
+    result_json = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'sectorName': self.sector_name,
+            'riseDate': self.rise_date,
+            'prosperity': self.prosperity,
+            'memberCount': self.member_count,
+            'resultJson': self.result_json,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceBacktest(Base):
+    """反向归因：归因有效性回测校验记录（SRS §3.7，外挂伴随表）。
+
+    将某次归因逻辑放入历史同类行情回测，统计历史胜率 / 平均涨幅 / 期望收益，
+    并据此反向修正该次归因的置信度，规避事后强行归因。
+    """
+    __tablename__ = 'backtrace_backtests'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    attribution_id = Column(Integer, nullable=False, index=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=False)
+    drive_category = Column(String(32), nullable=True)
+    samples = Column(Integer, nullable=False, default=0)       # 历史样本覆盖量
+    win_rate = Column(Float, nullable=True)                    # 加权历史胜率 0~1
+    avg_gain_1w = Column(Float, nullable=True)                 # 平均 1 周涨幅(%)
+    avg_gain_1m = Column(Float, nullable=True)                 # 平均 1 月涨幅(%)
+    avg_loss_1m = Column(Float, nullable=True)                 # 平均 1 月回撤(%)
+    expectancy_1m = Column(Float, nullable=True)               # 期望 1 月净收益(%)
+    confidence_raw = Column(Float, nullable=True)              # 归因原置信度(因子加权)
+    confidence_adjusted = Column(Float, nullable=True)         # 回测修正后置信度
+    verdict = Column(String(48), nullable=True)                # 历史有效性判定
+    result_json = Column(Text, nullable=True)                  # 完整回测明细(JSON 串)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        result: Any = None
+        if self.result_json:
+            try:
+                result = json.loads(self.result_json)
+            except (ValueError, TypeError):
+                result = None
+        return {
+            'id': self.id,
+            'attributionId': self.attribution_id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'driveCategory': self.drive_category,
+            'samples': self.samples,
+            'winRate': self.win_rate,
+            'avgGain1w': self.avg_gain_1w,
+            'avgGain1m': self.avg_gain_1m,
+            'avgLoss1m': self.avg_loss_1m,
+            'expectancy1m': self.expectancy_1m,
+            'confidenceRaw': self.confidence_raw,
+            'confidenceAdjusted': self.confidence_adjusted,
+            'verdict': self.verdict,
+            'result': result,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceAgentSignal(Base):
+    """反向归因：Agent 自主深挖小众突发事件信号（DSA-BACKTRACE-V1.0 增强，外挂伴随表）。
+
+    在反向回溯（§3.1~§3.7）基础上，Agent 主动扫描拉升前窗口内的隐藏早期信号
+    （机构调研 / 产业链异动 / 舆情小道消息 / 游资动向），按时间临近度 + 来源可信度
+    + 相关度综合打分，输出信号时间线，反哺归因 driving_factor 的早期佐证强度。
+    """
+
+    __tablename__ = 'backtrace_agent_signals'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    signal_type = Column(String(32), nullable=False, index=True)   # 机构调研/产业链异动/舆情小道消息/游资动向
+    signal_date = Column(String(10), nullable=False, index=True)   # YYYY-MM-DD（拉升前）
+    lead_days = Column(Integer, nullable=False)                    # 距拉升起始日的提前天数
+    source = Column(String(64), nullable=False)
+    summary = Column(Text, nullable=True)
+    credibility = Column(Float, nullable=True)                     # 来源可信度 0~1
+    relevance = Column(Float, nullable=True)                       # 与拉升的相关度 0~1
+    score = Column(Float, nullable=True)                           # 综合得分 0~100
+    is_early = Column(Integer, nullable=False, default=0)          # 1=小众早期信号(lead_days>=阈值)
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'signalType': self.signal_type,
+            'signalDate': self.signal_date,
+            'leadDays': self.lead_days,
+            'source': self.source,
+            'summary': self.summary,
+            'credibility': self.credibility,
+            'relevance': self.relevance,
+            'score': self.score,
+            'isEarly': bool(self.is_early),
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceFactorLibrary(Base):
+    """反向归因：高频上涨因子自动沉淀库（DSA-BACKTRACE-V1.0 增强，外挂伴随表）。
+
+    将已验证的归因（§3.4）与回测（§3.7）结果按驱动因子聚合统计，沉淀为标准化
+    「上涨因子库」：出现频次 / 历史胜率 / 平均涨幅 / 期望净收益 / 置信度，并反向
+    支撑正向预判（输入早期信号 → 匹配因子库 → 输出上涨概率与建议动作）。
+    """
+
+    __tablename__ = 'backtrace_factor_library'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    factor_name = Column(String(128), nullable=False, index=True)   # 标准化因子名（驱动正文归一）
+    factor_category = Column(String(32), nullable=False, index=True)  # 基本面/题材情绪/资金筹码
+    occur_count = Column(Integer, nullable=False, default=0)         # 历史沉淀出现次数
+    avg_win_rate = Column(Float, nullable=False, default=0.0)        # 历史胜率 0~1
+    avg_gain_1w = Column(Float, nullable=False, default=0.0)         # 平均 1 周涨幅 %
+    avg_gain_1m = Column(Float, nullable=False, default=0.0)         # 平均 1 月涨幅 %
+    avg_loss_1m = Column(Float, nullable=False, default=0.0)         # 平均 1 月回撤 %（负）
+    expectancy_1m = Column(Float, nullable=False, default=0.0)       # 期望 1 月净收益 %
+    confidence = Column(Float, nullable=False, default=0.0)          # 因子置信度 0~1（随频次上升）
+    sample_stocks = Column(Text, nullable=True)                      # 代表性样本标的 JSON
+    last_updated = Column(DateTime, default=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'factorName': self.factor_name,
+            'factorCategory': self.factor_category,
+            'occurCount': self.occur_count,
+            'avgWinRate': self.avg_win_rate,
+            'avgGain1w': self.avg_gain_1w,
+            'avgGain1m': self.avg_gain_1m,
+            'avgLoss1m': self.avg_loss_1m,
+            'expectancy1m': self.expectancy_1m,
+            'confidence': self.confidence,
+            'sampleStocks': json.loads(self.sample_stocks) if self.sample_stocks else [],
+            'lastUpdated': self.last_updated.isoformat() if self.last_updated else None,
+        }
+
+
+class BacktraceScanAlert(Base):
+    """反向归因：自动化闭环预警扫描结果（DSA-BACKTRACE-V1.0 #20，外挂伴随表）。
+
+    把 #19 一键闭环编排为批量扫描：对大涨回溯池（或指定 watchlist）逐只跑
+    闭环（Agent 深挖 → 因子预判 → 内核传导），按综合评分分级（强信号·重点关注 /
+    中性·持续观察 / 弱信号·低关注），落库后供前端预警看板与 GET 查询消费。
+    """
+
+    __tablename__ = 'backtrace_scan_alerts'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    scan_batch = Column(String(32), nullable=False, index=True)      # 同一批次扫描标识
+    stock_code = Column(String(16), nullable=False, index=True)
+    stock_name = Column(String(64), nullable=True)
+    chain_id = Column(String(32), nullable=True)
+    predicted_prob = Column(Float, nullable=False, default=0.0)      # 正向预判上涨概率 0~1
+    boost = Column(Float, nullable=False, default=0.0)               # 内核传导幅度增益（钳制[0,0.5]）
+    signal_count = Column(Integer, nullable=False, default=0)        # 深挖隐藏信号总数
+    early_count = Column(Integer, nullable=False, default=0)         # 小众早期信号数
+    top_signal_score = Column(Float, nullable=False, default=0.0)    # 最高单条信号评分 0~100
+    composite_score = Column(Float, nullable=False, default=0.0)     # 综合预警评分 0~1
+    level = Column(String(32), nullable=False, default='弱信号·低关注')  # 预警级别
+    created_at = Column(DateTime, default=datetime.now, index=True)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'scanBatch': self.scan_batch,
+            'stockCode': self.stock_code,
+            'stockName': self.stock_name,
+            'chainId': self.chain_id,
+            'predictedProb': self.predicted_prob,
+            'boost': self.boost,
+            'signalCount': self.signal_count,
+            'earlyCount': self.early_count,
+            'topSignalScore': self.top_signal_score,
+            'compositeScore': self.composite_score,
+            'level': self.level,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceScanBatch(Base):
+    """反向归因：闭环预警扫描批次历史（DSA-BACKTRACE-V1.0 #21，外挂伴随表）。
+
+    把 #20 自动化预警扫描包装为可调度任务：每次手动/定时/事件触发扫描后，
+    聚合本次批次的分级计数（强/中/弱）、Top 标的与综合评分，落库供历史回看与
+    收盘后定时预警追溯。
+    """
+
+    __tablename__ = 'backtrace_scan_batches'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    batch_id = Column(String(32), nullable=False, index=True)       # 与 backtrace_scan_alerts.scan_batch 对应
+    run_type = Column(String(16), nullable=False, default='manual')  # manual | schedule | event
+    scheduled_at = Column(DateTime, nullable=True)
+    started_at = Column(DateTime, nullable=False, default=datetime.now)
+    finished_at = Column(DateTime, nullable=True)
+    total_scanned = Column(Integer, nullable=False, default=0)
+    strong_count = Column(Integer, nullable=False, default=0)       # 强信号·重点关注
+    neutral_count = Column(Integer, nullable=False, default=0)      # 中性·持续观察
+    weak_count = Column(Integer, nullable=False, default=0)         # 弱信号·低关注
+    top_stock = Column(String(16), nullable=True)
+    top_stock_name = Column(String(64), nullable=True)
+    top_composite = Column(Float, nullable=False, default=0.0)      # Top 标的综合预警评分 0~1
+    created_at = Column(DateTime, default=datetime.now, index=True)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'batchId': self.batch_id,
+            'runType': self.run_type,
+            'scheduledAt': self.scheduled_at.isoformat() if self.scheduled_at else None,
+            'startedAt': self.started_at.isoformat() if self.started_at else None,
+            'finishedAt': self.finished_at.isoformat() if self.finished_at else None,
+            'totalScanned': self.total_scanned,
+            'strongCount': self.strong_count,
+            'neutralCount': self.neutral_count,
+            'weakCount': self.weak_count,
+            'topStock': self.top_stock,
+            'topStockName': self.top_stock_name,
+            'topComposite': self.top_composite,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class BacktraceScanSchedule(Base):
+    """反向归因：闭环预警扫描调度配置（#21，单键配置行）。
+
+    默认收盘后定时触发（周一至周五 15:30）。cron 为 5 段标准表达式
+    （分 时 日 月 周），enabled 控制是否生效。
+    """
+
+    __tablename__ = 'backtrace_scan_schedule'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    config_key = Column(String(32), nullable=False, unique=True, default='default')
+    cron = Column(String(32), nullable=False, default='30 15 * * 1-5')
+    enabled = Column(Integer, nullable=False, default=1)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'configKey': self.config_key,
+            'cron': self.cron,
+            'enabled': bool(self.enabled),
+            'updatedAt': self.updated_at.isoformat() if self.updated_at else None,
+        }
+
+
 class FactorMiningResult(Base):
     """自动因子挖掘闭环结果（P0-②）。记录每代因子及其 IC/多空收益，闭环保留最优。"""
     __tablename__ = 'factor_mining_result'

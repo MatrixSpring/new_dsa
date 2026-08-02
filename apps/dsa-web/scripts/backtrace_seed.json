@@ -1,0 +1,4592 @@
+{
+  "pool": [
+    {
+      "id": 1,
+      "screenDate": "2026-08-02",
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "dailyGain": 9.83,
+      "amountYi": 128.4,
+      "industry": "半导体",
+      "riseStartDate": "2026-07-28",
+      "gainType": "放量大涨",
+      "consecutiveDays": 3,
+      "createdAt": "2026-08-02T21:42:55.837391"
+    },
+    {
+      "id": 2,
+      "screenDate": "2026-08-02",
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "dailyGain": 10.01,
+      "amountYi": 96.7,
+      "industry": "新能源",
+      "riseStartDate": "2026-07-29",
+      "gainType": "涨停",
+      "consecutiveDays": 2,
+      "createdAt": "2026-08-02T21:42:55.837398"
+    },
+    {
+      "id": 3,
+      "screenDate": "2026-08-02",
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "dailyGain": 7.42,
+      "amountYi": 154.2,
+      "industry": "新能源",
+      "riseStartDate": "2026-07-27",
+      "gainType": "放量大涨",
+      "consecutiveDays": 4,
+      "createdAt": "2026-08-02T21:42:55.837399"
+    },
+    {
+      "id": 4,
+      "screenDate": "2026-08-02",
+      "stockCode": "688256",
+      "stockName": "寒武纪",
+      "dailyGain": 10.0,
+      "amountYi": 78.9,
+      "industry": "AI芯片",
+      "riseStartDate": "2026-07-30",
+      "gainType": "涨停",
+      "consecutiveDays": 1,
+      "createdAt": "2026-08-02T21:42:55.837400"
+    },
+    {
+      "id": 5,
+      "screenDate": "2026-08-02",
+      "stockCode": "600276",
+      "stockName": "恒瑞医药",
+      "dailyGain": 6.15,
+      "amountYi": 42.3,
+      "industry": "医药",
+      "riseStartDate": "2026-07-28",
+      "gainType": "放量大涨",
+      "consecutiveDays": 2,
+      "createdAt": "2026-08-02T21:42:55.837400"
+    },
+    {
+      "id": 6,
+      "screenDate": "2026-08-02",
+      "stockCode": "000725",
+      "stockName": "京东方A",
+      "dailyGain": 5.31,
+      "amountYi": 61.0,
+      "industry": "面板",
+      "riseStartDate": "2026-07-29",
+      "gainType": "放量大涨",
+      "consecutiveDays": 1,
+      "createdAt": "2026-08-02T21:42:55.837401"
+    },
+    {
+      "id": 7,
+      "screenDate": "2026-08-02",
+      "stockCode": "601012",
+      "stockName": "隆基绿能",
+      "dailyGain": 8.77,
+      "amountYi": 88.5,
+      "industry": "光伏",
+      "riseStartDate": "2026-07-27",
+      "gainType": "板块联动",
+      "consecutiveDays": 3,
+      "createdAt": "2026-08-02T21:42:55.837401"
+    },
+    {
+      "id": 8,
+      "screenDate": "2026-08-02",
+      "stockCode": "002230",
+      "stockName": "科大讯飞",
+      "dailyGain": 6.92,
+      "amountYi": 53.1,
+      "industry": "AI应用",
+      "riseStartDate": "2026-07-30",
+      "gainType": "放量大涨",
+      "consecutiveDays": 2,
+      "createdAt": "2026-08-02T21:42:55.837402"
+    },
+    {
+      "id": 9,
+      "screenDate": "2026-08-02",
+      "stockCode": "600893",
+      "stockName": "航发动力",
+      "dailyGain": 5.88,
+      "amountYi": 39.4,
+      "industry": "军工",
+      "riseStartDate": "2026-07-28",
+      "gainType": "板块联动",
+      "consecutiveDays": 1,
+      "createdAt": "2026-08-02T21:42:55.837402"
+    },
+    {
+      "id": 10,
+      "screenDate": "2026-08-02",
+      "stockCode": "300059",
+      "stockName": "东方财富",
+      "dailyGain": 9.45,
+      "amountYi": 167.8,
+      "industry": "金融科技",
+      "riseStartDate": "2026-07-30",
+      "gainType": "放量大涨",
+      "consecutiveDays": 2,
+      "createdAt": "2026-08-02T21:42:55.837403"
+    },
+    {
+      "id": 11,
+      "screenDate": "2026-08-02",
+      "stockCode": "688041",
+      "stockName": "海光信息",
+      "dailyGain": 10.0,
+      "amountYi": 64.2,
+      "industry": "半导体",
+      "riseStartDate": "2026-07-29",
+      "gainType": "涨停",
+      "consecutiveDays": 3,
+      "createdAt": "2026-08-02T21:42:55.837403"
+    },
+    {
+      "id": 12,
+      "screenDate": "2026-08-02",
+      "stockCode": "002475",
+      "stockName": "立讯精密",
+      "dailyGain": 5.67,
+      "amountYi": 71.6,
+      "industry": "消费电子",
+      "riseStartDate": "2026-07-29",
+      "gainType": "板块联动",
+      "consecutiveDays": 1,
+      "createdAt": "2026-08-02T21:42:55.837404"
+    }
+  ],
+  "attribution": {
+    "stockCode": "688981",
+    "stockName": "中芯国际",
+    "riseStartDate": "2026-07-28",
+    "dailyGain": 9.83,
+    "totalRiseDays": 3,
+    "driveCategory": "基本面事件驱动",
+    "drivingFactor": [
+      {
+        "factorType": "核心强驱动",
+        "content": "中芯国际半年度业绩预增超市场预期（净利同比 +80%~110%），二期半导体产能投产贡献新增营收",
+        "weight": 38,
+        "confidence": 0.9,
+        "source": "巨潮资讯《半年度业绩预增暨产能落地公告》（拉升前 22 日）",
+        "hiddenConstraint": "下游需求不及预期时产能消纳存在压力"
+      },
+      {
+        "factorType": "核心强驱动",
+        "content": "国家出台半导体产业扶持细则，关键技术突破企业获补贴与税收减免",
+        "weight": 22,
+        "confidence": 0.85,
+        "source": "工信部《产业扶持政策实施细则》（拉升前 15 日）",
+        "hiddenConstraint": "补贴退坡与达标门槛构成远期约束"
+      },
+      {
+        "factorType": "次要催化",
+        "content": "券商上调中芯国际评级至“买入”并给出 35% 目标价空间，半导体景气度回暖",
+        "weight": 15,
+        "confidence": 0.72,
+        "source": "中信证券深度研报（拉升前 9 日）",
+        "hiddenConstraint": "评级依赖景气度持续性假设"
+      },
+      {
+        "factorType": "次要催化",
+        "content": "近两周半导体板块获机构密集调研，资金关注度升温",
+        "weight": 10,
+        "confidence": 0.66,
+        "source": "财联社行业异动报道（拉升前 4 日）",
+        "hiddenConstraint": "调研热度不代表确定性订单"
+      },
+      {
+        "factorType": "情绪炒作",
+        "content": "活跃游资席位现身中芯国际龙虎榜，短线情绪驱动特征明显",
+        "weight": 10,
+        "confidence": 0.45,
+        "source": "同花顺龙虎榜报道（拉升前 2 日）",
+        "hiddenConstraint": "游资抱团易致脉冲回落，非事件驱动"
+      },
+      {
+        "factorType": "情绪炒作",
+        "content": "市场情绪进入活跃区间，半导体题材存在发酵基础",
+        "weight": 5,
+        "confidence": 0.4,
+        "source": "财联社/同花顺情绪指标（拉升前）",
+        "hiddenConstraint": "题材情绪持续性弱"
+      }
+    ],
+    "similarHistoryCase": [
+      {
+        "caseTime": "2024-Q3",
+        "event": "同类半导体龙头业绩超预期 + 政策催化双轮驱动",
+        "postTrend": "后续 1 月延续主升约 +28%，2 月后随板块轮动回落"
+      },
+      {
+        "caseTime": "2023-Q4",
+        "event": "半导体题材情绪脉冲（无实质业绩）",
+        "postTrend": "冲高 3 日后快速回落，1 周回撤 -15%"
+      }
+    ],
+    "trendPersistenceJudge": "长期主升",
+    "suggestAdjust": "建议上调中芯国际长期基本面权重 +60%；因驱动类型为「基本面事件驱动」，将基本面事件驱动对应周期预测权重上修；联动半导体产业链传导系数 +0.05；触发该个股四周期预测重算。",
+    "guardrails": {
+      "timeFiltered": true,
+      "priorDocCount": 5,
+      "excludedPostRise": true,
+      "minSourcesEnforced": true,
+      "noSourceConfidenceCapped": 0.3,
+      "lowConfidenceSuppressed": [
+        "活跃游资席位现身中芯国际",
+        "市场情绪进入活跃区间，半"
+      ],
+      "weightsSum": 100
+    },
+    "engine": "heuristic-math",
+    "generatedAt": "2026-08-02T21:42:55",
+    "attributionId": 1
+  },
+  "news": [
+    {
+      "id": 1,
+      "stockCode": "688981",
+      "docType": "announcement",
+      "source": "巨潮资讯",
+      "title": "中芯国际关于半年度业绩预增暨产能落地的公告",
+      "publishedAt": "2026-07-06 19:42",
+      "isPrior": true,
+      "rawLength": 88,
+      "createdAt": "2026-08-02T21:42:55.843241"
+    },
+    {
+      "id": 2,
+      "stockCode": "688981",
+      "docType": "research",
+      "source": "中信证券",
+      "title": "半导体深度：中芯国际上调盈利预测及目标价",
+      "publishedAt": "2026-07-13 09:15",
+      "isPrior": true,
+      "rawLength": 53,
+      "createdAt": "2026-08-02T21:42:55.843348"
+    },
+    {
+      "id": 3,
+      "stockCode": "688981",
+      "docType": "policy",
+      "source": "工信部",
+      "title": "半导体产业扶持政策实施细则发布",
+      "publishedAt": "2026-07-19 16:30",
+      "isPrior": true,
+      "rawLength": 53,
+      "createdAt": "2026-08-02T21:42:55.843436"
+    },
+    {
+      "id": 4,
+      "stockCode": "688981",
+      "docType": "industry",
+      "source": "财联社",
+      "title": "半导体板块异动：机构调研频次显著上升",
+      "publishedAt": "2026-07-24 14:05",
+      "isPrior": true,
+      "rawLength": 46,
+      "createdAt": "2026-08-02T21:42:55.843517"
+    },
+    {
+      "id": 5,
+      "stockCode": "688981",
+      "docType": "news",
+      "source": "同花顺",
+      "title": "游资席位现身中芯国际龙虎榜",
+      "publishedAt": "2026-07-26 17:20",
+      "isPrior": true,
+      "rawLength": 42,
+      "createdAt": "2026-08-02T21:42:55.843597"
+    }
+  ],
+  "linkage": {
+    "eventLibraryAdded": true,
+    "fundamentalWeightDelta": 0.6,
+    "chainCoeffDelta": 0.05,
+    "forecastRecomputeTriggered": true,
+    "forecastRecomputeEndpoint": "/api/v1/forecast-snapshots",
+    "caseBanked": true,
+    "note": "驱动分类=基本面事件驱动；趋势判断=长期主升；核心驱动权重=60%"
+  },
+  "sectorReview": {
+    "sector": "新能源",
+    "riseDate": "2026-08-02",
+    "memberCount": 3,
+    "prosperity": "景气主升",
+    "rotationLogic": "新能源板块处于景气主升阶段：业绩与政策双轮驱动，资金从题材向基本面切换，预计沿产业链上游向下游传导，后续关注订单兑现与产能消纳进度。",
+    "conductionChain": [
+      "锂矿开采",
+      "正极/负极材料",
+      "电芯制造",
+      "整车 & 储能"
+    ],
+    "commonDrivers": [
+      {
+        "driver": "业绩 / 订单超预期",
+        "hitStocks": 2,
+        "share": 66.7
+      },
+      {
+        "driver": "产业政策支持",
+        "hitStocks": 2,
+        "share": 66.7
+      },
+      {
+        "driver": "机构密集调研",
+        "hitStocks": 3,
+        "share": 100.0
+      },
+      {
+        "driver": "题材情绪 / 游资抱团",
+        "hitStocks": 1,
+        "share": 33.3
+      }
+    ],
+    "aggregate": {
+      "memberCount": 3,
+      "strongRate": 100.0,
+      "avgCoreWeight": 53.3,
+      "categoryDistribution": {
+        "基本面事件驱动": 2,
+        "题材情绪驱动": 1,
+        "资金筹码驱动": 0
+      },
+      "trendDistribution": {
+        "长期主升": 0,
+        "中期趋势": 3,
+        "短期脉冲": 0
+      }
+    },
+    "perStock": [
+      {
+        "stockCode": "002594",
+        "stockName": "比亚迪",
+        "dailyGain": 10.01,
+        "gainType": "涨停",
+        "consecutiveDays": 2,
+        "driveCategory": "基本面事件驱动",
+        "coreWeight": 62,
+        "emotionWeight": 13,
+        "trendJudge": "中期趋势",
+        "topDriver": "比亚迪业绩/订单超预期 + 新能源景气度回暖（核心强驱动）"
+      },
+      {
+        "stockCode": "300750",
+        "stockName": "宁德时代",
+        "dailyGain": 7.42,
+        "gainType": "放量大涨",
+        "consecutiveDays": 4,
+        "driveCategory": "基本面事件驱动",
+        "coreWeight": 58,
+        "emotionWeight": 17,
+        "trendJudge": "中期趋势",
+        "topDriver": "宁德时代业绩/订单超预期 + 新能源景气度回暖（核心强驱动）"
+      },
+      {
+        "stockCode": "601012",
+        "stockName": "隆基绿能",
+        "dailyGain": 8.77,
+        "gainType": "板块联动",
+        "consecutiveDays": 3,
+        "driveCategory": "题材情绪驱动",
+        "coreWeight": 40,
+        "emotionWeight": 42,
+        "trendJudge": "中期趋势",
+        "topDriver": "光伏题材情绪发酵，游资席位抱团（情绪/资金驱动）"
+      }
+    ],
+    "engine": "heuristic-math",
+    "generatedAt": "2026-08-02T21:42:55",
+    "reviewId": 1
+  },
+  "attributionList": [
+    {
+      "id": 1,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "riseStartDate": "2026-07-28",
+      "dailyGain": 9.83,
+      "totalRiseDays": 3,
+      "driveCategory": "基本面事件驱动",
+      "trendJudge": "长期主升",
+      "result": {
+        "stockCode": "688981",
+        "stockName": "中芯国际",
+        "riseStartDate": "2026-07-28",
+        "dailyGain": 9.83,
+        "totalRiseDays": 3,
+        "driveCategory": "基本面事件驱动",
+        "drivingFactor": [
+          {
+            "factorType": "核心强驱动",
+            "content": "中芯国际半年度业绩预增超市场预期（净利同比 +80%~110%），二期半导体产能投产贡献新增营收",
+            "weight": 38,
+            "confidence": 0.9,
+            "source": "巨潮资讯《半年度业绩预增暨产能落地公告》（拉升前 22 日）",
+            "hiddenConstraint": "下游需求不及预期时产能消纳存在压力"
+          },
+          {
+            "factorType": "核心强驱动",
+            "content": "国家出台半导体产业扶持细则，关键技术突破企业获补贴与税收减免",
+            "weight": 22,
+            "confidence": 0.85,
+            "source": "工信部《产业扶持政策实施细则》（拉升前 15 日）",
+            "hiddenConstraint": "补贴退坡与达标门槛构成远期约束"
+          },
+          {
+            "factorType": "次要催化",
+            "content": "券商上调中芯国际评级至“买入”并给出 35% 目标价空间，半导体景气度回暖",
+            "weight": 15,
+            "confidence": 0.72,
+            "source": "中信证券深度研报（拉升前 9 日）",
+            "hiddenConstraint": "评级依赖景气度持续性假设"
+          },
+          {
+            "factorType": "次要催化",
+            "content": "近两周半导体板块获机构密集调研，资金关注度升温",
+            "weight": 10,
+            "confidence": 0.66,
+            "source": "财联社行业异动报道（拉升前 4 日）",
+            "hiddenConstraint": "调研热度不代表确定性订单"
+          },
+          {
+            "factorType": "情绪炒作",
+            "content": "活跃游资席位现身中芯国际龙虎榜，短线情绪驱动特征明显",
+            "weight": 10,
+            "confidence": 0.45,
+            "source": "同花顺龙虎榜报道（拉升前 2 日）",
+            "hiddenConstraint": "游资抱团易致脉冲回落，非事件驱动"
+          },
+          {
+            "factorType": "情绪炒作",
+            "content": "市场情绪进入活跃区间，半导体题材存在发酵基础",
+            "weight": 5,
+            "confidence": 0.4,
+            "source": "财联社/同花顺情绪指标（拉升前）",
+            "hiddenConstraint": "题材情绪持续性弱"
+          }
+        ],
+        "similarHistoryCase": [
+          {
+            "caseTime": "2024-Q3",
+            "event": "同类半导体龙头业绩超预期 + 政策催化双轮驱动",
+            "postTrend": "后续 1 月延续主升约 +28%，2 月后随板块轮动回落"
+          },
+          {
+            "caseTime": "2023-Q4",
+            "event": "半导体题材情绪脉冲（无实质业绩）",
+            "postTrend": "冲高 3 日后快速回落，1 周回撤 -15%"
+          }
+        ],
+        "trendPersistenceJudge": "长期主升",
+        "suggestAdjust": "建议上调中芯国际长期基本面权重 +60%；因驱动类型为「基本面事件驱动」，将基本面事件驱动对应周期预测权重上修；联动半导体产业链传导系数 +0.05；触发该个股四周期预测重算。",
+        "guardrails": {
+          "timeFiltered": true,
+          "priorDocCount": 5,
+          "excludedPostRise": true,
+          "minSourcesEnforced": true,
+          "noSourceConfidenceCapped": 0.3,
+          "lowConfidenceSuppressed": [
+            "活跃游资席位现身中芯国际",
+            "市场情绪进入活跃区间，半"
+          ],
+          "weightsSum": 100
+        },
+        "engine": "heuristic-math",
+        "generatedAt": "2026-08-02T21:42:55"
+      },
+      "createdAt": "2026-08-02T21:42:55.844507"
+    }
+  ],
+  "backtest": {
+    "attributionId": 1,
+    "stockCode": "688981",
+    "stockName": "中芯国际",
+    "driveCategory": "基本面事件驱动",
+    "samples": 189,
+    "winRate": 0.617,
+    "avgGain1w": 2.5,
+    "avgGain1m": 6.37,
+    "avgLoss1m": -4.32,
+    "expectancy1m": 2.28,
+    "confidenceRaw": 0.768,
+    "confidenceAdjusted": 0.677,
+    "adjustment": "置信度下调（历史胜率显著低于原归因置信度，警惕事后强行归因）",
+    "verdict": "归因逻辑历史有效（可纳入因子库）",
+    "matchedBuckets": [
+      {
+        "factor": "中芯国际半年度业绩预增超市场预期（净",
+        "bucket": "业绩订单",
+        "weight": 38.0,
+        "winRate": 0.71,
+        "avgGain1m": 8.6,
+        "samples": 70
+      },
+      {
+        "factor": "国家出台半导体产业扶持细则，关键技术",
+        "bucket": "产业政策",
+        "weight": 22.0,
+        "winRate": 0.64,
+        "avgGain1m": 6.1,
+        "samples": 34
+      },
+      {
+        "factor": "券商上调中芯国际评级至“买入”并给出",
+        "bucket": "机构研报",
+        "weight": 15.0,
+        "winRate": 0.58,
+        "avgGain1m": 5.2,
+        "samples": 32
+      },
+      {
+        "factor": "近两周半导体板块获机构密集调研，资金",
+        "bucket": "资金调研",
+        "weight": 10.0,
+        "winRate": 0.55,
+        "avgGain1m": 4.4,
+        "samples": 14
+      },
+      {
+        "factor": "活跃游资席位现身中芯国际龙虎榜，短线",
+        "bucket": "情绪游资",
+        "weight": 15.0,
+        "winRate": 0.43,
+        "avgGain1m": 3.6,
+        "samples": 40
+      }
+    ],
+    "engine": "heuristic-backtest",
+    "generatedAt": "2026-08-02T21:42:55",
+    "backtestId": 1
+  },
+  "agentDig": {
+    "stockCode": "688981",
+    "stockName": "中芯国际",
+    "riseStartDate": "2026-07-28",
+    "windowDays": 30,
+    "signalCount": 4,
+    "earlyCount": 2,
+    "typeDistribution": {
+      "机构调研": 1,
+      "产业链异动": 1,
+      "舆情小道消息": 1,
+      "游资动向": 1
+    },
+    "signals": [
+      {
+        "signalType": "机构调研",
+        "signalDate": "2026-07-09",
+        "leadDays": 19,
+        "source": "进门财经 / 私下调研纪要",
+        "summary": "中芯国际近期接待半导体主题机构密集调研，交流中透露订单能见度提升与产能爬坡进度",
+        "credibility": 0.82,
+        "relevance": 0.72,
+        "score": 70.7,
+        "isEarly": 1
+      },
+      {
+        "signalType": "产业链异动",
+        "signalDate": "2026-07-15",
+        "leadDays": 13,
+        "source": "产业链上下游情报",
+        "summary": "半导体上游环节出现订单与价格异动，下游客户提前锁定产能，供需缺口扩大",
+        "credibility": 0.78,
+        "relevance": 0.88,
+        "score": 62.7,
+        "isEarly": 1
+      },
+      {
+        "signalType": "舆情小道消息",
+        "signalDate": "2026-07-20",
+        "leadDays": 8,
+        "source": "社群 / 雪球 / 韭研社",
+        "summary": "半导体题材在投资社群开始发酵，出现未公开合作与政策预期的小道消息",
+        "credibility": 0.48,
+        "relevance": 0.58,
+        "score": 39.3,
+        "isEarly": 0
+      },
+      {
+        "signalType": "游资动向",
+        "signalDate": "2026-07-25",
+        "leadDays": 3,
+        "source": "龙虎榜 / 活跃席位监控",
+        "summary": "多个活跃游资席位提前埋伏中芯国际，换手率与量比异动，短线情绪升温",
+        "credibility": 0.56,
+        "relevance": 0.66,
+        "score": 35.0,
+        "isEarly": 0
+      }
+    ],
+    "timeline": [
+      {
+        "signalDate": "2026-07-09",
+        "signalType": "机构调研",
+        "leadDays": 19,
+        "score": 70.7,
+        "isEarly": true
+      },
+      {
+        "signalDate": "2026-07-15",
+        "signalType": "产业链异动",
+        "leadDays": 13,
+        "score": 62.7,
+        "isEarly": true
+      },
+      {
+        "signalDate": "2026-07-20",
+        "signalType": "舆情小道消息",
+        "leadDays": 8,
+        "score": 39.3,
+        "isEarly": false
+      },
+      {
+        "signalDate": "2026-07-25",
+        "signalType": "游资动向",
+        "leadDays": 3,
+        "score": 35.0,
+        "isEarly": false
+      }
+    ],
+    "engine": "agent-heuristic-dig",
+    "generatedAt": "2026-08-02T21:42:55"
+  },
+  "factorLibrary": [
+    {
+      "factorName": "游资情绪抱团",
+      "factorCategory": "题材情绪驱动",
+      "occurCount": 718,
+      "avgWinRate": 0.43,
+      "avgGain1w": 2.1,
+      "avgGain1m": 3.6,
+      "avgLoss1m": -7.2,
+      "expectancy1m": -2.56,
+      "confidence": 0.7,
+      "sampleStocks": [
+        "605555",
+        "003021"
+      ],
+      "rank": 1
+    },
+    {
+      "factorName": "业绩订单超预期",
+      "factorCategory": "基本面事件驱动",
+      "occurCount": 613,
+      "avgWinRate": 0.71,
+      "avgGain1w": 3.2,
+      "avgGain1m": 8.6,
+      "avgLoss1m": -3.4,
+      "expectancy1m": 5.12,
+      "confidence": 0.94,
+      "sampleStocks": [
+        "002594",
+        "300750",
+        "600519",
+        "688981"
+      ],
+      "rank": 2
+    },
+    {
+      "factorName": "龙头券商买入评级",
+      "factorCategory": "资金筹码驱动",
+      "occurCount": 521,
+      "avgWinRate": 0.58,
+      "avgGain1w": 1.9,
+      "avgGain1m": 5.2,
+      "avgLoss1m": -3.8,
+      "expectancy1m": 1.42,
+      "confidence": 0.86,
+      "sampleStocks": [
+        "600276",
+        "000858"
+      ],
+      "rank": 3
+    },
+    {
+      "factorName": "产业政策扶持",
+      "factorCategory": "基本面事件驱动",
+      "occurCount": 488,
+      "avgWinRate": 0.64,
+      "avgGain1w": 2.4,
+      "avgGain1m": 6.1,
+      "avgLoss1m": -4.2,
+      "expectancy1m": 2.39,
+      "confidence": 0.88,
+      "sampleStocks": [
+        "600036",
+        "000725"
+      ],
+      "rank": 4
+    },
+    {
+      "factorName": "机构密集调研",
+      "factorCategory": "资金筹码驱动",
+      "occurCount": 434,
+      "avgWinRate": 0.55,
+      "avgGain1w": 1.6,
+      "avgGain1m": 4.4,
+      "avgLoss1m": -4.5,
+      "expectancy1m": 0.4,
+      "confidence": 0.86,
+      "sampleStocks": [
+        "002475",
+        "300760",
+        "688981"
+      ],
+      "rank": 5
+    },
+    {
+      "factorName": "机构资金持续流入",
+      "factorCategory": "资金筹码驱动",
+      "occurCount": 399,
+      "avgWinRate": 0.57,
+      "avgGain1w": 1.7,
+      "avgGain1m": 4.8,
+      "avgLoss1m": -4.1,
+      "expectancy1m": 0.97,
+      "confidence": 0.85,
+      "sampleStocks": [
+        "601012",
+        "600900"
+      ],
+      "rank": 6
+    },
+    {
+      "factorName": "产业链供需缺口",
+      "factorCategory": "基本面事件驱动",
+      "occurCount": 351,
+      "avgWinRate": 0.66,
+      "avgGain1w": 3.0,
+      "avgGain1m": 7.8,
+      "avgLoss1m": -4.0,
+      "expectancy1m": 3.79,
+      "confidence": 0.9,
+      "sampleStocks": [
+        "300014",
+        "603799"
+      ],
+      "rank": 7
+    },
+    {
+      "factorName": "技术专利突破",
+      "factorCategory": "基本面事件驱动",
+      "occurCount": 275,
+      "avgWinRate": 0.6,
+      "avgGain1w": 2.8,
+      "avgGain1m": 7.3,
+      "avgLoss1m": -5.0,
+      "expectancy1m": 2.38,
+      "confidence": 0.87,
+      "sampleStocks": [
+        "002415",
+        "688981"
+      ],
+      "rank": 8
+    },
+    {
+      "factorName": "券商上调中芯国际评级至“买入”并给出 35% 目标价空间，半导体景气度回暖",
+      "factorCategory": "基本面事件驱动",
+      "occurCount": 1,
+      "avgWinRate": 0.58,
+      "avgGain1w": 1.9,
+      "avgGain1m": 5.2,
+      "avgLoss1m": -3.8,
+      "expectancy1m": 1.42,
+      "confidence": 0.52,
+      "sampleStocks": [
+        "688981"
+      ],
+      "rank": 9
+    },
+    {
+      "factorName": "活跃游资席位现身中芯国际龙虎榜，短线情绪驱动特征明显",
+      "factorCategory": "基本面事件驱动",
+      "occurCount": 1,
+      "avgWinRate": 0.43,
+      "avgGain1w": 2.1,
+      "avgGain1m": 3.6,
+      "avgLoss1m": -7.2,
+      "expectancy1m": -2.56,
+      "confidence": 0.52,
+      "sampleStocks": [
+        "688981"
+      ],
+      "rank": 10
+    },
+    {
+      "factorName": "市场情绪进入活跃区间，半导体题材存在发酵基础",
+      "factorCategory": "基本面事件驱动",
+      "occurCount": 1,
+      "avgWinRate": 0.43,
+      "avgGain1w": 2.1,
+      "avgGain1m": 3.6,
+      "avgLoss1m": -7.2,
+      "expectancy1m": -2.56,
+      "confidence": 0.52,
+      "sampleStocks": [
+        "688981"
+      ],
+      "rank": 11
+    }
+  ],
+  "factorStats": {
+    "presetCount": 8,
+    "dbAttributionCount": 30,
+    "minedFromDb": 75,
+    "reinforced": 36,
+    "libraryTotal": 47,
+    "engine": "factor-library-stats",
+    "generatedAt": "2026-08-02T21:42:56"
+  },
+  "factorPredict": {
+    "stockCode": "688981",
+    "detectedFactors": [
+      "机构调研",
+      "产业链异动",
+      "舆情小道消息",
+      "游资动向"
+    ],
+    "predictedProb": 0.556,
+    "avgExpectancy": 0.8,
+    "suggestion": "中性偏多：建议结合其它信号综合判断",
+    "matched": [
+      {
+        "factorName": "机构密集调研",
+        "factorCategory": "资金筹码驱动",
+        "avgWinRate": 0.55,
+        "confidence": 0.86,
+        "occurCount": 434,
+        "expectancy1m": 0.4
+      },
+      {
+        "factorName": "产业链供需缺口",
+        "factorCategory": "基本面事件驱动",
+        "avgWinRate": 0.66,
+        "confidence": 0.9,
+        "occurCount": 351,
+        "expectancy1m": 3.79
+      },
+      {
+        "factorName": "游资情绪抱团",
+        "factorCategory": "题材情绪驱动",
+        "avgWinRate": 0.43,
+        "confidence": 0.7,
+        "occurCount": 718,
+        "expectancy1m": -2.56
+      }
+    ],
+    "engine": "factor-library-forward",
+    "generatedAt": "2026-08-02T21:42:55"
+  },
+  "factorForecast": {
+    "chainId": "lithium",
+    "shockNode": "锂矿开采",
+    "baseMagnitude": 0.3,
+    "boostedMagnitude": 0.3941,
+    "boost": 0.3138,
+    "structuredBoost": 0.3138,
+    "edgeOverrides": [
+      {
+        "source": "li_mine",
+        "target": "cathode",
+        "edgeType": "cost",
+        "baseCoeff": 0.85,
+        "overrideCoeff": 1.0,
+        "boost": 0.15,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "co_mine",
+        "target": "cathode",
+        "edgeType": "cost",
+        "baseCoeff": 0.65,
+        "overrideCoeff": 0.9011,
+        "boost": 0.2511,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "ni_mine",
+        "target": "cathode",
+        "edgeType": "cost",
+        "baseCoeff": 0.55,
+        "overrideCoeff": 0.8011,
+        "boost": 0.2511,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "graphite",
+        "target": "anode",
+        "edgeType": "cost",
+        "baseCoeff": 0.75,
+        "overrideCoeff": 1.0,
+        "boost": 0.25,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "cathode",
+        "target": "cell",
+        "edgeType": "cost",
+        "baseCoeff": 0.8,
+        "overrideCoeff": 1.0,
+        "boost": 0.2,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "anode",
+        "target": "cell",
+        "edgeType": "cost",
+        "baseCoeff": 0.5,
+        "overrideCoeff": 0.7511,
+        "boost": 0.2511,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "electrolyte",
+        "target": "cell",
+        "edgeType": "cost",
+        "baseCoeff": 0.55,
+        "overrideCoeff": 0.8011,
+        "boost": 0.2511,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "separator",
+        "target": "cell",
+        "edgeType": "cost",
+        "baseCoeff": 0.4,
+        "overrideCoeff": 0.6511,
+        "boost": 0.2511,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "cell",
+        "target": "ev",
+        "edgeType": "cost",
+        "baseCoeff": 0.7,
+        "overrideCoeff": 0.9511,
+        "boost": 0.2511,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "cell",
+        "target": "ess",
+        "edgeType": "cost",
+        "baseCoeff": 0.75,
+        "overrideCoeff": 1.0,
+        "boost": 0.25,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "cell",
+        "target": "consumer",
+        "edgeType": "cost",
+        "baseCoeff": 0.4,
+        "overrideCoeff": 0.6511,
+        "boost": 0.2511,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "ev",
+        "target": "cell",
+        "edgeType": "demand",
+        "baseCoeff": 0.9,
+        "overrideCoeff": 0.943,
+        "boost": 0.043,
+        "categories": [
+          "资金筹码驱动"
+        ]
+      },
+      {
+        "source": "ess",
+        "target": "cell",
+        "edgeType": "demand",
+        "baseCoeff": 0.6,
+        "overrideCoeff": 0.643,
+        "boost": 0.043,
+        "categories": [
+          "资金筹码驱动"
+        ]
+      },
+      {
+        "source": "equipment",
+        "target": "cell",
+        "edgeType": "supply",
+        "baseCoeff": 0.45,
+        "overrideCoeff": 0.7638,
+        "boost": 0.3138,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      },
+      {
+        "source": "li_mine",
+        "target": "electrolyte",
+        "edgeType": "cost",
+        "baseCoeff": 0.2,
+        "overrideCoeff": 0.4511,
+        "boost": 0.2511,
+        "categories": [
+          "基本面事件驱动"
+        ]
+      }
+    ],
+    "categoryEdgeContrib": [
+      {
+        "factorCategory": "基本面事件驱动",
+        "edgeType": "supply",
+        "boost": 0.3138,
+        "factors": [
+          "业绩订单超预期",
+          "产业政策扶持",
+          "产业链供需缺口",
+          "技术专利突破"
+        ]
+      },
+      {
+        "factorCategory": "基本面事件驱动",
+        "edgeType": "cost",
+        "boost": 0.2511,
+        "factors": [
+          "业绩订单超预期",
+          "产业政策扶持",
+          "产业链供需缺口",
+          "技术专利突破"
+        ]
+      },
+      {
+        "factorCategory": "资金筹码驱动",
+        "edgeType": "demand",
+        "boost": 0.043,
+        "factors": [
+          "机构资金持续流入",
+          "龙头券商买入评级"
+        ]
+      }
+    ],
+    "factorWeights": {
+      "业绩订单超预期": 0.3186,
+      "产业链供需缺口": 0.2358,
+      "产业政策扶持": 0.1487,
+      "技术专利突破": 0.1481,
+      "龙头券商买入评级": 0.0884,
+      "机构资金持续流入": 0.0604
+    },
+    "baseline": {
+      "maxImpactPct": 21.86,
+      "impactedNodes": 13,
+      "affectedCompanies": 24
+    },
+    "enhanced": {
+      "maxImpactPct": 33.78,
+      "impactedNodes": 13,
+      "affectedCompanies": 24
+    },
+    "liftPct": {
+      "maxImpact": 11.92,
+      "impactedNodes": 0,
+      "affectedCompanies": 0
+    },
+    "forward4": {
+      "periods": [
+        "1w",
+        "2w",
+        "1m",
+        "6m"
+      ],
+      "baseline": [
+        9.84,
+        15.3,
+        21.86,
+        18.58
+      ],
+      "enhanced": [
+        15.2,
+        23.65,
+        33.78,
+        28.71
+      ]
+    },
+    "factors": [
+      {
+        "factorName": "业绩订单超预期",
+        "factorCategory": "基本面事件驱动",
+        "weight": 0.3186,
+        "avgWinRate": 0.71,
+        "confidence": 0.94,
+        "expectancy1m": 5.12
+      },
+      {
+        "factorName": "产业链供需缺口",
+        "factorCategory": "基本面事件驱动",
+        "weight": 0.2358,
+        "avgWinRate": 0.66,
+        "confidence": 0.9,
+        "expectancy1m": 3.79
+      },
+      {
+        "factorName": "产业政策扶持",
+        "factorCategory": "基本面事件驱动",
+        "weight": 0.1487,
+        "avgWinRate": 0.64,
+        "confidence": 0.88,
+        "expectancy1m": 2.39
+      },
+      {
+        "factorName": "技术专利突破",
+        "factorCategory": "基本面事件驱动",
+        "weight": 0.1481,
+        "avgWinRate": 0.6,
+        "confidence": 0.87,
+        "expectancy1m": 2.38
+      },
+      {
+        "factorName": "龙头券商买入评级",
+        "factorCategory": "资金筹码驱动",
+        "weight": 0.0884,
+        "avgWinRate": 0.58,
+        "confidence": 0.86,
+        "expectancy1m": 1.42
+      },
+      {
+        "factorName": "机构资金持续流入",
+        "factorCategory": "资金筹码驱动",
+        "weight": 0.0604,
+        "avgWinRate": 0.57,
+        "confidence": 0.85,
+        "expectancy1m": 0.97
+      }
+    ],
+    "engine": "factor-library-forward-propagation",
+    "generatedAt": "2026-08-02T21:42:55"
+  },
+  "closedLoop": {
+    "stockCode": "688981",
+    "stockName": "中芯国际",
+    "chainId": "semiconductor",
+    "shockNode": "硅片",
+    "dig": {
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "riseStartDate": "2026-07-28",
+      "windowDays": 30,
+      "signalCount": 4,
+      "earlyCount": 2,
+      "typeDistribution": {
+        "机构调研": 1,
+        "产业链异动": 1,
+        "舆情小道消息": 1,
+        "游资动向": 1
+      },
+      "signals": [
+        {
+          "signalType": "机构调研",
+          "signalDate": "2026-07-09",
+          "leadDays": 19,
+          "source": "进门财经 / 私下调研纪要",
+          "summary": "中芯国际近期接待半导体主题机构密集调研，交流中透露订单能见度提升与产能爬坡进度",
+          "credibility": 0.82,
+          "relevance": 0.72,
+          "score": 70.7,
+          "isEarly": 1
+        },
+        {
+          "signalType": "产业链异动",
+          "signalDate": "2026-07-15",
+          "leadDays": 13,
+          "source": "产业链上下游情报",
+          "summary": "半导体上游环节出现订单与价格异动，下游客户提前锁定产能，供需缺口扩大",
+          "credibility": 0.78,
+          "relevance": 0.88,
+          "score": 62.7,
+          "isEarly": 1
+        },
+        {
+          "signalType": "舆情小道消息",
+          "signalDate": "2026-07-20",
+          "leadDays": 8,
+          "source": "社群 / 雪球 / 韭研社",
+          "summary": "半导体题材在投资社群开始发酵，出现未公开合作与政策预期的小道消息",
+          "credibility": 0.48,
+          "relevance": 0.58,
+          "score": 39.3,
+          "isEarly": 0
+        },
+        {
+          "signalType": "游资动向",
+          "signalDate": "2026-07-25",
+          "leadDays": 3,
+          "source": "龙虎榜 / 活跃席位监控",
+          "summary": "多个活跃游资席位提前埋伏中芯国际，换手率与量比异动，短线情绪升温",
+          "credibility": 0.56,
+          "relevance": 0.66,
+          "score": 35.0,
+          "isEarly": 0
+        }
+      ],
+      "timeline": [
+        {
+          "signalDate": "2026-07-09",
+          "signalType": "机构调研",
+          "leadDays": 19,
+          "score": 70.7,
+          "isEarly": true
+        },
+        {
+          "signalDate": "2026-07-15",
+          "signalType": "产业链异动",
+          "leadDays": 13,
+          "score": 62.7,
+          "isEarly": true
+        },
+        {
+          "signalDate": "2026-07-20",
+          "signalType": "舆情小道消息",
+          "leadDays": 8,
+          "score": 39.3,
+          "isEarly": false
+        },
+        {
+          "signalDate": "2026-07-25",
+          "signalType": "游资动向",
+          "leadDays": 3,
+          "score": 35.0,
+          "isEarly": false
+        }
+      ],
+      "engine": "agent-heuristic-dig",
+      "generatedAt": "2026-08-02T21:42:55"
+    },
+    "predict": {
+      "stockCode": "688981",
+      "detectedFactors": [
+        "机构调研",
+        "产业链异动",
+        "舆情小道消息",
+        "游资动向"
+      ],
+      "predictedProb": 0.556,
+      "avgExpectancy": 0.8,
+      "suggestion": "中性偏多：建议结合其它信号综合判断",
+      "matched": [
+        {
+          "factorName": "机构密集调研",
+          "factorCategory": "资金筹码驱动",
+          "avgWinRate": 0.55,
+          "confidence": 0.86,
+          "occurCount": 434,
+          "expectancy1m": 0.4
+        },
+        {
+          "factorName": "产业链供需缺口",
+          "factorCategory": "基本面事件驱动",
+          "avgWinRate": 0.66,
+          "confidence": 0.9,
+          "occurCount": 351,
+          "expectancy1m": 3.79
+        },
+        {
+          "factorName": "游资情绪抱团",
+          "factorCategory": "题材情绪驱动",
+          "avgWinRate": 0.43,
+          "confidence": 0.7,
+          "occurCount": 718,
+          "expectancy1m": -2.56
+        }
+      ],
+      "engine": "factor-library-forward",
+      "generatedAt": "2026-08-02T21:42:55"
+    },
+    "propagate": {
+      "chainId": "semiconductor",
+      "shockNode": "硅片",
+      "baseMagnitude": 0.3,
+      "boostedMagnitude": 0.4,
+      "boost": 0.3333,
+      "structuredBoost": 0.3333,
+      "edgeOverrides": [
+        {
+          "source": "si_wafer",
+          "target": "foundry",
+          "edgeType": "cost",
+          "baseCoeff": 0.45,
+          "overrideCoeff": 0.7166,
+          "boost": 0.2666,
+          "categories": [
+            "基本面事件驱动"
+          ]
+        },
+        {
+          "source": "photoresist",
+          "target": "foundry",
+          "edgeType": "cost",
+          "baseCoeff": 0.3,
+          "overrideCoeff": 0.5666,
+          "boost": 0.2666,
+          "categories": [
+            "基本面事件驱动"
+          ]
+        },
+        {
+          "source": "etch_gas",
+          "target": "foundry",
+          "edgeType": "cost",
+          "baseCoeff": 0.25,
+          "overrideCoeff": 0.5166,
+          "boost": 0.2666,
+          "categories": [
+            "基本面事件驱动"
+          ]
+        },
+        {
+          "source": "eda",
+          "target": "design",
+          "edgeType": "cost",
+          "baseCoeff": 0.15,
+          "overrideCoeff": 0.4166,
+          "boost": 0.2666,
+          "categories": [
+            "基本面事件驱动"
+          ]
+        },
+        {
+          "source": "equipment2",
+          "target": "foundry",
+          "edgeType": "supply",
+          "baseCoeff": 0.6,
+          "overrideCoeff": 0.9333,
+          "boost": 0.3333,
+          "categories": [
+            "基本面事件驱动"
+          ]
+        },
+        {
+          "source": "foundry",
+          "target": "design",
+          "edgeType": "cost",
+          "baseCoeff": 0.55,
+          "overrideCoeff": 0.8166,
+          "boost": 0.2666,
+          "categories": [
+            "基本面事件驱动"
+          ]
+        },
+        {
+          "source": "foundry",
+          "target": "packaging",
+          "edgeType": "demand",
+          "baseCoeff": 0.7,
+          "overrideCoeff": 0.7251,
+          "boost": 0.0251,
+          "categories": [
+            "资金筹码驱动",
+            "题材情绪驱动"
+          ]
+        },
+        {
+          "source": "design",
+          "target": "smartphone",
+          "edgeType": "demand",
+          "baseCoeff": 0.5,
+          "overrideCoeff": 0.5251,
+          "boost": 0.0251,
+          "categories": [
+            "资金筹码驱动",
+            "题材情绪驱动"
+          ]
+        },
+        {
+          "source": "design",
+          "target": "auto_chip",
+          "edgeType": "demand",
+          "baseCoeff": 0.6,
+          "overrideCoeff": 0.6251,
+          "boost": 0.0251,
+          "categories": [
+            "资金筹码驱动",
+            "题材情绪驱动"
+          ]
+        },
+        {
+          "source": "design",
+          "target": "ai_server",
+          "edgeType": "demand",
+          "baseCoeff": 0.85,
+          "overrideCoeff": 0.8751,
+          "boost": 0.0251,
+          "categories": [
+            "资金筹码驱动",
+            "题材情绪驱动"
+          ]
+        }
+      ],
+      "categoryEdgeContrib": [
+        {
+          "factorCategory": "基本面事件驱动",
+          "edgeType": "supply",
+          "boost": 0.3333,
+          "factors": [
+            "产业链供需缺口"
+          ]
+        },
+        {
+          "factorCategory": "基本面事件驱动",
+          "edgeType": "cost",
+          "boost": 0.2666,
+          "factors": [
+            "产业链供需缺口"
+          ]
+        },
+        {
+          "factorCategory": "资金筹码驱动",
+          "edgeType": "demand",
+          "boost": 0.0251,
+          "factors": [
+            "机构密集调研"
+          ]
+        },
+        {
+          "factorCategory": "题材情绪驱动",
+          "edgeType": "subst",
+          "boost": 0.0,
+          "factors": [
+            "游资情绪抱团"
+          ]
+        },
+        {
+          "factorCategory": "题材情绪驱动",
+          "edgeType": "demand",
+          "boost": 0.0,
+          "factors": [
+            "游资情绪抱团"
+          ]
+        }
+      ],
+      "factorWeights": {
+        "机构密集调研": 0.0955,
+        "产业链供需缺口": 0.9045,
+        "游资情绪抱团": 0.0
+      },
+      "baseline": {
+        "maxImpactPct": 10.66,
+        "impactedNodes": 10,
+        "affectedCompanies": 3
+      },
+      "enhanced": {
+        "maxImpactPct": 22.63,
+        "impactedNodes": 10,
+        "affectedCompanies": 3
+      },
+      "liftPct": {
+        "maxImpact": 11.97,
+        "impactedNodes": 0,
+        "affectedCompanies": 0
+      },
+      "forward4": {
+        "periods": [
+          "1w",
+          "2w",
+          "1m",
+          "6m"
+        ],
+        "baseline": [
+          4.8,
+          7.46,
+          10.66,
+          9.06
+        ],
+        "enhanced": [
+          10.18,
+          15.84,
+          22.63,
+          19.24
+        ]
+      },
+      "factors": [
+        {
+          "factorName": "机构密集调研",
+          "factorCategory": "资金筹码驱动",
+          "weight": 0.0955,
+          "avgWinRate": 0.55,
+          "confidence": 0.86,
+          "expectancy1m": 0.4
+        },
+        {
+          "factorName": "产业链供需缺口",
+          "factorCategory": "基本面事件驱动",
+          "weight": 0.9045,
+          "avgWinRate": 0.66,
+          "confidence": 0.9,
+          "expectancy1m": 3.79
+        },
+        {
+          "factorName": "游资情绪抱团",
+          "factorCategory": "题材情绪驱动",
+          "weight": 0.0,
+          "avgWinRate": 0.43,
+          "confidence": 0.7,
+          "expectancy1m": -2.56
+        }
+      ],
+      "engine": "factor-library-forward-propagation",
+      "generatedAt": "2026-08-02T21:42:55"
+    },
+    "attribution": {
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "riseStartDate": "2026-07-28",
+      "dailyGain": 9.83,
+      "totalRiseDays": 3,
+      "driveCategory": "基本面事件驱动",
+      "drivingFactor": [
+        {
+          "factorType": "核心强驱动",
+          "content": "中芯国际半年度业绩预增超市场预期（净利同比 +80%~110%），二期半导体产能投产贡献新增营收",
+          "weight": 38,
+          "confidence": 0.9,
+          "source": "巨潮资讯《半年度业绩预增暨产能落地公告》（拉升前 22 日）",
+          "hiddenConstraint": "下游需求不及预期时产能消纳存在压力"
+        },
+        {
+          "factorType": "核心强驱动",
+          "content": "国家出台半导体产业扶持细则，关键技术突破企业获补贴与税收减免",
+          "weight": 22,
+          "confidence": 0.85,
+          "source": "工信部《产业扶持政策实施细则》（拉升前 15 日）",
+          "hiddenConstraint": "补贴退坡与达标门槛构成远期约束"
+        },
+        {
+          "factorType": "次要催化",
+          "content": "券商上调中芯国际评级至“买入”并给出 35% 目标价空间，半导体景气度回暖",
+          "weight": 15,
+          "confidence": 0.72,
+          "source": "中信证券深度研报（拉升前 9 日）",
+          "hiddenConstraint": "评级依赖景气度持续性假设"
+        },
+        {
+          "factorType": "次要催化",
+          "content": "近两周半导体板块获机构密集调研，资金关注度升温",
+          "weight": 10,
+          "confidence": 0.66,
+          "source": "财联社行业异动报道（拉升前 4 日）",
+          "hiddenConstraint": "调研热度不代表确定性订单"
+        },
+        {
+          "factorType": "情绪炒作",
+          "content": "活跃游资席位现身中芯国际龙虎榜，短线情绪驱动特征明显",
+          "weight": 10,
+          "confidence": 0.45,
+          "source": "同花顺龙虎榜报道（拉升前 2 日）",
+          "hiddenConstraint": "游资抱团易致脉冲回落，非事件驱动"
+        },
+        {
+          "factorType": "情绪炒作",
+          "content": "市场情绪进入活跃区间，半导体题材存在发酵基础",
+          "weight": 5,
+          "confidence": 0.4,
+          "source": "财联社/同花顺情绪指标（拉升前）",
+          "hiddenConstraint": "题材情绪持续性弱"
+        }
+      ],
+      "similarHistoryCase": [
+        {
+          "caseTime": "2024-Q3",
+          "event": "同类半导体龙头业绩超预期 + 政策催化双轮驱动",
+          "postTrend": "后续 1 月延续主升约 +28%，2 月后随板块轮动回落"
+        },
+        {
+          "caseTime": "2023-Q4",
+          "event": "半导体题材情绪脉冲（无实质业绩）",
+          "postTrend": "冲高 3 日后快速回落，1 周回撤 -15%"
+        }
+      ],
+      "trendPersistenceJudge": "长期主升",
+      "suggestAdjust": "建议上调中芯国际长期基本面权重 +60%；因驱动类型为「基本面事件驱动」，将基本面事件驱动对应周期预测权重上修；联动半导体产业链传导系数 +0.05；触发该个股四周期预测重算。",
+      "guardrails": {
+        "timeFiltered": true,
+        "priorDocCount": 5,
+        "excludedPostRise": true,
+        "minSourcesEnforced": true,
+        "noSourceConfidenceCapped": 0.3,
+        "lowConfidenceSuppressed": [
+          "活跃游资席位现身中芯国际",
+          "市场情绪进入活跃区间，半"
+        ],
+        "weightsSum": 100
+      },
+      "engine": "heuristic-math",
+      "generatedAt": "2026-08-02T21:42:55",
+      "attributionId": 2
+    },
+    "engine": "backtrace-closed-loop",
+    "generatedAt": "2026-08-02T21:42:55"
+  },
+  "alertScan": {
+    "scanBatch": "20260802214255-14f864",
+    "totalScanned": 14,
+    "disclosureCandidates": 6,
+    "opinionCandidates": 6,
+    "wechatCandidates": 6,
+    "flashCandidates": 6,
+    "communityCandidates": 6,
+    "overseasCandidates": 6,
+    "kronosAnalyzed": 14,
+    "crossValidationSummary": {
+      "totalAlerts": 14,
+      "layerDistribution": {
+        "L0": 6,
+        "L1": 6,
+        "L2": 6,
+        "L3": 6,
+        "L4": 6,
+        "L5": 0
+      },
+      "consensusDistribution": {
+        "strong": 6,
+        "moderate": 0,
+        "weak": 0,
+        "none": 8
+      },
+      "multiSourceConfirmed": 6,
+      "authoritativeConfirmed": 6,
+      "conflictAlerts": 0,
+      "rumorAlerts": 1,
+      "technicalBullConfirmed": 5
+    },
+    "inflectionSummary": {
+      "totalAlerts": 14,
+      "levelDistribution": {
+        "high": 0,
+        "medium": 2,
+        "low": 0,
+        "none": 12
+      },
+      "typeDistribution": {
+        "技术·情绪背离": 2
+      },
+      "highCount": 0,
+      "mediumCount": 2,
+      "lowCount": 0,
+      "noneCount": 12,
+      "highInflectionAlerts": []
+    },
+    "engine": "backtrace-closed-loop-scan",
+    "generatedAt": "2026-08-02T21:42:56",
+    "alerts": [
+      {
+        "stockCode": "002594",
+        "stockName": "比亚迪",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": true,
+        "hasOpinion": true,
+        "hasWechat": true,
+        "hasFlash": true,
+        "hasCommunity": true,
+        "hasOverseas": true,
+        "kronosInfo": {
+          "stockCode": "002594",
+          "stockName": "比亚迪",
+          "trend": "多头趋势",
+          "momentum": 0.525,
+          "inflectionPoint": "无顶部拐点",
+          "riseProb": 0.716,
+          "sidewayProb": 0.222,
+          "downProb": 0.062,
+          "volatility": 0.354,
+          "volumeScore": 0.322,
+          "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.525
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.322
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.646
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.848
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "authoritativeCount": 2,
+          "retailCount": 3,
+          "distinctSources": 6,
+          "credibilityScore": 0.7,
+          "direction": "bullish",
+          "consensusLevel": "strong",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": [
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "overseas",
+              "layer": "L1",
+              "tier": "authoritative",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "flash",
+              "layer": "L2",
+              "tier": "professional",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "community",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "wechat",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "opinion",
+              "layer": "L4",
+              "tier": "retail",
+              "direction": "neutral",
+              "hasRumor": false
+            }
+          ]
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "688256",
+        "stockName": "寒武纪",
+        "chainId": "semiconductor",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": false,
+        "hasOpinion": false,
+        "hasWechat": false,
+        "hasFlash": false,
+        "hasCommunity": false,
+        "hasOverseas": false,
+        "kronosInfo": {
+          "stockCode": "688256",
+          "stockName": "寒武纪",
+          "trend": "震荡",
+          "momentum": 0.401,
+          "inflectionPoint": "底部拐点·下跌末端反转",
+          "riseProb": 0.356,
+          "sidewayProb": 0.352,
+          "downProb": 0.291,
+          "volatility": 0.18,
+          "volumeScore": 0.672,
+          "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.401
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.672
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.82
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.911
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [],
+          "authoritativeCount": 0,
+          "retailCount": 0,
+          "distinctSources": 0,
+          "credibilityScore": 0.0,
+          "direction": "neutral",
+          "consensusLevel": "none",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": []
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "688041",
+        "stockName": "海光信息",
+        "chainId": "semiconductor",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": false,
+        "hasOpinion": false,
+        "hasWechat": false,
+        "hasFlash": false,
+        "hasCommunity": false,
+        "hasOverseas": false,
+        "kronosInfo": {
+          "stockCode": "688041",
+          "stockName": "海光信息",
+          "trend": "震荡",
+          "momentum": 0.787,
+          "inflectionPoint": "底部拐点·下跌末端反转",
+          "riseProb": 0.321,
+          "sidewayProb": 0.325,
+          "downProb": 0.354,
+          "volatility": 0.142,
+          "volumeScore": 0.715,
+          "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.787
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.715
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.858
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.959
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [],
+          "authoritativeCount": 0,
+          "retailCount": 0,
+          "distinctSources": 0,
+          "credibilityScore": 0.0,
+          "direction": "neutral",
+          "consensusLevel": "none",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": []
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "688981",
+        "stockName": "中芯国际",
+        "chainId": "semiconductor",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": true,
+        "hasOpinion": true,
+        "hasWechat": true,
+        "hasFlash": true,
+        "hasCommunity": true,
+        "hasOverseas": true,
+        "kronosInfo": {
+          "stockCode": "688981",
+          "stockName": "中芯国际",
+          "trend": "空头趋势",
+          "momentum": 0.483,
+          "inflectionPoint": "顶部拐点·高位见顶",
+          "riseProb": 0.155,
+          "sidewayProb": 0.228,
+          "downProb": 0.617,
+          "volatility": 0.215,
+          "volumeScore": 0.366,
+          "persistence": "高位结构松动，警惕回落，建议减仓规避追涨",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.483
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.366
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.785
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.862
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "authoritativeCount": 2,
+          "retailCount": 2,
+          "distinctSources": 6,
+          "credibilityScore": 0.7,
+          "direction": "bullish",
+          "consensusLevel": "strong",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": [
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "overseas",
+              "layer": "L1",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "flash",
+              "layer": "L2",
+              "tier": "professional",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "community",
+              "layer": "L2",
+              "tier": "professional",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "wechat",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "opinion",
+              "layer": "L4",
+              "tier": "retail",
+              "direction": "bullish",
+              "hasRumor": false
+            }
+          ]
+        },
+        "inflectionWarning": {
+          "level": "medium",
+          "types": [
+            "技术·情绪背离"
+          ],
+          "reasons": [
+            "技术面空头但舆情偏多，警惕诱空"
+          ],
+          "confidence": 0.5,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "300059",
+        "stockName": "东方财富",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": false,
+        "hasOpinion": false,
+        "hasWechat": false,
+        "hasFlash": false,
+        "hasCommunity": false,
+        "hasOverseas": false,
+        "kronosInfo": {
+          "stockCode": "300059",
+          "stockName": "东方财富",
+          "trend": "震荡",
+          "momentum": 0.782,
+          "inflectionPoint": "底部拐点·下跌末端反转",
+          "riseProb": 0.332,
+          "sidewayProb": 0.411,
+          "downProb": 0.257,
+          "volatility": 0.431,
+          "volumeScore": 0.906,
+          "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.782
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.906
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.569
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.964
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [],
+          "authoritativeCount": 0,
+          "retailCount": 0,
+          "distinctSources": 0,
+          "credibilityScore": 0.0,
+          "direction": "neutral",
+          "consensusLevel": "none",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": []
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "300750",
+        "stockName": "宁德时代",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": true,
+        "hasOpinion": true,
+        "hasWechat": true,
+        "hasFlash": true,
+        "hasCommunity": true,
+        "hasOverseas": true,
+        "kronosInfo": {
+          "stockCode": "300750",
+          "stockName": "宁德时代",
+          "trend": "震荡",
+          "momentum": 0.854,
+          "inflectionPoint": "底部拐点·下跌末端反转",
+          "riseProb": 0.356,
+          "sidewayProb": 0.337,
+          "downProb": 0.307,
+          "volatility": 0.489,
+          "volumeScore": 0.786,
+          "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.854
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.786
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.511
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.987
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "authoritativeCount": 2,
+          "retailCount": 3,
+          "distinctSources": 6,
+          "credibilityScore": 0.7,
+          "direction": "bullish",
+          "consensusLevel": "strong",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": [
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "overseas",
+              "layer": "L1",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "flash",
+              "layer": "L2",
+              "tier": "professional",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "community",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "wechat",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "opinion",
+              "layer": "L4",
+              "tier": "retail",
+              "direction": "bullish",
+              "hasRumor": false
+            }
+          ]
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "002230",
+        "stockName": "科大讯飞",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": false,
+        "hasOpinion": false,
+        "hasWechat": false,
+        "hasFlash": false,
+        "hasCommunity": false,
+        "hasOverseas": false,
+        "kronosInfo": {
+          "stockCode": "002230",
+          "stockName": "科大讯飞",
+          "trend": "空头趋势",
+          "momentum": 0.868,
+          "inflectionPoint": "顶部拐点·高位见顶",
+          "riseProb": 0.198,
+          "sidewayProb": 0.232,
+          "downProb": 0.57,
+          "volatility": 0.319,
+          "volumeScore": 0.542,
+          "persistence": "高位结构松动，警惕回落，建议减仓规避追涨",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.868
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.542
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.681
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.888
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [],
+          "authoritativeCount": 0,
+          "retailCount": 0,
+          "distinctSources": 0,
+          "credibilityScore": 0.0,
+          "direction": "neutral",
+          "consensusLevel": "none",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": []
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "600276",
+        "stockName": "恒瑞医药",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": false,
+        "hasOpinion": false,
+        "hasWechat": false,
+        "hasFlash": false,
+        "hasCommunity": false,
+        "hasOverseas": false,
+        "kronosInfo": {
+          "stockCode": "600276",
+          "stockName": "恒瑞医药",
+          "trend": "多头趋势",
+          "momentum": 0.756,
+          "inflectionPoint": "无顶部拐点",
+          "riseProb": 0.66,
+          "sidewayProb": 0.23,
+          "downProb": 0.11,
+          "volatility": 0.247,
+          "volumeScore": 0.376,
+          "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.756
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.376
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.753
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.84
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [],
+          "authoritativeCount": 0,
+          "retailCount": 0,
+          "distinctSources": 0,
+          "credibilityScore": 0.0,
+          "direction": "neutral",
+          "consensusLevel": "none",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": []
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "600893",
+        "stockName": "航发动力",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": false,
+        "hasOpinion": false,
+        "hasWechat": false,
+        "hasFlash": false,
+        "hasCommunity": false,
+        "hasOverseas": false,
+        "kronosInfo": {
+          "stockCode": "600893",
+          "stockName": "航发动力",
+          "trend": "空头趋势",
+          "momentum": 0.468,
+          "inflectionPoint": "顶部拐点·高位见顶",
+          "riseProb": 0.155,
+          "sidewayProb": 0.204,
+          "downProb": 0.642,
+          "volatility": 0.319,
+          "volumeScore": 0.762,
+          "persistence": "高位结构松动，警惕回落，建议减仓规避追涨",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.468
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.762
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.681
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.91
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [],
+          "authoritativeCount": 0,
+          "retailCount": 0,
+          "distinctSources": 0,
+          "credibilityScore": 0.0,
+          "direction": "neutral",
+          "consensusLevel": "none",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": []
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "002475",
+        "stockName": "立讯精密",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": false,
+        "hasOpinion": false,
+        "hasWechat": false,
+        "hasFlash": false,
+        "hasCommunity": false,
+        "hasOverseas": false,
+        "kronosInfo": {
+          "stockCode": "002475",
+          "stockName": "立讯精密",
+          "trend": "多头趋势",
+          "momentum": 0.435,
+          "inflectionPoint": "无顶部拐点",
+          "riseProb": 0.615,
+          "sidewayProb": 0.25,
+          "downProb": 0.134,
+          "volatility": 0.128,
+          "volumeScore": 0.922,
+          "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.435
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.922
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.872
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.887
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [],
+          "authoritativeCount": 0,
+          "retailCount": 0,
+          "distinctSources": 0,
+          "credibilityScore": 0.0,
+          "direction": "neutral",
+          "consensusLevel": "none",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": []
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "000725",
+        "stockName": "京东方A",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": true,
+        "hasOpinion": true,
+        "hasWechat": true,
+        "hasFlash": true,
+        "hasCommunity": true,
+        "hasOverseas": true,
+        "kronosInfo": {
+          "stockCode": "000725",
+          "stockName": "京东方A",
+          "trend": "多头趋势",
+          "momentum": 0.853,
+          "inflectionPoint": "无顶部拐点",
+          "riseProb": 0.648,
+          "sidewayProb": 0.242,
+          "downProb": 0.11,
+          "volatility": 0.405,
+          "volumeScore": 0.66,
+          "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.853
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.66
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.595
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.967
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "authoritativeCount": 2,
+          "retailCount": 2,
+          "distinctSources": 6,
+          "credibilityScore": 0.7,
+          "direction": "bullish",
+          "consensusLevel": "strong",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": [
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "overseas",
+              "layer": "L1",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "flash",
+              "layer": "L2",
+              "tier": "professional",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "community",
+              "layer": "L2",
+              "tier": "professional",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "wechat",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "opinion",
+              "layer": "L4",
+              "tier": "retail",
+              "direction": "bullish",
+              "hasRumor": false
+            }
+          ]
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "600519",
+        "stockName": "贵州茅台",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": true,
+        "hasOpinion": true,
+        "hasWechat": true,
+        "hasFlash": true,
+        "hasCommunity": true,
+        "hasOverseas": true,
+        "kronosInfo": {
+          "stockCode": "600519",
+          "stockName": "贵州茅台",
+          "trend": "震荡",
+          "momentum": 0.798,
+          "inflectionPoint": "底部拐点·下跌末端反转",
+          "riseProb": 0.332,
+          "sidewayProb": 0.354,
+          "downProb": 0.314,
+          "volatility": 0.295,
+          "volumeScore": 0.55,
+          "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.798
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.55
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.705
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.956
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "authoritativeCount": 2,
+          "retailCount": 3,
+          "distinctSources": 6,
+          "credibilityScore": 0.7,
+          "direction": "bearish",
+          "consensusLevel": "strong",
+          "conflictFlag": false,
+          "rumorFlag": true,
+          "sources": [
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "overseas",
+              "layer": "L1",
+              "tier": "authoritative",
+              "direction": "neutral",
+              "hasRumor": false
+            },
+            {
+              "source": "flash",
+              "layer": "L2",
+              "tier": "professional",
+              "direction": "bearish",
+              "hasRumor": true
+            },
+            {
+              "source": "community",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "bearish",
+              "hasRumor": true
+            },
+            {
+              "source": "wechat",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "bearish",
+              "hasRumor": true
+            },
+            {
+              "source": "opinion",
+              "layer": "L4",
+              "tier": "retail",
+              "direction": "bearish",
+              "hasRumor": true
+            }
+          ]
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "603799",
+        "stockName": "华友钴业",
+        "chainId": "lithium",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.3333,
+        "matchedFactors": 3,
+        "compositeScore": 0.6305,
+        "level": "强信号·重点关注",
+        "hasDisclosure": true,
+        "hasOpinion": true,
+        "hasWechat": true,
+        "hasFlash": true,
+        "hasCommunity": true,
+        "hasOverseas": true,
+        "kronosInfo": {
+          "stockCode": "603799",
+          "stockName": "华友钴业",
+          "trend": "多头趋势",
+          "momentum": 0.603,
+          "inflectionPoint": "无顶部拐点",
+          "riseProb": 0.651,
+          "sidewayProb": 0.296,
+          "downProb": 0.053,
+          "volatility": 0.173,
+          "volumeScore": 0.804,
+          "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.603
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.804
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.827
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.867
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "authoritativeCount": 2,
+          "retailCount": 3,
+          "distinctSources": 6,
+          "credibilityScore": 0.7,
+          "direction": "bearish",
+          "consensusLevel": "strong",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": [
+            {
+              "source": "disclosure",
+              "layer": "L0",
+              "tier": "authoritative",
+              "direction": "bullish",
+              "hasRumor": false
+            },
+            {
+              "source": "overseas",
+              "layer": "L1",
+              "tier": "authoritative",
+              "direction": "bearish",
+              "hasRumor": false
+            },
+            {
+              "source": "flash",
+              "layer": "L2",
+              "tier": "professional",
+              "direction": "bearish",
+              "hasRumor": false
+            },
+            {
+              "source": "community",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "bearish",
+              "hasRumor": false
+            },
+            {
+              "source": "wechat",
+              "layer": "L3",
+              "tier": "retail",
+              "direction": "bearish",
+              "hasRumor": false
+            },
+            {
+              "source": "opinion",
+              "layer": "L4",
+              "tier": "retail",
+              "direction": "bearish",
+              "hasRumor": false
+            }
+          ]
+        },
+        "inflectionWarning": {
+          "level": "medium",
+          "types": [
+            "技术·情绪背离"
+          ],
+          "reasons": [
+            "技术面多头但舆情偏空，警惕诱多"
+          ],
+          "confidence": 0.5,
+          "suggestedAction": "中性观察"
+        }
+      },
+      {
+        "stockCode": "601012",
+        "stockName": "隆基绿能",
+        "chainId": "photovoltaic",
+        "signalCount": 4,
+        "earlyCount": 2,
+        "topSignalScore": 70.7,
+        "predictedProb": 0.556,
+        "boost": 0.2666,
+        "matchedFactors": 3,
+        "compositeScore": 0.6038,
+        "level": "强信号·重点关注",
+        "hasDisclosure": false,
+        "hasOpinion": false,
+        "hasWechat": false,
+        "hasFlash": false,
+        "hasCommunity": false,
+        "hasOverseas": false,
+        "kronosInfo": {
+          "stockCode": "601012",
+          "stockName": "隆基绿能",
+          "trend": "空头趋势",
+          "momentum": 0.621,
+          "inflectionPoint": "顶部拐点·高位见顶",
+          "riseProb": 0.164,
+          "sidewayProb": 0.178,
+          "downProb": 0.658,
+          "volatility": 0.364,
+          "volumeScore": 0.283,
+          "persistence": "高位结构松动，警惕回落，建议减仓规避追涨",
+          "factorScores": [
+            {
+              "name": "BSQ趋势强度因子",
+              "score": 0.621
+            },
+            {
+              "name": "分层量能因子",
+              "score": 0.283
+            },
+            {
+              "name": "波动率压缩因子",
+              "score": 0.636
+            },
+            {
+              "name": "拐点共振因子",
+              "score": 0.859
+            }
+          ]
+        },
+        "crossValidation": {
+          "layersHit": [],
+          "authoritativeCount": 0,
+          "retailCount": 0,
+          "distinctSources": 0,
+          "credibilityScore": 0.0,
+          "direction": "neutral",
+          "consensusLevel": "none",
+          "conflictFlag": false,
+          "rumorFlag": false,
+          "sources": []
+        },
+        "inflectionWarning": {
+          "level": "none",
+          "types": [
+            "无"
+          ],
+          "reasons": [
+            "暂无显著拐点信号"
+          ],
+          "confidence": 0.0,
+          "suggestedAction": "中性观察"
+        }
+      }
+    ]
+  },
+  "scanSchedule": {
+    "cron": "30 15 * * 1-5",
+    "enabled": true
+  },
+  "scanHistory": [
+    {
+      "id": 1,
+      "batchId": "20260802214256-c3cc2b",
+      "runType": "manual",
+      "scheduledAt": null,
+      "startedAt": "2026-08-02T21:42:56.103986",
+      "finishedAt": "2026-08-02T21:42:56.103986",
+      "totalScanned": 14,
+      "strongCount": 14,
+      "neutralCount": 0,
+      "weakCount": 0,
+      "topStock": "002594",
+      "topStockName": "比亚迪",
+      "topComposite": 0.6305,
+      "createdAt": "2026-08-02T21:42:56.104636"
+    }
+  ],
+  "dataSource": {
+    "provider": "MockMarketProvider",
+    "label": "模拟数据源（确定性 mock）",
+    "mode": "mock",
+    "reason": "沙箱确定性数据源（未开启 DSA_REALTIME_MARKET）",
+    "surgingCount": 12,
+    "envKey": "DSA_REALTIME_MARKET"
+  },
+  "disclosures": [
+    {
+      "id": 9,
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "disclosureDate": "2026-08-02",
+      "title": "财报 2026H1：营收同比 22.7%，净利同比 41.3%",
+      "category": "财报",
+      "summary": "出海与高端化提升盈利",
+      "sentiment": "中性",
+      "createdAt": "2026-08-02T21:42:56.107056"
+    },
+    {
+      "id": 8,
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "disclosureDate": "2026-08-02",
+      "title": "财报 2026H1：营收同比 19.2%，净利同比 33.6%",
+      "category": "财报",
+      "summary": "储能与海外业务双轮驱动",
+      "sentiment": "中性",
+      "createdAt": "2026-08-02T21:42:56.107056"
+    },
+    {
+      "id": 7,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "disclosureDate": "2026-08-02",
+      "title": "财报 2026H1：营收同比 28.4%，净利同比 55.0%",
+      "category": "财报",
+      "summary": "先进制程放量驱动高增长",
+      "sentiment": "中性",
+      "createdAt": "2026-08-02T21:42:56.107055"
+    },
+    {
+      "id": 11,
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "disclosureDate": "2026-07-27",
+      "title": "中金公司 研报点评：增持",
+      "category": "研报点评",
+      "summary": "全球储能需求超预期，龙头份额稳固",
+      "sentiment": "利好",
+      "createdAt": "2026-08-02T21:42:56.107057"
+    },
+    {
+      "id": 10,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "disclosureDate": "2026-07-26",
+      "title": "中信证券 研报点评：买入",
+      "category": "研报点评",
+      "summary": "国产替代加速，先进制程拐点确认",
+      "sentiment": "利好",
+      "createdAt": "2026-08-02T21:42:56.107057"
+    },
+    {
+      "id": 2,
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "disclosureDate": "2026-07-25",
+      "title": "签署海外储能系统重大供货合同，金额约 120 亿元",
+      "category": "重大合同",
+      "summary": "海外储能订单落地，2026 发货节奏明确",
+      "sentiment": "利好",
+      "createdAt": "2026-08-02T21:42:56.107053"
+    },
+    {
+      "id": 12,
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "disclosureDate": "2026-07-24",
+      "title": "国泰君安 研报点评：买入",
+      "category": "研报点评",
+      "summary": "智能化与全球化打开第二成长曲线",
+      "sentiment": "利好",
+      "createdAt": "2026-08-02T21:42:56.107058"
+    },
+    {
+      "id": 5,
+      "stockCode": "000725",
+      "stockName": "京东方 A",
+      "disclosureDate": "2026-07-23",
+      "title": "拟回购股份用于股权激励，金额上限 30 亿元",
+      "category": "股权激励",
+      "summary": "面板景气回暖，现金流支撑回购",
+      "sentiment": "利好",
+      "createdAt": "2026-08-02T21:42:56.107054"
+    },
+    {
+      "id": 1,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "disclosureDate": "2026-07-22",
+      "title": "2026 半年度业绩预告：先进制程产能利用率提升，净利同比预增 55%",
+      "category": "业绩预告",
+      "summary": "先进制程订单饱满，稼动率环比提升，毛利率改善",
+      "sentiment": "利好",
+      "createdAt": "2026-08-02T21:42:56.107051"
+    },
+    {
+      "id": 6,
+      "stockCode": "603799",
+      "stockName": "华友钴业",
+      "disclosureDate": "2026-07-21",
+      "title": "印尼镍资源项目投产，一体化布局降本",
+      "category": "重大合同",
+      "summary": "上游资源自给率提升，盈利弹性释放",
+      "sentiment": "利好",
+      "createdAt": "2026-08-02T21:42:56.107055"
+    },
+    {
+      "id": 4,
+      "stockCode": "600519",
+      "stockName": "贵州茅台",
+      "disclosureDate": "2026-07-20",
+      "title": "2026 半年度主要经营数据：系列酒增长提速",
+      "category": "财报",
+      "summary": "直营占比提升，吨价稳步上行",
+      "sentiment": "中性",
+      "createdAt": "2026-08-02T21:42:56.107054"
+    },
+    {
+      "id": 3,
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "disclosureDate": "2026-07-18",
+      "title": "发布 2026 年股权激励计划，绑定核心技术与出海团队",
+      "category": "股权激励",
+      "summary": "考核目标挂钩新能源出海销量与智能化渗透率",
+      "sentiment": "利好",
+      "createdAt": "2026-08-02T21:42:56.107053"
+    }
+  ],
+  "disclosureSource": {
+    "provider": "MockDisclosureProvider",
+    "label": "模拟披露源（确定性 mock）",
+    "mode": "mock",
+    "reason": "沙箱确定性披露源（未开启 DSA_REALTIME_DISCLOSURE）",
+    "disclosureCount": 6,
+    "financialCount": 3,
+    "researchCount": 3,
+    "envKey": "DSA_REALTIME_DISCLOSURE"
+  },
+  "opinions": [
+    {
+      "id": 2,
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "opinionDate": "2026-07-27",
+      "title": "储能出海订单传闻刷屏，题材情绪进入高潮",
+      "source": "头条",
+      "heatScore": 0.86,
+      "sentimentScore": 0.7,
+      "sentiment": "利好",
+      "stage": "狂热",
+      "summary": "头条爆款满天飞，全民讨论，警惕见顶与游资出货",
+      "hasRumor": false,
+      "createdAt": "2026-08-02T21:42:56.108469"
+    },
+    {
+      "id": 1,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "opinionDate": "2026-07-26",
+      "title": "国产替代加速，先进制程订单能见度延伸至明年",
+      "source": "头条财经",
+      "heatScore": 0.72,
+      "sentimentScore": 0.6,
+      "sentiment": "利好",
+      "stage": "发酵",
+      "summary": "机构与游资圈层开始密集解读，散户端热度缓慢上行",
+      "hasRumor": false,
+      "createdAt": "2026-08-02T21:42:56.108468"
+    },
+    {
+      "id": 3,
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "opinionDate": "2026-07-25",
+      "title": "智能化渗透率提升，专业博主二次解读出海逻辑",
+      "source": "雪球",
+      "heatScore": 0.5,
+      "sentimentScore": 0.1,
+      "sentiment": "中性",
+      "stage": "发酵",
+      "summary": "信息扩散层（三级圈层）内容增多，热度温和上升",
+      "hasRumor": false,
+      "createdAt": "2026-08-02T21:42:56.108470"
+    },
+    {
+      "id": 4,
+      "stockCode": "600519",
+      "stockName": "贵州茅台",
+      "opinionDate": "2026-07-24",
+      "title": "网传消费税改革利空白酒，股吧恐慌扩散",
+      "source": "股吧",
+      "heatScore": 0.66,
+      "sentimentScore": -0.55,
+      "sentiment": "利空",
+      "stage": "退潮",
+      "summary": "无权威佐证的自媒体谣言，按文档 §六 强制降权 80%",
+      "hasRumor": true,
+      "createdAt": "2026-08-02T21:42:56.108471"
+    },
+    {
+      "id": 5,
+      "stockCode": "000725",
+      "stockName": "京东方 A",
+      "opinionDate": "2026-07-23",
+      "title": "面板景气回暖早期信号，小众财经号零星提及",
+      "source": "头条",
+      "heatScore": 0.4,
+      "sentimentScore": 0.45,
+      "sentiment": "利好",
+      "stage": "萌芽",
+      "summary": "仅少量小众财经自媒体提及，全网热度极低（二级圈层附近）",
+      "hasRumor": false,
+      "createdAt": "2026-08-02T21:42:56.108471"
+    },
+    {
+      "id": 6,
+      "stockCode": "603799",
+      "stockName": "华友钴业",
+      "opinionDate": "2026-07-22",
+      "title": "镍价波动拖累资源股，雪球分歧加大",
+      "source": "雪球",
+      "heatScore": 0.55,
+      "sentimentScore": -0.4,
+      "sentiment": "利空",
+      "stage": "发酵",
+      "summary": "产业链利空发酵，专业散户跟随减仓，情绪偏冷",
+      "hasRumor": false,
+      "createdAt": "2026-08-02T21:42:56.108472"
+    }
+  ],
+  "opinionSource": {
+    "provider": "MockOpinionProvider",
+    "label": "模拟舆情源（确定性 mock）",
+    "mode": "mock",
+    "reason": "沙箱确定性舆情源（未开启 DSA_REALTIME_OPINION）",
+    "opinionCount": 6,
+    "rumorCount": 1,
+    "weightSuggest": 0.15,
+    "envKey": "DSA_REALTIME_OPINION"
+  },
+  "wechats": [
+    {
+      "id": 2,
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "pubDate": "2026-07-27",
+      "title": "产业垂直号梳理储能出海订单，游资题材号次日复盘催化",
+      "source": "产业深度号",
+      "carrier": "产业垂直号",
+      "credibility": "高",
+      "heatScore": 0.85,
+      "sentimentScore": 0.68,
+      "sentiment": "利好",
+      "stage": "狂热",
+      "hasRumor": false,
+      "weightSuggest": 0.2,
+      "summary": "头条尚未大面积曝光，已进入题材发酵期；警惕全网刷屏后的狂热见顶",
+      "createdAt": "2026-08-02T21:42:56.109929"
+    },
+    {
+      "id": 1,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "pubDate": "2026-07-26",
+      "title": "券商官方公众号早评：先进制程订单能见度延伸至明年，国产替代加速",
+      "source": "XX券商研究",
+      "carrier": "券商公众号",
+      "credibility": "高",
+      "heatScore": 0.7,
+      "sentimentScore": 0.62,
+      "sentiment": "利好",
+      "stage": "发酵",
+      "hasRumor": false,
+      "weightSuggest": 0.2,
+      "summary": "券商官方公众号主动推送，机构与散户均阅读，圈内资金提前悄悄建仓",
+      "createdAt": "2026-08-02T21:42:56.109928"
+    },
+    {
+      "id": 3,
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "pubDate": "2026-07-25",
+      "title": "财经视频号博主可视化解读智能化渗透率提升逻辑",
+      "source": "车圈视频号",
+      "carrier": "财经视频号",
+      "credibility": "中",
+      "heatScore": 0.55,
+      "sentimentScore": 0.12,
+      "sentiment": "中性",
+      "stage": "发酵",
+      "hasRumor": false,
+      "weightSuggest": 0.2,
+      "summary": "视频号短线情绪放大器，介于公众号与头条之间，热度温和上行",
+      "createdAt": "2026-08-02T21:42:56.109929"
+    },
+    {
+      "id": 4,
+      "stockCode": "600519",
+      "stockName": "贵州茅台",
+      "pubDate": "2026-07-24",
+      "title": "无资质自媒体公众号编造消费税改革利空白酒传闻，小范围转载",
+      "source": "野鸡财经号",
+      "carrier": "其他自媒体",
+      "credibility": "低",
+      "heatScore": 0.66,
+      "sentimentScore": -0.58,
+      "sentiment": "利空",
+      "stage": "退潮",
+      "hasRumor": true,
+      "weightSuggest": 0.02,
+      "summary": "无权威佐证的自媒体谣言，按文档 §六 强制降权、不认定有效事件",
+      "createdAt": "2026-08-02T21:42:56.109930"
+    },
+    {
+      "id": 5,
+      "stockCode": "000725",
+      "stockName": "京东方 A",
+      "pubDate": "2026-07-23",
+      "title": "付费产业社群提前提示面板景气回暖早期信号",
+      "source": "面板投研群线索",
+      "carrier": "付费社群线索",
+      "credibility": "中",
+      "heatScore": 0.45,
+      "sentimentScore": 0.48,
+      "sentiment": "利好",
+      "stage": "萌芽",
+      "hasRumor": false,
+      "weightSuggest": 0.2,
+      "summary": "付费社群线索属于小众信息补充，产业圈内消息比全网公开早 3~15 天",
+      "createdAt": "2026-08-02T21:42:56.109931"
+    },
+    {
+      "id": 6,
+      "stockCode": "603799",
+      "stockName": "华友钴业",
+      "pubDate": "2026-07-22",
+      "title": "产业垂直号提示镍价波动拖累资源股，专业散户跟随减仓",
+      "source": "有色产业号",
+      "carrier": "产业垂直号",
+      "credibility": "高",
+      "heatScore": 0.55,
+      "sentimentScore": -0.4,
+      "sentiment": "利空",
+      "stage": "发酵",
+      "hasRumor": false,
+      "weightSuggest": 0.2,
+      "summary": "产业链利空发酵，圈内提前恐慌出逃，个股毫无征兆快速下跌",
+      "createdAt": "2026-08-02T21:42:56.109931"
+    }
+  ],
+  "wechatSource": {
+    "provider": "MockWechatProvider",
+    "label": "模拟微信舆情源（确定性 mock）",
+    "mode": "mock",
+    "reason": "沙箱确定性微信舆情源（未开启 DSA_REALTIME_WECHAT）",
+    "wechatCount": 6,
+    "rumorCount": 1,
+    "lowCredibilityCount": 1,
+    "weightShortSuggest": 0.2,
+    "weightLongSuggest": 0.08,
+    "envKey": "DSA_REALTIME_WECHAT"
+  },
+  "flashes": [
+    {
+      "id": 2,
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "pubDate": "2026-07-27",
+      "title": "财联社早盘利好推送：储能出海订单传闻刷屏，题材情绪进入高潮",
+      "source": "财联社",
+      "mediaType": "快讯",
+      "isBreaking": true,
+      "heatScore": 0.88,
+      "sentimentScore": 0.7,
+      "sentiment": "利好",
+      "stage": "狂热",
+      "hasRumor": false,
+      "weightSuggest": 0.22,
+      "summary": "早盘利好推送→当日冲高；警惕全网刷屏后的狂热见顶与游资出货",
+      "createdAt": "2026-08-02T21:42:56.111859"
+    },
+    {
+      "id": 1,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "pubDate": "2026-07-26",
+      "title": "财联社盘中突发：先进制程订单能见度延伸至明年，国产替代加速",
+      "source": "财联社",
+      "mediaType": "快讯",
+      "isBreaking": true,
+      "heatScore": 0.74,
+      "sentimentScore": 0.62,
+      "sentiment": "利好",
+      "stage": "发酵",
+      "hasRumor": false,
+      "weightSuggest": 0.22,
+      "summary": "财联社 7×24 电报式推送，游资与量化第一参考，盘中题材催化最强",
+      "createdAt": "2026-08-02T21:42:56.111858"
+    },
+    {
+      "id": 3,
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "pubDate": "2026-07-25",
+      "title": "华尔街见闻：智能化渗透率提升，外围与期货联动解读出海逻辑",
+      "source": "华尔街见闻",
+      "mediaType": "快讯",
+      "isBreaking": false,
+      "heatScore": 0.52,
+      "sentimentScore": 0.14,
+      "sentiment": "中性",
+      "stage": "发酵",
+      "hasRumor": false,
+      "weightSuggest": 0.22,
+      "summary": "擅长全球宏观与外围联动，对大盘权重股影响大，短线节奏偏温和",
+      "createdAt": "2026-08-02T21:42:56.111860"
+    },
+    {
+      "id": 4,
+      "stockCode": "600519",
+      "stockName": "贵州茅台",
+      "pubDate": "2026-07-24",
+      "title": "e公司突发利空爆料：网传消费税改革利空白酒，个股闪崩高频源头",
+      "source": "e公司",
+      "mediaType": "深度媒体",
+      "isBreaking": true,
+      "heatScore": 0.66,
+      "sentimentScore": -0.58,
+      "sentiment": "利空",
+      "stage": "退潮",
+      "hasRumor": true,
+      "weightSuggest": 0.044,
+      "summary": "垂直专业媒体独家负面爆料，按文档 §七 强制降权、不认定有效利好事件",
+      "createdAt": "2026-08-02T21:42:56.111861"
+    },
+    {
+      "id": 5,
+      "stockCode": "000725",
+      "stockName": "京东方 A",
+      "pubDate": "2026-07-23",
+      "title": "金十数据：面板景气回暖早期信号，期货联动大宗商品产业链",
+      "source": "金十数据",
+      "mediaType": "快讯",
+      "isBreaking": false,
+      "heatScore": 0.42,
+      "sentimentScore": 0.46,
+      "sentiment": "利好",
+      "stage": "萌芽",
+      "hasRumor": false,
+      "weightSuggest": 0.22,
+      "summary": "欧美实时数据 + 期货联动，影响周期股、大宗商品产业链 A 股",
+      "createdAt": "2026-08-02T21:42:56.111861"
+    },
+    {
+      "id": 6,
+      "stockCode": "603799",
+      "stockName": "华友钴业",
+      "pubDate": "2026-07-22",
+      "title": "财联社资源品快讯：镍价波动拖累资源股，题材分歧加大",
+      "source": "财联社",
+      "mediaType": "快讯",
+      "isBreaking": false,
+      "heatScore": 0.55,
+      "sentimentScore": -0.4,
+      "sentiment": "利空",
+      "stage": "发酵",
+      "hasRumor": false,
+      "weightSuggest": 0.22,
+      "summary": "产业链利空发酵，专业散户跟随减仓，情绪偏冷",
+      "createdAt": "2026-08-02T21:42:56.111862"
+    }
+  ],
+  "flashSource": {
+    "provider": "MockFlashProvider",
+    "label": "模拟快讯源（确定性 mock）",
+    "mode": "mock",
+    "reason": "沙箱确定性快讯源（未开启 DSA_REALTIME_FLASH）",
+    "flashCount": 6,
+    "rumorCount": 1,
+    "breakingCount": 3,
+    "weightShortSuggest": 0.22,
+    "weightLongSuggest": 0.09,
+    "envKey": "DSA_REALTIME_FLASH"
+  },
+  "communities": [
+    {
+      "id": 2,
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "pubDate": "2026-07-27",
+      "title": "淘股吧打板风向标：储能出海题材情绪高潮，游资短线客集中看多",
+      "platform": "淘股吧",
+      "quality": "噪音",
+      "isHot": true,
+      "postCount": 980,
+      "discussionHeat": 0.9,
+      "sentimentScore": 0.62,
+      "sentiment": "看多",
+      "hasRumor": false,
+      "weightSuggest": 0.13,
+      "summary": "淘股吧游资/短线客聚集，题材情绪风向标，警惕全网高潮后的见顶出货",
+      "createdAt": "2026-08-02T21:42:56.113899"
+    },
+    {
+      "id": 1,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "pubDate": "2026-07-26",
+      "title": "雪球长文：先进制程订单能见度延伸，国产替代逻辑获机构与 KOL 理性看多",
+      "platform": "雪球",
+      "quality": "高质量",
+      "isHot": true,
+      "postCount": 320,
+      "discussionHeat": 0.7,
+      "sentimentScore": 0.55,
+      "sentiment": "看多",
+      "hasRumor": false,
+      "weightSuggest": 0.13,
+      "summary": "雪球高质量社区：KOL/机构入驻，讨论理性，偏中长线逻辑发酵",
+      "createdAt": "2026-08-02T21:42:56.113897"
+    },
+    {
+      "id": 3,
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "pubDate": "2026-07-25",
+      "title": "东财股吧散户分歧：智能化渗透率提升 vs 估值压制，情绪中性偏冷",
+      "platform": "东财股吧",
+      "quality": "噪音",
+      "isHot": false,
+      "postCount": 540,
+      "discussionHeat": 0.55,
+      "sentimentScore": -0.1,
+      "sentiment": "中性",
+      "hasRumor": false,
+      "weightSuggest": 0.13,
+      "summary": "股吧散户情绪放大器，分歧大、追涨杀跌明显，短线节奏偏震荡",
+      "createdAt": "2026-08-02T21:42:56.113900"
+    },
+    {
+      "id": 4,
+      "stockCode": "600519",
+      "stockName": "贵州茅台",
+      "pubDate": "2026-07-24",
+      "title": "东财股吧刷屏：网传消费税改革小道消息，疑似谣言需强降权",
+      "platform": "东财股吧",
+      "quality": "噪音",
+      "isHot": true,
+      "postCount": 720,
+      "discussionHeat": 0.66,
+      "sentimentScore": -0.5,
+      "sentiment": "看空",
+      "hasRumor": true,
+      "weightSuggest": 0.026,
+      "summary": "社区谣言高发源头，按文档 §七 强制降权、不认定有效利好事件",
+      "createdAt": "2026-08-02T21:42:56.113900"
+    },
+    {
+      "id": 5,
+      "stockCode": "000725",
+      "stockName": "京东方 A",
+      "pubDate": "2026-07-23",
+      "title": "雪球理性讨论：面板景气回暖早期信号，景气拐点获长线资金关注",
+      "platform": "雪球",
+      "quality": "高质量",
+      "isHot": false,
+      "postCount": 180,
+      "discussionHeat": 0.4,
+      "sentimentScore": 0.42,
+      "sentiment": "看多",
+      "hasRumor": false,
+      "weightSuggest": 0.13,
+      "summary": "雪球高质量讨论，景气拐点逻辑偏中长线，情绪稳定",
+      "createdAt": "2026-08-02T21:42:56.113901"
+    },
+    {
+      "id": 6,
+      "stockCode": "603799",
+      "stockName": "华友钴业",
+      "pubDate": "2026-07-22",
+      "title": "淘股吧分歧：镍价波动拖累资源股，短线客追涨杀跌情绪偏冷",
+      "platform": "淘股吧",
+      "quality": "噪音",
+      "isHot": false,
+      "postCount": 410,
+      "discussionHeat": 0.5,
+      "sentimentScore": -0.38,
+      "sentiment": "看空",
+      "hasRumor": false,
+      "weightSuggest": 0.13,
+      "summary": "资源品分歧加大，短线客情绪极化，噪声偏高",
+      "createdAt": "2026-08-02T21:42:56.113901"
+    }
+  ],
+  "communitySource": {
+    "provider": "MockCommunityProvider",
+    "label": "模拟社区舆情源（确定性 mock）",
+    "mode": "mock",
+    "reason": "沙箱确定性社区源（未开启 DSA_REALTIME_COMMUNITY）",
+    "communityCount": 6,
+    "rumorCount": 1,
+    "hotCount": 3,
+    "weightShortSuggest": 0.13,
+    "weightLongSuggest": 0.05,
+    "envKey": "DSA_REALTIME_COMMUNITY"
+  },
+  "overseas": [
+    {
+      "id": 2,
+      "stockCode": "300750",
+      "stockName": "宁德时代",
+      "pubDate": "2026-07-27",
+      "title": "Reuters：欧洲储能订单超预期，北向资金连续净流入释放看多信号",
+      "platform": "路透",
+      "region": "海外",
+      "isInstitution": true,
+      "rating": "增持",
+      "sentimentScore": 0.58,
+      "sentiment": "看多",
+      "impactType": "评级调整",
+      "weightSuggest": 0.18,
+      "summary": "路透：海外基本面+外资流向共振，长线外资维度偏多",
+      "createdAt": "2026-08-02T21:42:56.115621"
+    },
+    {
+      "id": 1,
+      "stockCode": "688981",
+      "stockName": "中芯国际",
+      "pubDate": "2026-07-26",
+      "title": "Bloomberg：半导体设备出口管制松动预期升温，海外机构上调评级至增持",
+      "platform": "彭博",
+      "region": "海外",
+      "isInstitution": true,
+      "rating": "增持",
+      "sentimentScore": 0.6,
+      "sentiment": "看多",
+      "impactType": "评级调整",
+      "weightSuggest": 0.18,
+      "summary": "彭博终端：外资定价权风向标，机构评级上调代表长线外资维度确认",
+      "createdAt": "2026-08-02T21:42:56.115619"
+    },
+    {
+      "id": 3,
+      "stockCode": "002594",
+      "stockName": "比亚迪",
+      "pubDate": "2026-07-25",
+      "title": "WSJ：海外工厂投产进度符合预期，基本面中性偏多但估值承压",
+      "platform": "WSJ",
+      "region": "海外",
+      "isInstitution": false,
+      "rating": "中性",
+      "sentimentScore": 0.18,
+      "sentiment": "中性",
+      "impactType": "评级调整",
+      "weightSuggest": 0.14,
+      "summary": "华尔街日报：深度基本面报道，海外工厂落地兑现，短线催化有限",
+      "createdAt": "2026-08-02T21:42:56.115621"
+    },
+    {
+      "id": 4,
+      "stockCode": "600519",
+      "stockName": "贵州茅台",
+      "pubDate": "2026-07-24",
+      "title": "Bloomberg：外资持股比例边际变化引发讨论，长线外资维度再定价",
+      "platform": "彭博",
+      "region": "海外",
+      "isInstitution": false,
+      "rating": "无",
+      "sentimentScore": 0.1,
+      "sentiment": "中性",
+      "impactType": "外资流向",
+      "weightSuggest": 0.14,
+      "summary": "海外权威源对核心资产的长期外资持仓跟踪（池外标的，演示 union 登记）",
+      "createdAt": "2026-08-02T21:42:56.115622"
+    },
+    {
+      "id": 5,
+      "stockCode": "000725",
+      "stockName": "京东方 A",
+      "pubDate": "2026-07-23",
+      "title": "Seeking Alpha：面板景气拐点多空交锋，独立分析师给出增持论点",
+      "platform": "Seeking Alpha",
+      "region": "海外",
+      "isInstitution": true,
+      "rating": "增持",
+      "sentimentScore": 0.4,
+      "sentiment": "看多",
+      "impactType": "评级调整",
+      "weightSuggest": 0.18,
+      "summary": "Seeking Alpha 众包投研：独立分析师评级调整，偏长线外资视角",
+      "createdAt": "2026-08-02T21:42:56.115622"
+    },
+    {
+      "id": 6,
+      "stockCode": "603799",
+      "stockName": "华友钴业",
+      "pubDate": "2026-07-22",
+      "title": "Reuters：镍价波动拖累资源股，机构下调评级至中性",
+      "platform": "路透",
+      "region": "海外",
+      "isInstitution": true,
+      "rating": "减持",
+      "sentimentScore": -0.42,
+      "sentiment": "看空",
+      "impactType": "评级调整",
+      "weightSuggest": 0.18,
+      "summary": "路透：资源品基本面承压，机构评级下调，长线外资维度偏空",
+      "createdAt": "2026-08-02T21:42:56.115623"
+    }
+  ],
+  "overseasSource": {
+    "provider": "MockOverseasProvider",
+    "label": "模拟海外权威源（确定性 mock）",
+    "mode": "mock",
+    "reason": "沙箱确定性海外权威源（未开启 DSA_REALTIME_OVERSEAS）",
+    "overseasCount": 6,
+    "institutionCount": 4,
+    "ratingUpCount": 3,
+    "weightShortSuggest": 0.14,
+    "weightLongSuggest": 0.18,
+    "envKey": "DSA_REALTIME_OVERSEAS"
+  },
+  "kronosSource": {
+    "provider": "MockKronosProvider",
+    "label": "模拟 Kronos 技术面底座（确定性 mock，无需模型权重）",
+    "mode": "mock",
+    "reason": "沙箱确定性 Kronos 技术面底座（未开启 DSA_REALTIME_KRONOS）",
+    "modelFamily": "NeoQuasar（AAAI2026 金融 K 线基础模型）",
+    "modelSpec": "small（P0 轻量化部署，4 档规格 mini/small/base/large）",
+    "contextWindow": 512,
+    "weightShortCap": 0.35,
+    "weightLongCap": 0.15,
+    "analyzedCount": 14,
+    "envKey": "DSA_REALTIME_KRONOS"
+  },
+  "kronosPools": {
+    "shortTermStrong": [
+      {
+        "id": 2,
+        "stockCode": "002594",
+        "stockName": "比亚迪",
+        "trend": "多头趋势",
+        "momentum": 0.525,
+        "inflectionPoint": "无顶部拐点",
+        "riseProb": 0.716,
+        "sidewayProb": 0.222,
+        "downProb": 0.062,
+        "volatility": 0.354,
+        "volumeScore": 0.322,
+        "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.525
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.322
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.646
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.848
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118466"
+      }
+    ],
+    "reversal": [
+      {
+        "id": 3,
+        "stockCode": "300750",
+        "stockName": "宁德时代",
+        "trend": "震荡",
+        "momentum": 0.854,
+        "inflectionPoint": "底部拐点·下跌末端反转",
+        "riseProb": 0.356,
+        "sidewayProb": 0.337,
+        "downProb": 0.307,
+        "volatility": 0.489,
+        "volumeScore": 0.786,
+        "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.854
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.786
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.511
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.987
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118467"
+      },
+      {
+        "id": 4,
+        "stockCode": "688256",
+        "stockName": "寒武纪",
+        "trend": "震荡",
+        "momentum": 0.401,
+        "inflectionPoint": "底部拐点·下跌末端反转",
+        "riseProb": 0.356,
+        "sidewayProb": 0.352,
+        "downProb": 0.291,
+        "volatility": 0.18,
+        "volumeScore": 0.672,
+        "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.401
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.672
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.82
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.911
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118467"
+      },
+      {
+        "id": 10,
+        "stockCode": "300059",
+        "stockName": "东方财富",
+        "trend": "震荡",
+        "momentum": 0.782,
+        "inflectionPoint": "底部拐点·下跌末端反转",
+        "riseProb": 0.332,
+        "sidewayProb": 0.411,
+        "downProb": 0.257,
+        "volatility": 0.431,
+        "volumeScore": 0.906,
+        "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.782
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.906
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.569
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.964
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118471"
+      },
+      {
+        "id": 11,
+        "stockCode": "688041",
+        "stockName": "海光信息",
+        "trend": "震荡",
+        "momentum": 0.787,
+        "inflectionPoint": "底部拐点·下跌末端反转",
+        "riseProb": 0.321,
+        "sidewayProb": 0.325,
+        "downProb": 0.354,
+        "volatility": 0.142,
+        "volumeScore": 0.715,
+        "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.787
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.715
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.858
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.959
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118471"
+      },
+      {
+        "id": 13,
+        "stockCode": "600519",
+        "stockName": "贵州茅台",
+        "trend": "震荡",
+        "momentum": 0.798,
+        "inflectionPoint": "底部拐点·下跌末端反转",
+        "riseProb": 0.332,
+        "sidewayProb": 0.354,
+        "downProb": 0.314,
+        "volatility": 0.295,
+        "volumeScore": 0.55,
+        "persistence": "下跌末端企稳，具备反转预期，关注试盘放量",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.798
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.55
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.705
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.956
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118472"
+      }
+    ],
+    "riskWarning": [
+      {
+        "id": 1,
+        "stockCode": "688981",
+        "stockName": "中芯国际",
+        "trend": "空头趋势",
+        "momentum": 0.483,
+        "inflectionPoint": "顶部拐点·高位见顶",
+        "riseProb": 0.155,
+        "sidewayProb": 0.228,
+        "downProb": 0.617,
+        "volatility": 0.215,
+        "volumeScore": 0.366,
+        "persistence": "高位结构松动，警惕回落，建议减仓规避追涨",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.483
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.366
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.785
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.862
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118463"
+      },
+      {
+        "id": 2,
+        "stockCode": "002594",
+        "stockName": "比亚迪",
+        "trend": "多头趋势",
+        "momentum": 0.525,
+        "inflectionPoint": "无顶部拐点",
+        "riseProb": 0.716,
+        "sidewayProb": 0.222,
+        "downProb": 0.062,
+        "volatility": 0.354,
+        "volumeScore": 0.322,
+        "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.525
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.322
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.646
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.848
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118466"
+      },
+      {
+        "id": 5,
+        "stockCode": "600276",
+        "stockName": "恒瑞医药",
+        "trend": "多头趋势",
+        "momentum": 0.756,
+        "inflectionPoint": "无顶部拐点",
+        "riseProb": 0.66,
+        "sidewayProb": 0.23,
+        "downProb": 0.11,
+        "volatility": 0.247,
+        "volumeScore": 0.376,
+        "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.756
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.376
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.753
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.84
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118468"
+      },
+      {
+        "id": 6,
+        "stockCode": "000725",
+        "stockName": "京东方A",
+        "trend": "多头趋势",
+        "momentum": 0.853,
+        "inflectionPoint": "无顶部拐点",
+        "riseProb": 0.648,
+        "sidewayProb": 0.242,
+        "downProb": 0.11,
+        "volatility": 0.405,
+        "volumeScore": 0.66,
+        "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.853
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.66
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.595
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.967
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118468"
+      },
+      {
+        "id": 7,
+        "stockCode": "601012",
+        "stockName": "隆基绿能",
+        "trend": "空头趋势",
+        "momentum": 0.621,
+        "inflectionPoint": "顶部拐点·高位见顶",
+        "riseProb": 0.164,
+        "sidewayProb": 0.178,
+        "downProb": 0.658,
+        "volatility": 0.364,
+        "volumeScore": 0.283,
+        "persistence": "高位结构松动，警惕回落，建议减仓规避追涨",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.621
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.283
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.636
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.859
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118469"
+      },
+      {
+        "id": 8,
+        "stockCode": "002230",
+        "stockName": "科大讯飞",
+        "trend": "空头趋势",
+        "momentum": 0.868,
+        "inflectionPoint": "顶部拐点·高位见顶",
+        "riseProb": 0.198,
+        "sidewayProb": 0.232,
+        "downProb": 0.57,
+        "volatility": 0.319,
+        "volumeScore": 0.542,
+        "persistence": "高位结构松动，警惕回落，建议减仓规避追涨",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.868
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.542
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.681
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.888
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118469"
+      },
+      {
+        "id": 9,
+        "stockCode": "600893",
+        "stockName": "航发动力",
+        "trend": "空头趋势",
+        "momentum": 0.468,
+        "inflectionPoint": "顶部拐点·高位见顶",
+        "riseProb": 0.155,
+        "sidewayProb": 0.204,
+        "downProb": 0.642,
+        "volatility": 0.319,
+        "volumeScore": 0.762,
+        "persistence": "高位结构松动，警惕回落，建议减仓规避追涨",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.468
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.762
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.681
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.91
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118470"
+      },
+      {
+        "id": 12,
+        "stockCode": "002475",
+        "stockName": "立讯精密",
+        "trend": "多头趋势",
+        "momentum": 0.435,
+        "inflectionPoint": "无顶部拐点",
+        "riseProb": 0.615,
+        "sidewayProb": 0.25,
+        "downProb": 0.134,
+        "volatility": 0.128,
+        "volumeScore": 0.922,
+        "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.435
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.922
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.872
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.887
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118472"
+      },
+      {
+        "id": 14,
+        "stockCode": "603799",
+        "stockName": "华友钴业",
+        "trend": "多头趋势",
+        "momentum": 0.603,
+        "inflectionPoint": "无顶部拐点",
+        "riseProb": 0.651,
+        "sidewayProb": 0.296,
+        "downProb": 0.053,
+        "volatility": 0.173,
+        "volumeScore": 0.804,
+        "persistence": "中期上升趋势，量价配合，可持续 1~2 周",
+        "factorScores": [
+          {
+            "name": "BSQ趋势强度因子",
+            "score": 0.603
+          },
+          {
+            "name": "分层量能因子",
+            "score": 0.804
+          },
+          {
+            "name": "波动率压缩因子",
+            "score": 0.827
+          },
+          {
+            "name": "拐点共振因子",
+            "score": 0.867
+          }
+        ],
+        "createdAt": "2026-08-02T21:42:56.118473"
+      }
+    ]
+  },
+  "infoLayers": {
+    "layers": {
+      "L0": {
+        "name": "顶层产业知情",
+        "audience": "高管 / 产业链核心",
+        "horizon": "30~45 天",
+        "stage": "底部缓建仓",
+        "role": "异动观察池，长线参考",
+        "tier": 0
+      },
+      "L1": {
+        "name": "机构专业层",
+        "audience": "公募 / 私募 / 游资 / 研究员",
+        "horizon": "7~15 天",
+        "stage": "拉升初期",
+        "role": "核心做多跟踪",
+        "tier": 1
+      },
+      "L2": {
+        "name": "专业交易者",
+        "audience": "短线高手 / 资深散户",
+        "horizon": "3~7 天",
+        "stage": "主升浪起点",
+        "role": "短线重点预判",
+        "tier": 2
+      },
+      "L3": {
+        "name": "深度散户层",
+        "audience": "复盘爱好者",
+        "horizon": "0~3 天",
+        "stage": "上涨中段",
+        "role": "谨慎追高",
+        "tier": 3
+      },
+      "L4": {
+        "name": "普通散户层",
+        "audience": "绝大多数股民",
+        "horizon": "滞后 1~5 天",
+        "stage": "高位狂热",
+        "role": "风险预警减仓",
+        "tier": 4
+      },
+      "L5": {
+        "name": "场外路人",
+        "audience": "新手",
+        "horizon": "滞后 1 周+",
+        "stage": "行情尾声",
+        "role": "强烈看空推演",
+        "tier": 5
+      }
+    },
+    "sourceLayerMap": {
+      "disclosure": {
+        "layer": "L0",
+        "label": "法定权威披露（巨潮 / 交易所）",
+        "tier": "authoritative"
+      },
+      "overseas": {
+        "layer": "L1",
+        "label": "海外权威（彭博 / 路透 / WSJ / Seeking Alpha）",
+        "tier": "authoritative"
+      },
+      "flash": {
+        "layer": "L2",
+        "label": "短线快讯（财联社 / 华尔街见闻 / 金十）",
+        "tier": "professional"
+      },
+      "community": {
+        "layer": "L2/L3",
+        "label": "深度社区（雪球高质量=L2 / 股吧淘股吧噪音=L3）",
+        "tier": "mixed"
+      },
+      "wechat": {
+        "layer": "L3",
+        "label": "微信私域圈层（#31）",
+        "tier": "retail"
+      },
+      "opinion": {
+        "layer": "L4",
+        "label": "头条公域舆情（#28）",
+        "tier": "retail"
+      },
+      "kronos": {
+        "layer": null,
+        "label": "K 线技术面算力底座（#35，非信息圈层 · 技术确认）",
+        "tier": "technical"
+      }
+    },
+    "authoritativeTiers": [
+      "L0",
+      "L1"
+    ],
+    "retailTiers": [
+      "L3",
+      "L4",
+      "L5"
+    ],
+    "credibilityThresholds": {
+      "singleRetailCap": 0.3,
+      "singleAuth": 0.5,
+      "multiAuthFloor": 0.7,
+      "multiAuthCeil": 0.9
+    }
+  },
+  "crossValidationSummary": {
+    "totalAlerts": 14,
+    "layerDistribution": {
+      "L0": 6,
+      "L1": 6,
+      "L2": 6,
+      "L3": 6,
+      "L4": 6,
+      "L5": 0
+    },
+    "consensusDistribution": {
+      "strong": 6,
+      "moderate": 0,
+      "weak": 0,
+      "none": 8
+    },
+    "multiSourceConfirmed": 6,
+    "authoritativeConfirmed": 6,
+    "conflictAlerts": 0,
+    "rumorAlerts": 1,
+    "technicalBullConfirmed": 5
+  },
+  "sentimentBacktest": {
+    "bySource": {
+      "disclosure": {
+        "samples": 360,
+        "bullishDays": 154,
+        "bearishDays": 172,
+        "neutralDays": 34,
+        "directionalWinRate": 0.681,
+        "longWinRate": 0.6429,
+        "shortWinRate": 0.7151,
+        "ic": 0.5334,
+        "signalDirection": "同向(正预测)",
+        "source": "disclosure",
+        "label": "法定披露（巨潮/交易所）",
+        "tier": "authoritative",
+        "coverage": 6,
+        "reliability": "高"
+      },
+      "overseas": {
+        "samples": 360,
+        "bullishDays": 146,
+        "bearishDays": 159,
+        "neutralDays": 55,
+        "directionalWinRate": 0.7311,
+        "longWinRate": 0.6918,
+        "shortWinRate": 0.7673,
+        "ic": 0.474,
+        "signalDirection": "同向(正预测)",
+        "source": "overseas",
+        "label": "海外权威（彭博/路透/WSJ/SeekingAlpha）",
+        "tier": "authoritative",
+        "coverage": 6,
+        "reliability": "高"
+      },
+      "flash": {
+        "samples": 360,
+        "bullishDays": 146,
+        "bearishDays": 166,
+        "neutralDays": 48,
+        "directionalWinRate": 0.6538,
+        "longWinRate": 0.6027,
+        "shortWinRate": 0.6988,
+        "ic": 0.404,
+        "signalDirection": "同向(正预测)",
+        "source": "flash",
+        "label": "短线快讯（财联社/华尔街见闻/金十）",
+        "tier": "professional",
+        "coverage": 6,
+        "reliability": "高"
+      },
+      "community": {
+        "samples": 360,
+        "bullishDays": 157,
+        "bearishDays": 161,
+        "neutralDays": 42,
+        "directionalWinRate": 0.6384,
+        "longWinRate": 0.5732,
+        "shortWinRate": 0.7019,
+        "ic": 0.3175,
+        "signalDirection": "同向(正预测)",
+        "source": "community",
+        "label": "深度社区（雪球/股吧/淘股吧）",
+        "tier": "professional",
+        "coverage": 6,
+        "reliability": "高"
+      },
+      "wechat": {
+        "samples": 360,
+        "bullishDays": 152,
+        "bearishDays": 151,
+        "neutralDays": 57,
+        "directionalWinRate": 0.6172,
+        "longWinRate": 0.5724,
+        "shortWinRate": 0.6623,
+        "ic": 0.3036,
+        "signalDirection": "同向(正预测)",
+        "source": "wechat",
+        "label": "微信私域（公众号/视频号）",
+        "tier": "retail",
+        "coverage": 6,
+        "reliability": "高"
+      },
+      "opinion": {
+        "samples": 360,
+        "bullishDays": 156,
+        "bearishDays": 158,
+        "neutralDays": 46,
+        "directionalWinRate": 0.5127,
+        "longWinRate": 0.4423,
+        "shortWinRate": 0.5823,
+        "ic": 0.0359,
+        "signalDirection": "弱相关",
+        "source": "opinion",
+        "label": "公域散户（头条/抖音/小红书）",
+        "tier": "retail",
+        "coverage": 6,
+        "reliability": "低"
+      }
+    },
+    "nDays": 60,
+    "universeSize": 6,
+    "summary": {
+      "bestSource": "disclosure",
+      "bestIc": 0.5334,
+      "worstSource": "opinion",
+      "worstIc": 0.0359,
+      "tierAvgDirectionalWinRate": {
+        "authoritative": 0.7061,
+        "professional": 0.6461,
+        "retail": 0.565
+      },
+      "authoritativeAvgIc": 0.5037,
+      "retailAvgIc": 0.1697
+    },
+    "generatedAt": "2026-08-02T21:42:56"
+  },
+  "inflectionSummary": {
+    "totalAlerts": 14,
+    "levelDistribution": {
+      "high": 0,
+      "medium": 2,
+      "low": 0,
+      "none": 12
+    },
+    "typeDistribution": {
+      "技术·情绪背离": 2
+    },
+    "highCount": 0,
+    "mediumCount": 2,
+    "lowCount": 0,
+    "noneCount": 12,
+    "highInflectionAlerts": []
+  }
+}

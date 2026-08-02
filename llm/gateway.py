@@ -67,6 +67,7 @@ class TaskType(Enum):
     IMAGE_OCR_NEWS = "image_ocr_news"                # 图片OCR识别
     CHAT_PROFESSIONAL = "chat_professional"          # 专业深度对话
     CHAT_LIGHT = "chat_light"                        # 轻量对话
+    LLM_PARSE = "llm_parse"                          # 长文本结构化解析（DSA-OPT-LLM-001）
 
 
 class ModelProvider(Enum):
@@ -229,6 +230,21 @@ class LLMGateway:
         user_prompt = f"选股需求：{query}"
         return self._call_llm(provider, system_prompt, user_prompt, task="stock_screening")
 
+    # ---- 新增：长文本结构化解析（DSA-OPT-LLM-001）----
+
+    def parse_structured(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        task: str = "llm_parse",
+    ) -> LLMResult:
+        """通用结构化 JSON 解析入口（长文本分层拆解 / 多文档对比 / 约束挖掘 / 长期规划）。
+
+        复用统一路由与 JSON 清洗逻辑，供 core/llm_parse_service.py 调用。
+        """
+        provider = self.route_task(TaskType.LLM_PARSE, user_prompt)
+        return self._call_llm(provider, system_prompt, user_prompt, task=task)
+
     # ---- 底层调用 ----
 
     def _call_llm(
@@ -260,7 +276,7 @@ class LLMGateway:
             return result
 
         # JSON 清洗
-        json_tasks = {"news_analysis", "chain_simulation", "stock_diagnose", "audit_revise", "code_review", "kline_analysis", "stock_screening"}
+        json_tasks = {"news_analysis", "chain_simulation", "stock_diagnose", "audit_revise", "code_review", "kline_analysis", "stock_screening", "llm_parse"}
         if task in json_tasks:
             parsed = _get_clean_llm_json()(result.raw_text or "")
             if parsed is None:

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Activity, BarChart3, Bell, BriefcaseBusiness, Gauge, Home, LogOut, MessageSquareQuote, Search, Settings2 } from 'lucide-react';
+import { Activity, BarChart3, Bell, BriefcaseBusiness, Building2, CalendarClock, Download, Gauge, Globe, History, Home, Landmark, LogOut, MessageSquareQuote, Network, Radar, Search, Settings2, SlidersHorizontal, GitBranch, RotateCcw } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { ALPHASIFT_CONFIG_CHANGED_EVENT, SYSTEM_CONFIG_CHANGED_EVENT, alphasiftApi } from '../../api/alphasift';
 import { useAuth } from '../../contexts/AuthContext';
@@ -33,6 +33,18 @@ const NAV_ITEMS: NavItem[] = [
   { key: 'screening', labelKey: 'layout.nav.screening', to: '/screening', icon: Search },
   { key: 'portfolio', labelKey: 'layout.nav.portfolio', to: '/portfolio', icon: BriefcaseBusiness },
   { key: 'decision-signals', labelKey: 'layout.nav.decisionSignals', to: '/decision-signals', icon: Activity },
+  { key: 'forecast-center', labelKey: 'layout.nav.forecastCenter', to: '/forecast-center', icon: Radar },
+  { key: 'global-dynamics', labelKey: 'layout.nav.globalDynamics', to: '/global-dynamics', icon: Globe },
+  { key: 'domestic-dynamics', labelKey: 'layout.nav.domesticDynamics', to: '/domestic-dynamics', icon: Landmark },
+  { key: 'daily-dynamics', labelKey: 'layout.nav.dailyDynamics', to: '/daily-dynamics', icon: CalendarClock },
+  { key: 'scheduler', labelKey: 'layout.nav.scheduler', to: '/scheduler', icon: CalendarClock },
+  { key: 'review-center', labelKey: 'layout.nav.reviewCenter', to: '/review-center', icon: History },
+  { key: 'industry-maintenance', labelKey: 'layout.nav.industryMaintenance', to: '/industry-maintenance', icon: Network },
+  { key: 'company-maintenance', labelKey: 'layout.nav.companyMaintenance', to: '/company-maintenance', icon: Building2 },
+  { key: 'dsa-params', labelKey: 'layout.nav.dsaParams', to: '/dsa-params', icon: SlidersHorizontal },
+  { key: 'crawl-center', labelKey: 'layout.nav.crawlCenter', to: '/crawl-center', icon: Download },
+  { key: 'dsa-engine', labelKey: 'layout.nav.dsaEngine', to: '/dsa-engine', icon: GitBranch },
+  { key: 'backtrace', labelKey: 'layout.nav.backtrace', to: '/backtrace', icon: RotateCcw },
   { key: 'backtest', labelKey: 'layout.nav.backtest', to: '/backtest', icon: BarChart3 },
   { key: 'alerts', labelKey: 'layout.nav.alerts', to: '/alerts', icon: Bell },
   { key: 'usage', labelKey: 'layout.nav.usage', to: '/usage', icon: Gauge },

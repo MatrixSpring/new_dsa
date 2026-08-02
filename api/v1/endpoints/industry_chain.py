@@ -17,14 +17,16 @@
 """
 import json
 import logging
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Body, HTTPException
 
-from src.storage import DatabaseManager, XzscIndustryChain
+from src.storage import DatabaseManager, XzscIndustryChain, ChainEdgeOverride, ChainRiskFlag, DsaGlobalParam
 from src.data.industry_chain_fusion import build_xzsc_shenwan_fusion
 from src.industry_chain_propagation import propagate_shock, chain_exposure_from_holdings
+from src.services.factor_propagation_service import forecast_with_factors
 
 logger = logging.getLogger(__name__)
 
@@ -365,17 +367,173 @@ def _get_chain_graph(chain_id: str) -> Optional[Dict[str, Any]]:
     return None
 
 
+def _load_dsa_global_params() -> Dict[str, float]:
+    """读取 DSA 全局参数（设计 §3.1 默认值来源），缺表/缺行时退回设计常数。"""
+    defaults = {
+        'recursion_depth': 20.0,
+        'coeff_threshold': 0.85,
+        'bearish_weight': 0.7,
+    }
+    try:
+        m = DatabaseManager.get_instance()
+        with m.session_scope() as s:
+            rows = s.query(DsaGlobalParam).all()
+            for r in rows:
+                defaults[r.param_key] = float(r.param_value)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning('读取 DSA 全局参数失败，使用设计常数: %s', exc)
+    return defaults
+
+
+def _build_override_map(chain_id: str) -> Dict[tuple, Dict[str, Any]]:
+    """构建 {(source,target):{coeff,lag}}（无向，正反各一份），供传导覆盖系数。"""
+    out: Dict[tuple, Dict[str, Any]] = {}
+    try:
+        m = DatabaseManager.get_instance()
+        with m.session_scope() as s:
+            rows = s.query(ChainEdgeOverride).filter_by(chain_id=chain_id).all()
+            for r in rows:
+                out[(r.source_node, r.target_node)] = {'coeff': r.coeff, 'lag': r.lag}
+                out[(r.target_node, r.source_node)] = {'coeff': r.coeff, 'lag': r.lag}
+    except Exception as exc:  # noqa: BLE001
+        logger.warning('读取传导系数覆盖失败: %s', exc)
+    return out
+
+
 @router.post('/industry-chains/{chain_id}/propagate')
 def propagate_chain_shock(chain_id: str, shock: Dict[str, Any] = Body(...)) -> Dict[str, Any]:
-    """产业链冲击传导推演 (P1-③ 深化)。
+    """产业链冲击传导推演 (P1-③ 深化)，接入设计 §3.1 引擎规则。
 
-    请求体: {node(环节名或id), magnitude(相对冲击, -0.2=跌20%/成本+20%), kind}
-    返回各环节/各公司受影响程度与链级汇总。
+    请求体: {node, magnitude, kind,
+             maxDepth?, bidirectionalDecay?, bearishDecay?, useOverrides?}
+    - 引擎默认值来自 dsa_global_params（recursion_depth/coeff_threshold/bearish_weight），
+      请求体字段可覆盖；useOverrides 默认开启，自动读取 chain_edge_override 覆盖系数。
+    返回各环节/各公司受影响程度与链级汇总（含 params 回显生效规则）。
     """
     graph = _get_chain_graph(chain_id)
     if graph is None:
         raise HTTPException(status_code=404, detail=f'未找到产业链: {chain_id}')
-    return propagate_shock(graph, shock)
+
+    gp = _load_dsa_global_params()
+    max_depth = int(float(gp.get('recursion_depth', 20)))
+    bidirectional_decay = float(gp.get('coeff_threshold', 0.85))
+    bearish_decay = float(gp.get('bearish_weight', 0.7))
+
+    if 'maxDepth' in shock:
+        max_depth = int(shock['maxDepth'])
+    if 'bidirectionalDecay' in shock:
+        bidirectional_decay = float(shock['bidirectionalDecay'])
+    if 'bearishDecay' in shock:
+        bearish_decay = float(shock['bearishDecay'])
+    use_overrides = bool(shock.get('useOverrides', True))
+    overrides = _build_override_map(chain_id) if use_overrides else {}
+
+    opts = {
+        'max_depth': max_depth,
+        'bidirectional_decay': bidirectional_decay,
+        'bearish_decay': bearish_decay,
+        'use_overrides': bool(overrides),
+        'overrides': overrides,
+    }
+    return propagate_shock(graph, shock, opts)
+
+
+@router.post('/industry-chains/{chain_id}/propagate-scenarios')
+def propagate_chain_scenarios(chain_id: str, shock: Dict[str, Any] = Body(...)) -> Dict[str, Any]:
+    """三情景并行传导推演（设计 §3.3 / 页面7 三情景）。
+
+    同一冲击在 基准 / 乐观 / 悲观 三种参数下并行传导：
+      - base        : 参数取全局默认（或请求体覆盖）
+      - optimistic  : 冲击幅度 ×0.6、利空衰减放宽到 1.0（更温和）
+      - pessimistic : 冲击幅度 ×1.4、利空衰减收紧到 0.5（更严峻）
+    返回 {code:0, data:{base, optimistic, pessimistic, params}}。
+    """
+    graph = _get_chain_graph(chain_id)
+    if graph is None:
+        raise HTTPException(status_code=404, detail=f'未找到产业链: {chain_id}')
+
+    gp = _load_dsa_global_params()
+    max_depth = int(float(gp.get('recursion_depth', 20)))
+    bidirectional_decay = float(gp.get('coeff_threshold', 0.85))
+    bearish_decay = float(gp.get('bearish_weight', 0.7))
+    if 'maxDepth' in shock:
+        max_depth = int(shock['maxDepth'])
+    if 'bidirectionalDecay' in shock:
+        bidirectional_decay = float(shock['bidirectionalDecay'])
+    if 'bearishDecay' in shock:
+        bearish_decay = float(shock['bearishDecay'])
+
+    base_mag = float(shock.get('magnitude', 0.0))
+    use_overrides = bool(shock.get('useOverrides', True))
+    overrides = _build_override_map(chain_id) if use_overrides else {}
+
+    base_opt = {
+        'max_depth': max_depth,
+        'bidirectional_decay': bidirectional_decay,
+        'bearish_decay': bearish_decay,
+        'use_overrides': bool(overrides),
+        'overrides': overrides,
+    }
+    optimistic_opt = dict(base_opt, bearish_decay=1.0)
+    pessimistic_opt = dict(base_opt, bearish_decay=0.5)
+
+    base = propagate_shock(graph, {**shock, 'magnitude': base_mag}, base_opt)
+    optimistic = propagate_shock(
+        graph, {**shock, 'magnitude': base_mag * 0.6}, optimistic_opt
+    )
+    pessimistic = propagate_shock(
+        graph, {**shock, 'magnitude': base_mag * 1.4}, pessimistic_opt
+    )
+
+    return {
+        'code': 0,
+        'msg': 'ok',
+        'data': {
+            'base': base,
+            'optimistic': optimistic,
+            'pessimistic': pessimistic,
+            'params': {
+                'max_depth': max_depth,
+                'bidirectional_decay': bidirectional_decay,
+                'bearish_decay': bearish_decay,
+                'magnitude': base_mag,
+                'optimistic_magnitude': base_mag * 0.6,
+                'pessimistic_magnitude': base_mag * 1.4,
+            },
+        },
+    }
+
+
+@router.post('/industry-chains/{chain_id}/factor-forecast')
+def factor_forward_forecast(chain_id: str, body: Dict[str, Any] = Body(...)) -> Dict[str, Any]:
+    """因子库 → DSA 内核正向传导桥接（闭环增强，内核零改动）。
+
+    把沉淀的标准化上涨因子库（#17）转为 DSA 引擎 propagate_shock 的因子权重，并真实注入
+    四周期正向传导对比（基线 vs 因子增强），输出最大冲击 / 影响环节 / 涉及公司提升与四周期预测。
+    请求体: { shock?{node,magnitude,kind}, topN?(默认6), minConfidence?(默认0.6), category? }
+    返回 {code, data:{ chainId, shockNode, baseMagnitude, boostedMagnitude, boost,
+                      structuredBoost, edgeOverrides, categoryEdgeContrib,
+                      factorWeights, baseline, enhanced, liftPct, forward4, factors, engine }}
+    """
+    graph = _get_chain_graph(chain_id)
+    if graph is None:
+        raise HTTPException(status_code=404, detail=f'未找到产业链: {chain_id}')
+
+    shock = body.get('shock') or {}
+    if not shock.get('node'):
+        shock['node'] = str(body.get('node') or '锂矿')
+    if 'magnitude' not in shock:
+        shock['magnitude'] = float(body.get('magnitude', 0.3))
+    else:
+        shock['magnitude'] = float(shock['magnitude'])
+    shock.setdefault('kind', str(body.get('kind') or 'demand'))
+
+    top_n = int(body.get('topN', 6))
+    min_confidence = float(body.get('minConfidence', 0.6))
+    category = body.get('category')
+    return forecast_with_factors(
+        graph, shock, top_n=top_n, min_confidence=min_confidence, category=category
+    )
 
 
 def _chain_companies_map() -> Dict[str, List[Dict[str, Any]]]:
@@ -416,3 +574,127 @@ def portfolio_chain_exposure(holdings: List[Dict[str, Any]] = Body(...)) -> Dict
         raise HTTPException(status_code=400, detail='holdings 不能为空')
     cmap = _chain_companies_map()
     return chain_exposure_from_holdings(holdings, cmap)
+
+
+# ===========================================================================
+# 页面4 收尾：自定义传导系数覆盖 / 风险标记 / 画布模板导出
+# ===========================================================================
+@router.put('/industry-chains/{chain_id}/edge-override')
+def upsert_edge_override(
+    chain_id: str,
+    payload: Dict[str, Any] = Body(...),
+) -> Dict[str, Any]:
+    """自定义产业链传导系数覆盖（页面4「自定义传导系数默认值」）。
+
+    请求体: {source_node, target_node, coeff(0~1), lag(>=0)}
+    覆盖默认 edges.coeff=0.6 / lag=5，写入后前端重调 propagate 刷新预测。
+    """
+    source_node = str(payload.get('sourceNode') or payload.get('source_node') or '')
+    target_node = str(payload.get('targetNode') or payload.get('target_node') or '')
+    if not source_node or not target_node:
+        raise HTTPException(status_code=400, detail='source_node / target_node 不能为空')
+    try:
+        coeff = float(payload.get('coeff', 0.6))
+    except (TypeError, ValueError):
+        raise HTTPException(status_code=400, detail='coeff 必须为数字')
+    try:
+        lag = int(payload.get('lag', 5))
+    except (TypeError, ValueError):
+        raise HTTPException(status_code=400, detail='lag 必须为整数')
+    coeff = max(0.0, min(1.0, coeff))  # clamp 0~1
+    lag = max(0, lag)
+
+    m = DatabaseManager.get_instance()
+    with m.session_scope() as s:
+        existing = (
+            s.query(ChainEdgeOverride)
+            .filter_by(chain_id=chain_id, source_node=source_node, target_node=target_node)
+            .first()
+        )
+        if existing:
+            existing.coeff = coeff
+            existing.lag = lag
+            row = existing
+        else:
+            row = ChainEdgeOverride(
+                chain_id=chain_id,
+                source_node=source_node,
+                target_node=target_node,
+                coeff=coeff,
+                lag=lag,
+            )
+            s.add(row)
+            s.flush()
+        return {'code': 0, 'msg': 'ok', 'data': row.to_dict()}
+
+
+@router.get('/industry-chains/{chain_id}/edge-overrides')
+def list_edge_overrides(chain_id: str) -> Dict[str, Any]:
+    """读取某产业链全部自定义传导系数覆盖。"""
+    m = DatabaseManager.get_instance()
+    with m.session_scope() as s:
+        rows = s.query(ChainEdgeOverride).filter_by(chain_id=chain_id).all()
+        items = [r.to_dict() for r in rows]
+    return {'code': 0, 'total': len(items), 'items': items}
+
+
+@router.post('/industry-chains/{chain_id}/risk-flag')
+def add_chain_risk_flag(
+    chain_id: str,
+    payload: Dict[str, Any] = Body(...),
+) -> Dict[str, Any]:
+    """产业链环节异常风险标记（页面4「行业异常自动标记风险」）。
+
+    请求体: {node, risk_type(price_up|output_cut|oversupply|other), severity(高|中|低), note}
+    """
+    node = str(payload.get('node') or '')
+    if not node:
+        raise HTTPException(status_code=400, detail='node 不能为空')
+    risk_type = str(payload.get('riskType') or payload.get('risk_type') or 'other')
+    severity = str(payload.get('severity') or '中')
+    note = payload.get('note')
+    m = DatabaseManager.get_instance()
+    with m.session_scope() as s:
+        row = ChainRiskFlag(
+            chain_id=chain_id,
+            node=node,
+            risk_type=risk_type,
+            severity=severity,
+            note=note,
+        )
+        s.add(row)
+        s.flush()
+        return {'code': 0, 'msg': 'ok', 'data': row.to_dict()}
+
+
+@router.get('/industry-chains/{chain_id}/risk-flags')
+def list_chain_risk_flags(chain_id: str) -> Dict[str, Any]:
+    """读取某产业链全部风险标记。"""
+    m = DatabaseManager.get_instance()
+    with m.session_scope() as s:
+        rows = s.query(ChainRiskFlag).filter_by(chain_id=chain_id).order_by(ChainRiskFlag.created_at.desc()).all()
+        items = [r.to_dict() for r in rows]
+    return {'code': 0, 'total': len(items), 'items': items}
+
+
+@router.get('/industry-chains/{chain_id}/export-template')
+def export_chain_template(chain_id: str) -> Dict[str, Any]:
+    """一键导出画布模板（页面4「导出模板」）。
+
+    返回结构化 {nodes, edges, companies, meta}，可直接导入画布编辑器。
+    """
+    graph = _get_chain_graph(chain_id)
+    if graph is None:
+        raise HTTPException(status_code=404, detail=f'未找到产业链: {chain_id}')
+    template = {
+        'meta': {
+            'chainId': graph.get('id'),
+            'name': graph.get('name'),
+            'category': graph.get('category'),
+            'exportedAt': datetime.now().isoformat(),
+        },
+        'nodes': graph.get('nodes', []),
+        'edges': graph.get('edges', []),
+        'companies': graph.get('companies', {}),
+    }
+    return {'code': 0, 'msg': 'ok', 'data': template}

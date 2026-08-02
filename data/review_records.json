@@ -1,0 +1,147 @@
+[
+  {
+    "symbol": "600519",
+    "name": "贵州茅台",
+    "scored_at": 1785642418.4151108,
+    "cycles": [
+      {
+        "cycle": "1w",
+        "predicted_direction": "up",
+        "actual_direction": "up",
+        "actual_return_pct": 4.2,
+        "direction_hit": true,
+        "range_hit": true,
+        "accuracy_score": 1.0,
+        "attribution": {
+          "data_layer": {
+            "score": 0.699,
+            "note": "共识分充足、概率不过度极端"
+          },
+          "model_layer": {
+            "score": 0.8,
+            "note": "方向命中，DSA 传导系数稳定"
+          },
+          "logic_layer": {
+            "score": 1.0,
+            "note": "传导路径与区间判断一致"
+          }
+        }
+      },
+      {
+        "cycle": "1m",
+        "predicted_direction": "up",
+        "actual_direction": "oscillation",
+        "actual_return_pct": 1.1,
+        "direction_hit": true,
+        "range_hit": true,
+        "accuracy_score": 1.0,
+        "attribution": {
+          "data_layer": {
+            "score": 0.584,
+            "note": "共识分偏低或概率极端，数据采集/交叉验证不足"
+          },
+          "model_layer": {
+            "score": 0.7,
+            "note": "方向命中，DSA 传导系数稳定"
+          },
+          "logic_layer": {
+            "score": 1.0,
+            "note": "传导路径与区间判断一致"
+          }
+        }
+      },
+      {
+        "cycle": "6m",
+        "predicted_direction": "up",
+        "actual_direction": "up",
+        "actual_return_pct": 12.0,
+        "direction_hit": true,
+        "range_hit": true,
+        "accuracy_score": 1.0,
+        "attribution": {
+          "data_layer": {
+            "score": 0.539,
+            "note": "共识分偏低或概率极端，数据采集/交叉验证不足"
+          },
+          "model_layer": {
+            "score": 0.65,
+            "note": "方向命中，DSA 传导系数稳定"
+          },
+          "logic_layer": {
+            "score": 1.0,
+            "note": "传导路径与区间判断一致"
+          }
+        }
+      }
+    ],
+    "accuracy_rate": 1.0,
+    "avg_layer_health": {
+      "data_layer": 0.607,
+      "model_layer": 0.717,
+      "logic_layer": 1.0
+    },
+    "weakest_layer": "data_layer",
+    "sample_size": 3
+  },
+  {
+    "symbol": "000001",
+    "name": "平安银行",
+    "scored_at": 1785642418.416965,
+    "cycles": [
+      {
+        "cycle": "1w",
+        "predicted_direction": "down",
+        "actual_direction": "up",
+        "actual_return_pct": 3.0,
+        "direction_hit": false,
+        "range_hit": false,
+        "accuracy_score": 0.0,
+        "attribution": {
+          "data_layer": {
+            "score": 0.47,
+            "note": "共识分偏低或概率极端，数据采集/交叉验证不足"
+          },
+          "model_layer": {
+            "score": 0.15,
+            "note": "方向判错，DSA 传导系数或权重需复盘"
+          },
+          "logic_layer": {
+            "score": 0.2,
+            "note": "传导方向与行情背离，事件-传导-行情链路需重梳"
+          }
+        }
+      },
+      {
+        "cycle": "1m",
+        "predicted_direction": "down",
+        "actual_direction": "down",
+        "actual_return_pct": -4.0,
+        "direction_hit": true,
+        "range_hit": true,
+        "accuracy_score": 1.0,
+        "attribution": {
+          "data_layer": {
+            "score": 0.422,
+            "note": "共识分偏低或概率极端，数据采集/交叉验证不足"
+          },
+          "model_layer": {
+            "score": 0.5,
+            "note": "方向命中，DSA 传导系数稳定"
+          },
+          "logic_layer": {
+            "score": 1.0,
+            "note": "传导路径与区间判断一致"
+          }
+        }
+      }
+    ],
+    "accuracy_rate": 0.5,
+    "avg_layer_health": {
+      "data_layer": 0.446,
+      "model_layer": 0.325,
+      "logic_layer": 0.6
+    },
+    "weakest_layer": "model_layer",
+    "sample_size": 2
+  }
+]
